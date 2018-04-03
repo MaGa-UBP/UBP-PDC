@@ -83,21 +83,40 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 }
 .headerImage.reykjavik{
   background-image: url('../images/gallery/g1.jpg');
+  background-size: cover;
+}
+.headerImage.reykjavik:before{
+  background: rgba(223, 0, 110,0.45);
 }
 .headerImage.fiordos{
   background-image: url('../images/gallery/g3.jpg');
 }
+.headerImage.fiordos:before{
+  background: rgba(223, 114, 0, 0.35);
+}
 .headerImage.oeste{
   background-image: url('../images/gallery/g2.jpg');
+}
+.headerImage.oeste:before{
+  background: rgba(0, 110, 223,0.5);
 }
 .headerImage.sur{
   background-image: url('../images/gallery/g5.jpg');
 }
+.headerImage.sur:before{
+  background: rgba(	0, 223, 114,0.35);
+}
 .headerImage.reikianes{
   background-image: url('../images/gallery/g6.jpg');
 }
+.headerImage.reikianes:before{
+  background: rgba();
+}
 .headerImage.norte{
   background-image: url('../images/gallery/g4.jpg');
+}
+.headerImage.norte:before{
+  background: rgba();
 }
 .headerImage.cuestionario{
   max-height: 500px;
