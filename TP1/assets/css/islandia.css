@@ -65,12 +65,21 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 }
 
 
-
-.reykjavik{
-  background-image: url('../images/gallery/g1.jpg');
+.headerImage{
   background-position: center;
   background-size: cover;
   max-height: 400px;
+}
+.headerImage.reykjavik{
+  background-image: url('../images/gallery/g1.jpg');
+}
+.headerImage.cuestionario{
+  max-height: 500px;
+  background-image: url('../images/gallery/g3.jpg');
+}
+
+.headerImage.cuestionario:before{
+  background: rgba(255,128,0,0.5);
 }
 .centeredLined{
   text-align: center;
