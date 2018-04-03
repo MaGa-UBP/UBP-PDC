@@ -63,3 +63,21 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 .appsLand-btn{
   margin-top: 20px;
 }
+
+
+
+.reykjavik{
+  background-image: url('../images/gallery/g1.jpg');
+  background-position: center;
+  background-size: cover;
+  max-height: 400px;
+}
+.centeredLined{
+  text-align: center;
+}
+.centeredLined h2{
+  display: inline-block;
+  padding: 10px;
+  border-top: 7px solid #FFF;
+  border-bottom: 7px solid #FFF;
+}
