@@ -56,7 +56,8 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   z-index: 2;
 }
 
-.subscribe-title h2{
+.subscribe-title h2,
+.single-tab-select-box h2{
   text-transform: none!important;
 }
 
@@ -95,4 +96,34 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   padding: 10px;
   border-top: 7px solid #FFF;
   border-bottom: 7px solid #FFF;
+}
+
+
+.cuestionario input {
+    color: #aaa;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    height: 48px;
+    border-radius: 0px;
+    box-shadow: none;
+    border-color: rgb(215, 215, 215);
+  }
+
+.divider{
+  height: 1px;
+  /* background-color: #00dddf;*/
+  border: 1px solid #00dddf;
+  /* border-style:  */
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.cuestionario label{
+  color: #565a5c;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
