@@ -55,3 +55,11 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 .filtr-container .filtr-item .item-title{
   z-index: 2;
 }
+
+.subscribe-title h2{
+  text-transform: none!important;
+}
+
+.appsLand-btn{
+  margin-top: 20px;
+}
