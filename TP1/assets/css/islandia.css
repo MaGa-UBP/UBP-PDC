@@ -81,6 +81,12 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 .headerImage.cuestionario:before{
   background: rgba(255,128,0,0.5);
 }
+.cuestionario .single-travel-boxes{
+  padding: 20px 40px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.1);
+
+}
+
 .centeredLined{
   text-align: center;
 }
