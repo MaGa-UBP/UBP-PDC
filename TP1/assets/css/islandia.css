@@ -5,6 +5,16 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   color: #00dddf !important;
 }
 
+.dropdown-menu{
+  background-color: #313131;
+}
+
+.main-menu .nav .dropdown-menu li{
+  padding: 0px 30px;
+}
+.main-menu .nav .dropdown-menu li a{
+  padding: 10px 0 10px;
+}
 .about-us{
   background: none;
   min-height: 1px !important;
