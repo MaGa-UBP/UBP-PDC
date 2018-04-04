@@ -394,3 +394,10 @@ border: 1px solid #ccc;
   width: 100%;
   height: 100%;
 }
+.smallVideoContainer{
+  text-align: center;
+}
+.smallVideoContainer iframe{
+  display: inline-block;
+  margin-top: 30px;
+}
