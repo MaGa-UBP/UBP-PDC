@@ -166,14 +166,10 @@
 							</p>
 							<div class="row">
 								<div class="col-md-6 matchHeight">
-									<div class="responsive-img">
-										<img src="../assets/images/gallery/sur1.jpg" class="responsive-img" />
-									</div>
+										<img src="../assets/images/gallery/sur1.jpg" class="img-responsive" />
 								</div>
 								<div class="col-md-6 matchHeight">
-									<div class="responsive-img">
-										<img src="../assets/images/gallery/sur2.jpg" class="responsive-img" />
-									</div>
+										<img src="../assets/images/gallery/sur2.jpg" class="img-responsive" />
 								</div>
 							</div>
 
@@ -271,7 +267,12 @@
 
 		<!--Custom JS-->
 		<script src="../assets/js/custom.js"></script>
-
+		<script src="../assets/js/jquery.matchHeight.js"></script>
+		<script>
+		$(function() {
+			$('.matchHeight').matchHeight();
+		});
+		</script>
 	</body>
 
 </html>
