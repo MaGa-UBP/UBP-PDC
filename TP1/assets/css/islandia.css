@@ -112,9 +112,6 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 .headerImage.reikianes{
   background-image: url('../images/gallery/g6.jpg');
 }
-.headerImage.reikianes:before{
-  background: rgba();
-}
 .headerImage.norte{
   background-image: url('../images/gallery/g4.jpg');
 }
@@ -130,7 +127,7 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 }
 
 .headerImage.cuestionario:before{
-  background: rgba(255,128,0,0.5);
+  background: rgba(	0, 223, 114,0.35);
 }
 .cuestionario .single-travel-boxes{
   padding: 20px 40px;
