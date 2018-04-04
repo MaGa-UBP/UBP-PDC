@@ -174,22 +174,23 @@
 									</div><!--/.col-->
 
 									<div class="col-xs-12">
-										<div class="divider"></div>
+										<hr class="divider"/>
 									</div>
 									<div class="col-xs-12">
 										<div class="single-tab-select-box">
 
-											<h2>1. ¿Cu&aacute;l es una de las actividades favoritas de los habitantes de Reykjavik y qu&eacute; define su modo de vida?</h2>
+											<label for="pregunta1">1. ¿Cu&aacute;l es una de las actividades favoritas de los habitantes de Reykjavik y qu&eacute; define su modo de vida?</label>
 
 											<div class="travel-select-icon">
-												<select class="form-control ">
 
-														<option value="default">enter your destination country</option><!-- /.option-->
+												<select id="pregunta1" name="pregunta1" class="form-control " required>
 
-														<option value="turkey">turkey</option><!-- /.option-->
+														<option value="">Elija la opci&oacute;n correcta</option><!-- /.option-->
 
-														<option value="russia">russia</option><!-- /.option-->
-														<option value="egept">egypt</option><!-- /.option-->
+														<option value="a">Esquiar por las monta&ntilde;as del norte</option><!-- /.option-->
+														<option value="b">Comer hot dogs mirando el mar</option><!-- /.option-->
+														<option value="c">Ir a una piscina p&uacute;blica</option><!-- /.option-->
+														<option value="d">Ir a un caf&eacute; y hablar de pol&iacute;tica</option><!-- /.option-->
 
 												</select><!-- /.select-->
 											</div><!-- /.travel-select-icon -->
@@ -198,41 +199,301 @@
 									<div class="col-xs-12">
 										<div class="single-tab-select-box">
 
-											<h2>2. ¿Cu&aacute;l es el nombre del salto famoso que se encuentra en los fiordos del oeste de Islandia?</h2>
+											<label for="pregunta2">2. ¿Cu&aacute;l es el nombre del salto famoso que se encuentra en los fiordos del oeste de Islandia?</label>
 
 											<div class="travel-select-icon">
-												<select class="form-control ">
+												<select id="pregunta2" name="pregunta2" class="form-control " required>
 
-														<option value="default">enter your destination country</option><!-- /.option-->
+														<option value="">Elija la opci&oacute;n correcta</option><!-- /.option-->
 
-														<option value="turkey">turkey</option><!-- /.option-->
-
-														<option value="russia">russia</option><!-- /.option-->
-														<option value="egept">egypt</option><!-- /.option-->
+														<option value="a">L&aacute;trabjarg</option><!-- /.option-->
+														<option value="b">Hornbjarg</option><!-- /.option-->
+														<option value="c">Vigur</option><!-- /.option-->
+														<option value="d">dynjandi</option><!-- /.option-->
 
 												</select><!-- /.select-->
 											</div><!-- /.travel-select-icon -->
 										</div><!--/.single-tab-select-box-->
 									</div><!--/.col-->
+
 									<div class="col-xs-12">
-										<div class="single-tab-select-box">
+										<label for="pregunta3">3. ¿Cu&aacute;ntos cm al a&ntilde;o se alejan las placas continentales de Eurasia y Am&eacute;rica?</label>
+										<div class="trip-circle" id="pregunta3">
 
-											<h2>2. ¿Cu&aacute;ntos cm al año se alejan las placas continentales de Eurasia y América?</h2>
+											<div class="single-trip-circle">
+												<input type="radio" name="pregunta3" value="a" id="radio1-1" required />
+												<label for="radio1-1">
+												<span class="round-boarder">
+													<span class="round-boarder1">
+													</span>
+												</span>2 cm
+											</label>
+											</div><!--/.single-trip-circle-->
 
-											<div class="travel-select-icon">
-												<select class="form-control ">
+											<div class="single-trip-circle" >
+												<input type="radio" name="pregunta3" value="b" id="radio1-2" required />
+													<label for="radio1-2">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>0.5 cm
+													</label>
+											</div><!--/.single-trip-circle-->
 
-														<option value="default">enter your destination country</option><!-- /.option-->
+											<div class="single-trip-circle" >
+												<input type="radio" name="pregunta3" value="c" id="radio1-3" required />
+													<label for="radio1-3">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>5 cm
+													</label>
+											</div><!--/.single-trip-circle-->
 
-														<option value="turkey">turkey</option><!-- /.option-->
-
-														<option value="russia">russia</option><!-- /.option-->
-														<option value="egept">egypt</option><!-- /.option-->
-
-												</select><!-- /.select-->
-											</div><!-- /.travel-select-icon -->
-										</div><!--/.single-tab-select-box-->
+											<div class="single-trip-circle" >
+												<input type="radio" name="pregunta3" value="d" id="radio1-4" required />
+													<label for="radio1-4">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>1 cm
+													</label>
+											</div><!--/.single-trip-circle-->
+										</div><!--/.trip-circle-->
 									</div><!--/.col-->
+
+									<div class="col-xs-12">
+										<label for="pregunta4">4. ¿Cu&aacute;ntas veces ha entrado en erupci&oacute;n el volc&aacute;n Hekla?</label>
+										<div class="trip-circle" id="pregunta4">
+
+											<div class="single-trip-circle">
+												<input type="radio" name="pregunta4" value="a" id="radio2-1" required />
+												<label for="radio2-1">
+												<span class="round-boarder">
+													<span class="round-boarder1">
+													</span>
+												</span>5 veces
+											</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="radio" name="pregunta4" value="b" id="radio2-2" required />
+													<label for="radio2-2">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>20 veces
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="radio" name="pregunta4" value="c" id="radio2-3" required />
+													<label for="radio2-3">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>0 veces
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="radio" name="pregunta4" value="d" id="radio2-4" required />
+													<label for="radio2-4">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>8 veces
+													</label>
+											</div><!--/.single-trip-circle-->
+										</div><!--/.trip-circle-->
+									</div><!--/.col-->
+
+									<div class="col-xs-12">
+										<label for="pregunta5">5. ¿Cu&aacute;les son las 3 religiones m&aacute;s populares en Islandia?</label>
+										<div class="trip-circle" id="pregunta5">
+
+											<div class="single-trip-circle">
+												<input type="checkbox" name="pregunta5" value="a" id="checkbox1-1" required />
+												<label for="checkbox1-1">
+												<span class="round-boarder">
+													<span class="round-boarder1">
+													</span>
+												</span>Iglesia Luterana
+											</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta5" value="b" id="checkbox1-2" required />
+													<label for="checkbox1-2">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Judaismo
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta5" value="c" id="checkbox1-3" required />
+													<label for="checkbox1-3">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Catolicismo
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle">
+												<input type="checkbox" name="pregunta5" value="d" id="checkbox1-4" required />
+													<label for="checkbox1-4">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Iglesia de Islandia
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle">
+												<input type="checkbox" name="pregunta5" value="e" id="checkbox1-5" required />
+													<label for="checkbox1-5">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Iglesia Luterana Simple
+													</label>
+											</div><!--/.single-trip-circle-->
+										</div><!--/.trip-circle-->
+									</div><!--/.col-->
+
+									<div class="col-xs-12">
+										<label for="pregunta6">6. ¿Qu&eacute; idiomas son obligatorios estudiar?</label>
+										<div class="trip-circle" id="pregunta6">
+
+											<div class="single-trip-circle">
+												<input type="checkbox" name="pregunta6" value="a" id="checkbox2-1" required />
+												<label for="checkbox2-1">
+												<span class="round-boarder">
+													<span class="round-boarder1">
+													</span>
+												</span>Ingl&eacute;s
+											</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta6" value="b" id="checkbox2-2" required />
+													<label for="checkbox2-2">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Alem&aacute;n
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta6" value="c" id="checkbox2-3" required />
+													<label for="checkbox2-3">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Noruego
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta6" value="d" id="checkbox2-4" required />
+													<label for="checkbox2-4">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Dan&eacute;s
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta6" value="d" id="checkbox2-5" required />
+													<label for="checkbox2-5">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Sueco
+													</label>
+											</div><!--/.single-trip-circle-->
+										</div><!--/.trip-circle-->
+									</div><!--/.col-->
+
+									<div class="col-xs-12">
+										<label for="pregunta7">7. ¿Qu&eacute; colores est&aacute;n presentes en la bandera de Islandia?</label>
+										<div class="trip-circle" id="pregunta7">
+
+											<div class="single-trip-circle">
+												<input type="checkbox" name="pregunta7" value="a" id="checkbox3-1" required />
+												<label for="checkbox3-1">
+												<span class="round-boarder">
+													<span class="round-boarder1">
+													</span>
+												</span>Rojo
+											</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta7" value="b" id="checkbox3-2" required />
+													<label for="checkbox3-2">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Amarillo
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta7" value="c" id="checkbox3-3" required />
+													<label for="checkbox3-3">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Blanco
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta7" value="d" id="checkbox3-4" required />
+													<label for="checkbox3-4">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Azul
+													</label>
+											</div><!--/.single-trip-circle-->
+										</div><!--/.trip-circle-->
+									</div><!--/.col-->
+
+									<div class="col-xs-12">
+										<label for="pregunta8">8. ¿Qu&eacute; fuentes de energ&iacute;a proveen la electricidad a toda la isla?</label>
+										<div class="trip-circle" id="pregunta8">
+
+											<div class="single-trip-circle">
+												<input type="checkbox" name="pregunta8" value="a" id="checkbox4-1" required />
+												<label for="checkbox4-1">
+												<span class="round-boarder">
+													<span class="round-boarder1">
+													</span>
+												</span>Geot&eacute;rmica
+											</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta8" value="b" id="checkbox4-2" required />
+													<label for="checkbox4-2">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Hidr&aacute;ulica
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta8" value="c" id="checkbox4-3" required />
+													<label for="checkbox4-3">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Nuclear
+													</label>
+											</div><!--/.single-trip-circle-->
+
+											<div class="single-trip-circle" >
+												<input type="checkbox" name="pregunta8" value="d" id="checkbox4-4" required />
+													<label for="checkbox4-4">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>Combustibles f&oacute;siles
+													</label>
+											</div><!--/.single-trip-circle-->
+										</div><!--/.trip-circle-->
+									</div><!--/.col-->
+
+
+
 								</form>
 							</div>
 						</div>

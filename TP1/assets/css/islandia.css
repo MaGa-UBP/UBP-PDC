@@ -111,11 +111,7 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   }
 
 .divider{
-  height: 1px;
-  /* background-color: #00dddf;*/
   border: 1px solid #00dddf;
-  /* border-style:  */
-  width: 100%;
   margin: 20px 0px;
 }
 
@@ -126,4 +122,12 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   font-family: 'Poppins', sans-serif;
   margin-bottom: 5px;
   margin-top: 10px;
+}
+.single-trip-circle {
+    display: flex;
+    margin-left:42px;
+}
+.single-trip-circle:first-child {
+    display: flex;
+    margin-left:0px;
 }
