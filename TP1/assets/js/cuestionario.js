@@ -45,7 +45,7 @@ $(document).ready(function(){
 		$preg3 = $(this).find('[name=pregunta3]:checked');
 		var respuestaPreg3 = $preg3.val();
 		formattedBody += "3. ¿Cuántos cm al año se alejan las placas continentales de Eurasia y América?\n"
-		var textoRespPreg3 = $preg3.parent().find('label').text();
+		var textoRespPreg3 = $preg3.parent().find('label').text().trim();
 		formattedBody += textoRespPreg3;
 
 		if(respuestaPreg3 === 'a'){
@@ -58,7 +58,7 @@ $(document).ready(function(){
 
 		$preg4 = $(this).find('[name=pregunta4]:checked');
 		var respuestaPreg4 = $preg4.val();
-		var textoRespPreg4 = $preg4.parent().find('label').text();
+		var textoRespPreg4 = $preg4.parent().find('label').text().trim();
 		formattedBody += "4. ¿Cuántas veces ha entrado en erupción el volcán Hekla?\n"
 		formattedBody += textoRespPreg4;
 		if(respuestaPreg4 === 'b'){
@@ -69,12 +69,13 @@ $(document).ready(function(){
 			formattedBody += ' [incorrecta]\n\n';
 		}
 
-		console.log(formattedBody);
 		// Preguntas múltiples
 		$preg5 = $('#pregunta5');
 		var respuestaPreg5 = [];
+		formattedBody += "5. ¿Cuáles son las 3 religiones más populares en Islandia?\n"
 		$("[name=pregunta5]:checked").each(function(){
 		    respuestaPreg5.push($(this).val());
+				formattedBody += $(this).parent().text().trim() +'; ';
 		});
 
 		if(jQuery.inArray('a', respuestaPreg5)!=-1 && jQuery.inArray('c', respuestaPreg5)!=-1 && jQuery.inArray('d', respuestaPreg5)!=-1
@@ -86,10 +87,13 @@ $(document).ready(function(){
 			formattedBody += ' [incorrecta]\n\n';
 		}
 
+
 		$preg6 = $('#pregunta6');
 		var respuestaPreg6 = [];
+		formattedBody += "6. ¿Qué idiomas son obligatorios estudiar?\n"
 		$("[name=pregunta6]:checked").each(function(){
 		    respuestaPreg6.push($(this).val());
+				formattedBody += $(this).parent().text().trim() +'; ';
 		});
 
 		if(jQuery.inArray('b', respuestaPreg6)==-1 && jQuery.inArray('c', respuestaPreg6)==-1 && jQuery.inArray('e', respuestaPreg6)==-1
@@ -104,8 +108,10 @@ $(document).ready(function(){
 
 		$preg7 = $('#pregunta7');
 		var respuestaPreg7 = [];
+		formattedBody += "7. ¿Qué colores están presentes en la bandera de Islandia?\n"
 		$("[name=pregunta7]:checked").each(function(){
 		    respuestaPreg7.push($(this).val());
+				formattedBody += $(this).parent().text().trim() +'; ';
 		});
 
 		if(jQuery.inArray('b', respuestaPreg7)==-1 && (jQuery.inArray('a', respuestaPreg7) != -1 &&
@@ -119,8 +125,10 @@ $(document).ready(function(){
 
 		$preg8 = $('#pregunta8');
 		var respuestaPreg8 = [];
+		formattedBody += "8. ¿Qué fuentes de energía proveen la electricidad a toda la isla?\n"
 		$("[name=pregunta8]:checked").each(function(){
 		    respuestaPreg8.push($(this).val());
+				formattedBody += $(this).parent().text().trim() +'; ';
 		});
 
 		if(jQuery.inArray('a', respuestaPreg8)!=-1 && jQuery.inArray('b', respuestaPreg8)!=-1
@@ -135,6 +143,8 @@ $(document).ready(function(){
 		//Preguntas %
 		$preg9 = $(this).find('[name=pregunta9]');
 		var respuestaPreg9 = $preg9.val();
+		formattedBody += "9. ¿Qué porcentaje de la población pertenece a la Iglesia de Islandia?\n"
+		formattedBody += respuestaPreg9+'% '
 		if(respuestaPreg9 === '90'){
 			$preg9.closest('.form-group').addClass('has-success');
 			formattedBody += ' [correcta]\n\n';
@@ -145,6 +155,8 @@ $(document).ready(function(){
 
 		$preg10 = $(this).find('[name=pregunta10]');
 		var respuestaPreg10 = $preg10.val();
+		formattedBody += "10. ¿Qué porcentaje del país está cubierto por glaciares?\n"
+		formattedBody += respuestaPreg10+'% '
 		if(respuestaPreg10 === '11'){
 			$preg10.closest('.form-group').addClass('has-success');
 			formattedBody += ' [correcta]\n\n';
@@ -153,9 +165,14 @@ $(document).ready(function(){
 			formattedBody += ' [incorrecta]\n\n';
 		}
 
+		console.log(formattedBody);
 
-	// var mailToLink = "mailto:x@y.com?body=" + encodeURIComponent(formattedBody);
-	// window.location.href = mailToLink;
+		var mailToLink = "mailto:gastonframirez@gmail.com?subject=Respuestas%20Cuestionario%20Islandia&body=" + encodeURIComponent(formattedBody);
+		// window.location.href = mailToLink;
+		window.open(
+		  mailToLink,
+		  '_blank' // <- This is what makes it open in a new window.
+		);
   });
 
 
