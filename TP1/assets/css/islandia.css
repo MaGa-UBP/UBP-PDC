@@ -281,3 +281,10 @@ border: 1px solid #ccc;
   font-size: 1.5em;
   font-weight: 700;
 }
+.main-menu .nav .book-btn:hover{
+  background-color:#00dddf;
+  color: #000;
+}
+.main-menu .nav .book-btn:before{
+  display: none;
+}
