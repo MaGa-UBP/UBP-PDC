@@ -379,6 +379,8 @@ border: 1px solid #ccc;
   font-size: 1.3em;
   font-weight: 500;
   font-family: 'Poppins', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .matchHeight{

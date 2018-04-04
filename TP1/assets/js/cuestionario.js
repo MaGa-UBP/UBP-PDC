@@ -143,9 +143,9 @@ $(document).ready(function(){
 		//Preguntas %
 		$preg9 = $(this).find('[name=pregunta9]');
 		var respuestaPreg9 = $preg9.val();
-		formattedBody += "9. ¿Qué porcentaje de la población pertenece a la Iglesia de Islandia?\n"
+		formattedBody += "9. ¿Qué porcentaje aproximado de la población pertenece a la Iglesia de Islandia?\n"
 		formattedBody += respuestaPreg9+'% '
-		if(respuestaPreg9 === '90'){
+		if(respuestaPreg9 === '70'){
 			$preg9.closest('.form-group').addClass('has-success');
 			formattedBody += ' [correcta]\n\n';
 		}else{
