@@ -5,6 +5,9 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   color: #00dddf !important;
 }
 
+.is-sticky .header-area:after{
+  background: #313131;
+}
 .dropdown-menu{
   background-color: #313131;
 }
@@ -183,6 +186,7 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   margin-bottom: 5px;
   margin-top: 10px;
 }
+
 .single-trip-circle {
     display: flex;
     margin-left:42px;
@@ -198,7 +202,17 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
     margin-left:20px;
 }
 
+.has-success .travel-select-icon:after,
+.has-success .travel-select-icon .form-control,
+.has-success .travel-check-icon .form-control{
+  border-color: #3c763d;
+}
 
+.has-error .travel-select-icon:after,
+.has-error .travel-select-icon .form-control,
+.has-error .travel-check-icon .form-control{
+  border-color: #a94442;
+}
 
 .service{
   padding: 80px 0 20px;
@@ -338,4 +352,37 @@ border: 1px solid #ccc;
 .slidecontainer .rangeValue{
   font-size: 1.2em;
   margin-top: 15px;
+}
+
+.statisticsTable th{
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
+.statisticsTable caption{
+  font-size: 1.5em;
+  color: #313131;
+}
+
+.dImportantes h2{
+  position: relative;
+  color: #565a5c;
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 14px;
+}
+
+.dImportantes p{
+  position: relative;
+  font-size: 1.3em;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.matchHeight{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

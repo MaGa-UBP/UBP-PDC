@@ -159,7 +159,7 @@
 
 
         <!--service start-->
-		<section id="service" class="service">
+		<section id="funFacts" class="service">
 			<div class="container">
 
 				<div class="service-counter text-center">
@@ -220,7 +220,7 @@
 		<!--service end-->
 
 		<!--galley start-->
-		<section id="gallery" class="gallery">
+		<section id="regiones" class="gallery">
 			<div class="container">
 				<div class="gallery-details">
 					<div class="gallery-header text-center">
@@ -325,9 +325,28 @@
 		</section><!--/.gallery-->
 		<!--gallery end-->
 
+		<section id="infoImportante" class="service dImportantes">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<h2 class="">Otros datos Importantes:</h2>
+						</div>
+						<div class="col-xs-12 col-md-6 col-lg-4 matchHeight">
+							<img src="./assets/images/bandera.png" class="img-responsive"/>
+						</div>
+						<div class="col-xs-12 col-md-6 col-lg-8 matchHeight">
+							<p>
+								Azul con una cruz roja de contornos blancos los colores son simbólicos para Islandia:
+								el rojo representa el fuego de los volcanes, el blanco recuerda la nieve,
+								mientras que los glaciares y el azul representan los cielos.
+							</p>
+						</div>
+					</div>
+				</div>
+		</section>
 
 		<!--subscribe start-->
-		<section id="subs" class="subscribe">
+		<section id="cuestionario" class="subscribe">
 			<div class="container">
 				<div class="subscribe-title text-center">
 					<h2>
@@ -424,7 +443,12 @@
 		<!--Custom JS-->
 		<script src="assets/js/custom.js"></script>
 
-
+		<script src="assets/js/jquery.matchHeight.js"></script>
+		<script>
+		$(function() {
+			$('.matchHeight').matchHeight();
+		});
+		</script>
 	</body>
 
 </html>
