@@ -71,8 +71,11 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   text-transform: none!important;
 }
 
-.appsLand-btn{
+.appsLand-btn,
+.appsLand-btn:hover{
   margin-top: 20px;
+  padding: 17px 54px;
+  font-size: 1.2em;
 }
 
 
@@ -121,6 +124,9 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 .headerImage.cuestionario{
   max-height: 500px;
   background-image: url('../images/gallery/g3.jpg');
+}
+.subscribe{
+  background-image: url('../images/gallery/g5.jpg');
 }
 
 .headerImage.cuestionario:before{
@@ -176,4 +182,10 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 }
 .service-img{
   max-width: 100px;
+}
+.footer-copyright{
+  padding: 0px;
+}
+.footer-content{
+  padding: 50px 0px 30px 0px;
 }
