@@ -209,11 +209,11 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-size: 1.2em !important;
 }
 
 /* Hide the browser's default checkbox */
@@ -256,4 +256,20 @@ border: 1px solid #ccc;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.btn-enviar{
+  background: #00dddf;
+  border: 1px solid #00dddf;
+  min-width: 120px;
+  height: 60px;
+  white-space: nowrap;
+  text-align: center;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-transform: capitalize;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  font-weight: 700;
 }
