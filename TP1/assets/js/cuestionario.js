@@ -8,11 +8,11 @@ $(document).ready(function(){
    	e.preventDefault();
 
 		var nombre = $(this).find('[name=nombre]').val();
-		var email = $(this).find('[name=email]').val();
+		var userEmail = $(this).find('[name=email]').val();
 		var edad = $(this).find('[name=edad]').val();
 
 		var formattedBody = "Nombre: "+nombre+"\n";
-		formattedBody += "Email: "+email+"\n";
+		formattedBody += "Email: "+userEmail+"\n";
 		formattedBody += "Edad: "+edad+"\n\n";
 
 		formattedBody += "Respuestas al cuestionario sobre Islandia: \n\n";
@@ -167,7 +167,7 @@ $(document).ready(function(){
 
 		console.log(formattedBody);
 
-		var mailToLink = "mailto:gastonframirez@gmail.com?subject=Respuestas%20Cuestionario%20Islandia&body=" + encodeURIComponent(formattedBody);
+		var mailToLink = "mailto:gastonframirez@gmail.com,mmparisi@hotmail.com,"+userEmail+"?subject=Respuestas%20Cuestionario%20Islandia&body=" + encodeURIComponent(formattedBody);
 		// window.location.href = mailToLink;
 		window.open(
 		  mailToLink,
