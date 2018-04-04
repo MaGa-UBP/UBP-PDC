@@ -494,8 +494,17 @@
 									<div class="col-xs-12">
 										<div class="slidecontainer">
 											<label for="pregunta10">10. ¿Qu&eacute; porcentaje del pa&iacute;s est&aacute; cubierto por glaciares?</label>
+											<div class="row">
+												<div class="col-xs-10 col-sm-11">
+													<input type="range" min="1" max="100" value="50" class="slider" id="pregunta10" name="pregunta10" required>
+												</div>
+												<div class="col-xs-2 col-sm-1">
+													<p class="rangeValue" >
+														<span id="pregunta10Value">50</span>%
+													</p>
+												</div>
+											</div>
 
-											<input type="range" min="1" max="100" value="" class="slider" id="pregunta10" name="pregunta10" required>
 										</div>
 									</div><!--/.col-->
 
@@ -595,6 +604,7 @@
 		<!--Custom JS-->
 		<script src="assets/js/custom.js"></script>
 
+		<script src="assets/js/cuestionario.js"></script>
 
 	</body>
 
