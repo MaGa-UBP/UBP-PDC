@@ -122,6 +122,12 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   max-height: 500px;
   background-image: url('../images/gallery/g3.jpg');
 }
+
+.headerImage.estadisticas{
+  max-height: 500px;
+  background-image: url('../images/gallery/g4.jpg');
+}
+
 .subscribe{
   background-image: url('../images/gallery/g5.jpg');
 }
@@ -129,6 +135,11 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 .headerImage.cuestionario:before{
   background: rgba(	0, 223, 114,0.35);
 }
+
+.headerImage.estadisticas:before{
+  background: rgba(	0, 223, 114,0.35);
+}
+
 .cuestionario .single-travel-boxes{
   padding: 20px 40px;
   box-shadow: 0 10px 20px rgba(0,0,0,.1);
