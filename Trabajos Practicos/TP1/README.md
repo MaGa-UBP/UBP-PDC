@@ -14,3 +14,6 @@ Es obligatorio que el portal cuente con 3 páginas como mínimo que respeten la 
 
 El cuestionario deberá solicitar nombre, edad y correo del usuario que responde.
 Agregar un botón "Finalizar" que cuando el usuario lo presione, haciendo uso de jQuery, se verifiquen y marquen las respuestas correctas e incorrectas que haya respondido el usuario, a la vez, de enviar los datos ingresados por correo electrónico.
+
+
+Ver https://maga-ubp.github.io/UBP-PDC/TP1/index.html
