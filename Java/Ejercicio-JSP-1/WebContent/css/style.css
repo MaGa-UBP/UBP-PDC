@@ -1,0 +1,70 @@
+body{
+	font-size: 14pt;
+	background-color: #b3ffb3;
+	color: #006600;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+h3{
+	color: #cc0000;
+}
+
+.btnJugar{
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 10pt;
+	width: 150px;
+	border: 1px solid #800000;
+	background-color: #800000;
+	color: #ff0000;
+	font-weight: bold;
+	padding: 5px;
+}
+
+a.btnJugar{
+	text-decoration: none;
+}
+
+.mensaje{
+	font-size: 16pt;
+	width: 300px;
+	background-color: #ffffff;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	border: 5px solid #800000;
+	
+}
+
+table.resultados,
+table.resultados th,
+table.resultados td{
+	border-collapse: collapse;
+	border: 1px solid #004d00;
+	text-align: left;
+}
+
+table.resultados th,
+table.resultados td{
+	padding: 5px;
+	width: 100px;
+	height: 20px;
+}
+
+table.resultados th{
+	background-color: #004d00;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+table.resultados tr.gano{
+	background-color: #33cc33;
+}
+
+table.resultados tr.empato{
+	background-color: #ffffff;
+}
+
+table.resultados tr.perdio{
+	background-color: #ff1919;
+}
