@@ -9,6 +9,9 @@ h3{
 	color: #cc0000;
 }
 
+select{
+	min-width: 100px;
+}
 .btnJugar{
 	font-family: Verdana, Arial, sans-serif;
 	font-size: 10pt;
@@ -57,14 +60,31 @@ table.resultados th{
 	font-weight: bold;
 }
 
-table.resultados tr.gano{
+table.resultados tr.ganaste{
 	background-color: #33cc33;
 }
 
-table.resultados tr.empato{
+table.resultados tr.empataste{
 	background-color: #ffffff;
 }
 
-table.resultados tr.perdio{
+table.resultados tr.perdiste{
 	background-color: #ff1919;
+}
+table.resultados td{
+	text-transform: uppercase;
+}
+
+table.resultados td.resultado{
+	text-transform: capitalize;
+}
+
+#errorSelect p{
+	color: #cc0000;
+	font-size: 12pt;
+	margin-top: 0px;
+}
+
+.hide{
+	display: none;
 }

@@ -1,12 +1,16 @@
 $(document).ready(function(){
 	$('#jugadaForm').on('submit',function(e){
-		$opcion = $(this).find("[name=opcion]").filter(":selected").val();;
-		console.log($opcion);
+		$opcion = $(this).find("[name=opcion]").val();
 		if($opcion==="-1"){
-			// Mostrar error
+			$("#errorSelect").removeClass('hide');
 			e.preventDefault();
 		}else{
-			e.preventDefault();
+			$("#errorSelect").addClass('hide');
+			//e.preventDefault();
 		}
 	});
+	$('#volverJugar').click(function(){
+		window.location = window.location.pathname;
+	});
 });
+
