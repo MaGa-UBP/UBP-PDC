@@ -19,6 +19,19 @@ $(document).ready(function(){
 			$('#reset').removeClass('hidden');
 		}
 	});
+	
+	 $('input[type="checkbox"]').change(function () {
+         var row = $(this).closest('.filaPartido');
+         var thisCb = $(this);
+         var checked = $(this).is(':checked');
+         $(row).find('input[type="checkbox"]').each(function() {
+        	    $(this).prop('checked',false);
+         });
+ 	    if(checked) {
+	        $(this).prop('checked',true);
+	    }
+     });
+	 
 	$('#reset').click(function(){
 		window.location = window.location.pathname;
 	});
