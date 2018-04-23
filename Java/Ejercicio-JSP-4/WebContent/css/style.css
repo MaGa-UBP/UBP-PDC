@@ -22,6 +22,7 @@ td.optionSelect{
     background-size: 95% 95%;
     background-repeat: no-repeat;
     background-position: center;
+    text-align: center;
 }
 td.optionSelect.noSelected:hover{
 	cursor: pointer;
@@ -36,9 +37,19 @@ td.correct{
 	margin: 20px 0px;
 }
 
+.optionSelect p {
+    font-size: 40pt;
+    margin: 0;
+    color: #FFF;
+    font-weight: bold;
+}
+
 .btnContainer{
 	width: 304px;
 	text-align: center;
+}
+a.btnJugar{
+	text-decoration: none;
 }
 .btnJugar{
 	font-size: 12pt;
