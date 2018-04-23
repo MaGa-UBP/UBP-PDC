@@ -36,13 +36,15 @@
 						}	
 						out.println("</tr></table>");
 					}
-					cantBolillas++;
+					
 					if(cantBolillas < 6){
 						nuevaBolilla = Double.class.cast(Math.random() * 45).intValue();
 						while(Arrays.asList(bolillas).contains(Integer.toString(nuevaBolilla))){
 							nuevaBolilla = Double.class.cast(Math.random() * 45).intValue();
 						}	 
+						bolillas[cantBolillas] = Integer.toString(nuevaBolilla);
 					}
+					cantBolillas++;
 					
 					out.println("<input type=\"hidden\" name=\"bolillas\" value=\""+nuevaBolilla+"\">");
 					
@@ -58,7 +60,7 @@
 			<input name="start" type="hidden"  value="true">
 		</form>
 		<%
-			if(cantBolillas>0){
+			if(cantBolillas>0&&cantBolillas<7){
 				out.println("<div class=\"ultimaBolilla\">");
 				out.println(nuevaBolilla);
 				out.println("</div>");
