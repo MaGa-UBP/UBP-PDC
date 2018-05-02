@@ -1,0 +1,6 @@
+.single-line input[type="radio"] {
+	display:inline-block;
+}
+table {
+	width: 200px;
+}

@@ -1,0 +1,44 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background-color: sandybrown;
+	box-sizing: border-box;
+}
+
+h1 {
+	color:white;
+	text-shadow: 1px 1px black;
+}
+
+h5 {
+	color: gray;
+	text-shadow: 1px 1px black;
+}
+
+div {
+	display: block;
+}
+
+.fl {
+	float: left;
+	margin-right: 50px;
+}
+
+table {
+	width: 500px;
+}
+
+td {
+	border: 0.5px solid yellow;
+	padding: 5px;
+	vertical-align: center;
+}
+
+tr:nth-child(even){
+	background-color: gold;
+}
+
+tr:nth-child(odd){
+	background-color: darkgoldenrod;
+	color: white;
+}

@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" %>
+<%
+	String existe = (String)request.getAttribute("existe");
+	if (existe == "S"){
+		%>
+		<img src="./img/icon_ok.png" alt="OK" style="width:22px;height:18px;">
+		<%
+	}
+	else
+	{
+		%>
+		<img src="./img/icon_wrong.png" alt="wrong" style="width:22px;height:18px;">
+		<%
+	}
+%>
+

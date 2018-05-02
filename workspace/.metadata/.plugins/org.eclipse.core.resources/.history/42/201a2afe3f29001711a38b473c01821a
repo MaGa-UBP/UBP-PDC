@@ -1,0 +1,104 @@
+<%@page import="com.sun.org.apache.bcel.internal.generic.NEWARRAY"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="ar.edu.ubp.pdc.classes.Juego" %>
+<%@ page import="java.util.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/parcial1.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<%! 
+	  	String jugar;
+		List<String> resultados = new ArrayList<String>();
+		List<String> tipos;
+		int i = 0;
+	%>
+	<%
+		jugar  = (request.getParameter("jugar") != null ? request.getParameter("jugar") : "N");
+		tipos = new ArrayList<String>();
+			tipos.add("PIEDRA");
+			tipos.add("PAPEL");
+			tipos.add("TIJERA");
+	%>
+	<p class="titulo encabezado"> Te invito a jugar...:) </p>
+	<form id="form" action="index.jsp" method="post">
+	
+	<input type="hidden" id="jugar" name="jugar" value="<%= jugar %>" />
+	
+	<div class="contenedor">
+		<div class="fila">	
+			Selecciona una opcion
+			<div class="celda">
+				
+				<select name="opcion" id="op">
+			                                <option value="-1"></option>
+			                                <option value="0">Piedra</option>
+			                                <option value="1">Papel</option>
+			                                <option value="2">Tijera</option>
+			    </select>
+		    </div>
+		    <div class="celda">
+		    <input type="button" id="boton" name="boton" value="Jugar" onclick="jJuego.jugar()">
+		    </div>
+	    </div>
+	</div>
+	
+	<% 	
+	
+		if(jugar.equals("S"))	
+		{
+		out.println("aaaaa");
+		out.println(request.getParameter("opcion"));
+		
+		resultados.add(request.getParameter("opcion"));
+		
+	%>
+	<p class="titulo"> Resultados </p>
+	<div class="tabla">
+		<div class="filaR">
+			<div class="celdaR">Usuario</div>
+			<div class="celdaR">Computadora</div>
+			<div class="celdaR">Resultado</div>
+		</div>
+		<% 
+			
+			for(i = 0 ; i < resultados.size();i++){
+				out.println("<div class=\"filaR\">" );
+				if(resultados.get(i) == "0"){
+					out.println("<div class=\"celdaR\"> Piedra </div>" );	
+				}else{
+					if(resultados.get(i) == "1"){
+						out.println("<div class=\"celdaR\"> Papel </div>" );	
+					}else{
+						if(resultados.get(i) == "2"){
+							out.println("<div class=\"celdaR\"> Tijera </div>" );	
+						}
+					}
+				}
+				out.println("<div class=\"celdaR\"> algo </div>" );
+				out.println("<div class=\"celdaR\"> algo </div>" );
+				out.println("</div>");
+			}
+		%>
+		
+	</div>
+		
+	<%
+		}
+		else{
+			
+			out.println("asdsadsa");	
+		}
+		
+	%>
+	
+	
+	</form>
+</body>
+</html>

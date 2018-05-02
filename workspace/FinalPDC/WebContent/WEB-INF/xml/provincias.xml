@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<provincias xmlns="http://www.w3schools.com"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.w3schools.com provincias.xsd">
+     <provincia cod_provincia="B">BUENOS AIRES</provincia>
+     <provincia cod_provincia="K">CATAMARCA</provincia>
+     <provincia cod_provincia="H">CHACO</provincia>
+     <provincia cod_provincia="U">CHUBUT</provincia>
+     <provincia cod_provincia="X">CÓRDOBA</provincia>
+     <provincia cod_provincia="W">CORRIENTES</provincia>
+     <provincia cod_provincia="E">ENTRE RIOS</provincia>
+     <provincia cod_provincia="P">FORMOSA</provincia>
+     <provincia cod_provincia="Y">JUJUY</provincia>
+     <provincia cod_provincia="L">LA PAMPA</provincia>
+     <provincia cod_provincia="F">LA RIOJA</provincia>
+     <provincia cod_provincia="M">MENDOZA</provincia>
+     <provincia cod_provincia="N">MISIONES</provincia>
+     <provincia cod_provincia="Q">NEUQUEN</provincia>
+     <provincia cod_provincia="R">RIO NEGRO</provincia>
+     <provincia cod_provincia="A">SALTA</provincia>
+     <provincia cod_provincia="J">SAN JUAN</provincia>
+     <provincia cod_provincia="D">SAN LUIS</provincia>
+     <provincia cod_provincia="Z">SANTA CRUZ</provincia>
+     <provincia cod_provincia="S">SANTA FE</provincia>
+     <provincia cod_provincia="G">SANTIAGO DEL ESTERO</provincia>
+     <provincia cod_provincia="V">TIERRA DEL FUEGO</provincia>
+     <provincia cod_provincia="T">TUCUMAN</provincia>
+</provincias>

@@ -1,0 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html">
+        <meta charset="ISO-8859-1">
+        <title>Juego del Corchito</title>
+        <link type="text/css" rel="stylesheet" href="./css/style.css" />
+        <script type="text/javascript" src="./js/jquery.js"></script>
+        <script type="text/javascript" src="./js/juego.js"></script>
+    </head>
+    <body>
+        <h2>Participantes</h2>
+        <form id="form" action="index.jsp" method="post">
+            <table>
+                <tr>
+                    <th>Participante</th>
+                </tr>    
+                <%!
+                String iniciado, sorteados;
+                String []participantes, eliminados;
+                %>
+                <%
+                short participante = -1;
+                
+                participantes = request.getParameterValues("participante");
+                eliminados    = request.getParameterValues("eliminado");
+                iniciado      = (request.getParameter("iniciado") == null ? "N" : request.getParameter("iniciado"));
+                sorteados     = (request.getParameter("sorteados") == null ? "" : request.getParameter("sorteados"));
+                if(participantes != null) {                    
+                    if(iniciado.equals("S")) {
+                        participante = Double.class.cast(Math.random() * participantes.length).shortValue();        
+                        while(sorteados.contains(participante + ";")){
+                            participante = Double.class.cast(Math.random() * participantes.length).shortValue();        
+                        }
+                        sorteados += participante + ";";
+                    }                    
+                    
+                    for(int i = 0; i < participantes.length; i++) {
+                        out.print("<tr>");
+                        out.print("<td class=\"" + (i == participante || eliminados[i].equals("S") ? "eliminado" : "") + "\">");
+                        out.print(participantes[i]);
+                        out.print("<input type=\"hidden\" name=\"participante\" value=\"" + participantes[i] + "\"/>");
+                        out.print("<input type=\"hidden\" name=\"eliminado\"    value=\"" + (i == participante || eliminados[i].equals("S") ? "S" : "N") + "\"/>");
+                        out.print("</td>");
+                        out.print("</tr>");
+                    }
+                }
+                %>
+                <%
+                if(iniciado.equals("N")) {
+                %>                    
+                <tr>
+                    <td>
+                        <input type="text"   name="participante" value="" maxlength="60" size="50"/>
+                        <input type="hidden" name="eliminado"    value="N"/>
+                    </td>
+                </tr>
+                <%
+                }
+                %>
+            </table>
+            <br/>
+            <%
+            if(iniciado.equals("N")) {
+                out.println("<input type=\"button\" value=\"Agregar\" onclick=\"jJuego.agregar()\"/>");
+            }
+            %>
+            <%
+            if(participantes != null && participantes.length >= 2) {
+                if(!sorteados.equals("") && sorteados.split(";").length == participantes.length - 2) {
+                    out.println("<input type=\"button\" value=\"Iniciar\" onclick=\"jJuego.reiniciar()\"/>");
+                }
+                else {
+                    out.println("<input type=\"button\" value=\"Extraer Bolilla\" onclick=\"jJuego.extraer()\"/>");
+                }                   
+            }
+            %>            
+            <input type="hidden" name="iniciado" value="<%= iniciado %>"/>
+            <input type="hidden" name="sorteados" value="<%= sorteados %>"/>
+            <script type="text/javascript">
+                jQuery(document).ready(function(){
+                   $("input:visible:first").focus(); 
+                });
+            </script>
+        </form>
+    </body>
+</html>

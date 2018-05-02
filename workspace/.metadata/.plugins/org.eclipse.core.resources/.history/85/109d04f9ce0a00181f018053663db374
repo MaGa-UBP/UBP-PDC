@@ -1,0 +1,20 @@
+hr{
+	font-size: 12p;
+	
+}
+body{
+	font-family:  "Trebuchet MS",Arial,Helvetica,sans-serif;
+	font-size: 10p;
+}
+tr{
+	background-color: #FFFFCC;
+}
+table trow{
+	background-color: #FFFF4D;
+}
+
+table head{
+	color: #000;
+	font-style: bold;
+	margin-bottom: 2px;
+}

@@ -1,0 +1,9 @@
+package ar.edu.ubp.pdc.fdeschant.examen;
+
+public class RecursosBean {
+	public String desc_recurso;
+	public String cod_tipo_recurso;
+	public String tipo_propietario;
+	public String desc_recurso;
+	
+}

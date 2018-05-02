@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="casddaService" targetNamespace="http://asdasd/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://asdasd/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://asdasd/" version="1.0" xmlns:tns="http://asdasd/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="hola" type="tns:hola"/>
+
+  <xs:element name="holaResponse" type="tns:holaResponse"/>
+
+  <xs:complexType name="hola">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="holaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="holaResponse">
+    <wsdl:part name="parameters" element="tns:holaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hola">
+    <wsdl:part name="parameters" element="tns:hola">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="cassdadada">
+    <wsdl:operation name="hola">
+      <wsdl:input name="hola" message="tns:hola">
+    </wsdl:input>
+      <wsdl:output name="holaResponse" message="tns:holaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="casddaServiceSoapBinding" type="tns:cassdadada">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="hola">
+      <soap:operation soapAction="urn:Hola" style="document"/>
+      <wsdl:input name="hola">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="holaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="casddaService">
+    <wsdl:port name="casddaPort" binding="tns:casddaServiceSoapBinding">
+      <soap:address location="http://localhost:8080/fdgdfg/services/casddaPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

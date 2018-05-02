@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Ejemplo 3</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/ejemplo3.js"></script>
+</head>
+<body>
+	<h3>C&aacute;lculos</h3>
+	<form id="form" name="form" action="ejemplo3.jsp" method="post">
+	    <p>Variable 1: <input type="text" name="variable1" value="" size="10" maxlength="10" onkeydown="jNumber.allowOnlyNumbers(event)" /></p>
+	    <p>Variable 2: <input type="text" name="variable2" value="" size="10" maxlength="10" onkeydown="jNumber.allowOnlyNumbers(event)" /></p>
+	    <input type="button" value="Calcular" onclick="jNumber.validForm()"/>
+	</form>
+	<br/>
+	<a href="./index.html">Volver al index principal</a>
+</body>
+</html>

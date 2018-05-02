@@ -1,0 +1,78 @@
+body {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 15pt;
+    color: #000;
+}
+
+table {
+    background-color: #000;
+}
+
+th, td {
+    background-color: #FFF;    
+    padding: 10px;
+    text-align: center;
+    font-size: 20pt;
+    width: 30px;
+}
+
+th {
+    background-color: #E0E0E0;    
+}
+
+th.pantalla {
+    background-color: #000;
+    color: #FFF;
+}
+
+a {
+    color: #CC0000;
+}
+
+td a {
+    text-decoration: none;
+}
+
+td.vendida {
+    background-color: #66CC00;
+    color: #FFF;
+}
+
+td.seleccionada {
+    background-color: #FFCC33;
+}
+
+td.libre {
+    background-color: #FFF;
+}
+
+#compra {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: auto;
+    margin-top: -250px;
+    margin-left: -280px;
+    padding: 30px;
+    background-color: #FFF;
+    border: 3px solid #000;
+    color: #000;
+    display: none;
+    z-index: 2;
+}
+
+#butacas {
+    font-weight: bold;
+}
+
+#bloque-compra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #E0E0E0;
+    z-index: 1;
+    display: none;
+}

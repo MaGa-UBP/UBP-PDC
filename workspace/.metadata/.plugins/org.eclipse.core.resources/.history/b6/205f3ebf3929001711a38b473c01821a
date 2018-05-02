@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="ar.edu.ubp.pdc.classes.Juego" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/parcial1.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<form id="form" action="index.jsp" method="post">
+	<p class="titulo encabezado"> Te invito a jugar...:) </p>
+	<% 
+	
+		
+	%>
+	<div class="contenedor">
+		<div class="fila">	
+			Selecciona una opcion
+			<div class="celda">
+				<select name="opcion" id="op">
+			                                <option value="-1"></option>
+			                                <option value="0">Piedra</option>
+			                                <option value="1">Papel</option>
+			                                <option value="2">Tijera</option>
+			    </select>
+		    </div>
+		    <div class="celda">
+		    <input type="button" id="boton" name="boton" value="Jugar">
+		    </div>
+	    </div>
+	</div>
+	<% 	if(request.getParameter("opcion").equals("-1"))	{
+		out.println("aaaaa");	}
+		else{
+			out.println(request.getParameter("opcion"));	
+			out.println("asdsadsa");	
+		}
+		 
+	%>
+	<p class="titulo"> Resultados </p>
+	<div class="tabla">
+		<div class="filaR">
+			<div class="celdaR">Usuario</div>
+			<div class="celdaR">Computadora</div>
+			<div class="celdaR">Resultado</div>
+		</div>
+	</div>
+	</form>
+</body>
+</html>

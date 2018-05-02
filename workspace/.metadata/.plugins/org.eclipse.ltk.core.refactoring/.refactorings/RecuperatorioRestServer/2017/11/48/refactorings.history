@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;AfiliadoBean.java&apos; to &apos;RecuperatorioClient/src/ar.edu.ubp.das.fds.servlet&apos;&#x0D;&#x0A;- Original project: &apos;RecuperatorioRestServer&apos;&#x0D;&#x0A;- Destination element: &apos;RecuperatorioClient/src/ar.edu.ubp.das.fds.servlet&apos;&#x0D;&#x0A;- Original element: &apos;ar.edu.ubp.das.fds.rest.AfiliadoBean.java&apos;" description="Copy compilation unit" destination="=RecuperatorioClient/src&lt;ar.edu.ubp.das.fds.servlet" element1="/src&lt;ar.edu.ubp.das.fds.rest{AfiliadoBean.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1511826940419" units="1" version="1.0"/>
+</session>

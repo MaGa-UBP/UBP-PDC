@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server localhost" name="Tomcat v9.0 Server localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="15">
+    <list key="modules" value0="PrimerPrograma::org.eclipse.jst.jee.server:PrimerPrograma::jst.web::3.1" value1="ProyectoBootstrap::org.eclipse.jst.jee.server:ProyectoBootstrap::jst.web::3.1" value10="Presupuestos::org.eclipse.jst.jee.server:Presupuestos::jst.web::3.1" value2="Ejercicio-090418::org.eclipse.jst.jee.server:Ejercicio-090418::jst.web::3.1" value3="Ejercicio-JSP-1::org.eclipse.jst.jee.server:Ejercicio-JSP-1::jst.web::3.1" value4="Ejercicio-JSP-2::org.eclipse.jst.jee.server:Ejercicio-JSP-2::jst.web::3.1" value5="Ejercicio-JSP-3::org.eclipse.jst.jee.server:Ejercicio-JSP-3::jst.web::3.1" value6="Ejercicio-JSP-4::org.eclipse.jst.jee.server:Ejercicio-JSP-4::jst.web::3.1" value7="MiCustomTags::org.eclipse.jst.jee.server:MiCustomTags::jst.web::3.1" value8="ParisiParcial1::org.eclipse.jst.jee.server:ParisiParcial1::jst.web::3.1" value9="Parcial 1::org.eclipse.jst.jee.server:Parcial 1::jst.web::3.1"/>
+  </server>
+  <server hostname="localhost" id="HTTP Server at localhost" isPublishing="true" name="HTTP Server at localhost" port="80" runtime-id="HTTP Server" server-type="org.eclipse.wst.server.http.server" server-type-id="org.eclipse.wst.server.http.server" start-timeout="240" stop-timeout="240" timestamp="2" urlPrefix="">
+    <list key="modules"/>
+  </server>
+</servers>

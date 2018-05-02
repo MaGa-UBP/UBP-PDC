@@ -1,0 +1,12 @@
+Configuración
+
+1. Descargar la versión 1.6.2 de Apache Axis2 en https://archive.apache.org/dist/axis/axis2/java/core/1.6.2/
+2. Descomprimir los fuentes en un directorio conocido.
+3. Acceder a Eclipse y configurar el acceso al directorio correspondiente en Windows / Preferences / Web Services / Axis2 Preferences,
+   seleccionando el directorio dentro de la solapa "Axis2 Runtime".
+4. Listo.
+ 
+Consideraciones al crear los servicios:
+
+Es importante que el parámetro "Dynamic Web Module" sea 2.5, tanto en el proyecto que crea el servicio como en aquel que lo
+consume.

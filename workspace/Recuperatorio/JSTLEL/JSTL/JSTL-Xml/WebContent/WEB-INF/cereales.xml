@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<cereales xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	      xsi:noNamespaceSchemaLocation="./cereales.xsd">
+    <cereal>Cebada</cereal>
+    <cereal>Avena</cereal>
+    <cereal>Mijo</cereal>
+    <cereal>Maíz</cereal>
+    <cereal>Arroz</cereal>
+    <cereal>Centeno</cereal>
+    <cereal>Trigo</cereal>        
+</cereales>

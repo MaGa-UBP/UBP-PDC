@@ -1,0 +1,13 @@
+/*
+$(document).ready(function() {
+	$("#boton").click(function() {
+		$("form").submit();
+	});
+});
+*/
+var jJuego = {
+	
+	iniciar: function() {
+		$("form").submit();
+	}
+}

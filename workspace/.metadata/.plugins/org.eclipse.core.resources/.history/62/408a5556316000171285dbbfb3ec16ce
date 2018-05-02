@@ -1,0 +1,104 @@
+package ar.edu.ubp.pdc.tags;
+
+import java.io.IOException;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.PageContext;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+public class GruposTagHandler extends SimpleTagSupport {
+
+	private String nombre;
+	private String incluirTodos;
+	private String presentacion;
+	private String funcion;
+
+	@Override
+	public void doTag() throws JspException, IOException {
+		super.doTag();
+
+		JspWriter out = this.getJspContext().getOut();
+		
+		try {
+			SchemaFactory          schema   = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");	        
+	        DocumentBuilderFactory factory  = DocumentBuilderFactory.newInstance();
+	                               factory.setValidating(false);
+	                               factory.setNamespaceAware(true);
+	                               factory.setSchema(schema.newSchema(new Source[] {new StreamSource(((PageContext)this.getJspContext()).getServletContext().getResourceAsStream("/WEB-INF/xml/grupos.xsd"))}));
+	        DocumentBuilder        builder  = factory.newDocumentBuilder();        
+			
+	        XPath                  xPath    =  XPathFactory.newInstance().newXPath();
+			Document               document = builder.parse(((PageContext)this.getJspContext()).getServletContext().getResourceAsStream("/WEB-INF/xml/grupos.xml"));
+		
+			String codigo;
+			
+			if(!(incluirTodos.equals("S") || incluirTodos.equals("N"))) {
+				throw new IllegalArgumentException("El parámetro incluirTodos acepta S o N");
+			}
+
+			if(!(presentacion.equals("L") || presentacion.equals("R"))) {
+				throw new IllegalArgumentException("El parámetro presentacion acepta 'L' para lista o 'R' para radio");
+			}
+			
+			funcion = funcion == null ? "" : funcion;
+			
+			if(presentacion.equals("R")){
+			if(incluirTodos.equals("S")) {
+				out.println("<input type=\"radio\" name=\"" + nombre + "\" value=\"T\" " +  "/> Todos");
+			}
+			
+			NodeList tipos = NodeList.class.cast(xPath.compile("/grupos/grupo").evaluate(document, XPathConstants.NODESET));
+			if(presentacion.equals("radio")){
+				for (int i = 0, len = tipos.getLength(); i < len; i++) {
+					codigo = String.valueOf(xPath.compile("codigo").evaluate(tipos.item(i), XPathConstants.STRING));
+					//nombre = String.valueOf(xPath.compile("nombre").evaluate(tipos.item(i), XPathConstants.STRING));
+					out.println("<input type=\"radio\" name=\"" + nombre + "\" value=\"" + codigo + "\">" + nombre +"<br/>");	
+				}						
+			}
+			else{
+		    	out.println("<select name=\""+nombre+"\">");
+		    	out.println("<option value=\"\" disabled selected>Seleccione un area</option>");
+				for (int i = 0, len = tipos.getLength(); i < len; i++) {
+					codigo = String.valueOf(xPath.compile("codigo").evaluate(tipos.item(i), XPathConstants.STRING));
+					nombre = String.valueOf(xPath.compile("nombre").evaluate(tipos.item(i), XPathConstants.STRING));
+					out.println("<option value=\""+codigo+"\">"+nombre+"</option>");
+				}
+			}
+		}
+		catch(SAXException | ParserConfigurationException | XPathExpressionException | IllegalArgumentException ex) {
+			out.println(ex.getMessage());	
+		}
+	}
+	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void setIncluirTodos(String incluirTodos) {
+		this.incluirTodos = incluirTodos;
+	}
+	
+	public void setPresentacion(String presentacion) {
+		this.presentacion = presentacion;
+	}
+
+	public void setFuncion(String funcion) {
+		this.funcion = funcion;
+	}
+	
+}

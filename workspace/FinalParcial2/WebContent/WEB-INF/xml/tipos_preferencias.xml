@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tipos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="./tipos_preferencias.xsd">
+   <tipo codigo="D"  texto="Deportiva"/>
+   <tipo codigo="G"  texto="Gastronómica"/>
+   <tipo codigo="TL" texto="Tiempo libre"/>
+</tipos>

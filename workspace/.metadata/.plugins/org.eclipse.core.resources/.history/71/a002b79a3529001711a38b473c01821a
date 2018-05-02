@@ -1,0 +1,5 @@
+var jJuego = {
+		iniciar : function () {
+			$("form").submit();
+		}
+}

@@ -1,0 +1,93 @@
+package ar.edu.ubp.pdc.tags;
+
+import java.io.IOException;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.PageContext;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+public class TiposRecursosTagHandler extends SimpleTagSupport {
+
+	private String nombre;
+	private String incluirTodos;
+	private String codTipoRecurso;
+	private String habilitado;
+
+	@Override
+	public void doTag() throws JspException, IOException {
+		super.doTag();
+
+		JspWriter out = this.getJspContext().getOut();
+		
+		try {
+			SchemaFactory          schema   = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");	        
+	        DocumentBuilderFactory factory  = DocumentBuilderFactory.newInstance();
+	                               factory.setValidating(false);
+	                               factory.setNamespaceAware(true);
+	                               factory.setSchema(schema.newSchema(new Source[] {new StreamSource(((PageContext)this.getJspContext()).getServletContext().getResourceAsStream("/WEB-INF/xml/tipos_recursos.xsd"))}));
+	        DocumentBuilder        builder  = factory.newDocumentBuilder();        
+			
+	        XPath                  xPath    =  XPathFactory.newInstance().newXPath();
+			Document               document = builder.parse(((PageContext)this.getJspContext()).getServletContext().getResourceAsStream("/WEB-INF/xml/tipos_recursos.xml"));
+		
+			String codigo;
+			
+			if(!(incluirTodos.equals("S") || incluirTodos.equals("N"))) {
+				throw new IllegalArgumentException("El parámetro incluirTodos acepta S o N");
+			}
+
+			if(!(habilitado.equals("S") || habilitado.equals("N"))) {
+				throw new IllegalArgumentException("El parámetro habilitado acepta S o N");
+			}
+			
+			codTipoRecurso = codTipoRecurso == null ? "" : codTipoRecurso;
+			
+			if(incluirTodos.equals("S")) {
+				out.println("<input type=\"radio\" name=\"" + nombre + "\" value=\"T\" " + (codTipoRecurso.isEmpty() ? "checked" : "") + " " + (habilitado.equals("S") ? "" : "disabled") + "/> Todos");
+			}
+			
+			NodeList tipos = NodeList.class.cast(xPath.compile("/tipos_recursos/tipo_recurso").evaluate(document, XPathConstants.NODESET));
+			for (int i = 0, len = tipos.getLength(); i < len; i++) {
+				codigo = String.valueOf(xPath.compile("@codigo").evaluate(tipos.item(i), XPathConstants.STRING));
+				
+			    out.println("<input type=\"radio\" name=\"" + nombre + "\" value=\"" + codigo + "\" " + (codigo.equals(codTipoRecurso) ? "checked" : "") + " " + (habilitado.equals("S") ? "" : "disabled") + ">" + xPath.compile(".").evaluate(tipos.item(i), XPathConstants.STRING));		
+			}						
+		
+		}
+		catch(SAXException | ParserConfigurationException | XPathExpressionException | IllegalArgumentException ex) {
+			out.println(ex.getMessage());	
+		}
+	}
+	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void setIncluirTodos(String incluirTodos) {
+		this.incluirTodos = incluirTodos;
+	}
+	
+	public void setCodTipoRecurso(String codTipoRecurso) {
+		this.codTipoRecurso = codTipoRecurso;
+	}
+
+	public void setHabilitado(String habilitado) {
+		this.habilitado = habilitado;
+	}
+	
+}

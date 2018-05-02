@@ -1,0 +1,25 @@
+package oniet;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DBConnection {
+
+	public static Connection connection=null;
+	
+	public static Connection getConnection(String ruta, String nombreDB, String usuario, String Contras){
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			connection=DriverManager.getConnection(ruta+nombreDB, usuario, contras);
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+	
+	
+}

@@ -1,0 +1,9 @@
+Ejecutar las siguientes líneas de comando en una ventana del sistema estando ubicados en el directorio del proyecto, seguir 
+estos pasos siempre que no se haya creado el servicio cliente.
+
+cd %PROJECT_HOME%/src  
+wsimport -s . http://localhost:{PORT}/FactorialJAXWS/FactorialWS?wsdl  
+
+NOTA 1: Reemplazar {PORT} de acuerdo al puerto en el cual se publicó el servicio. En nuestro caso sería 8091.
+NOTA 2: Esto generará el servicio para ser consumido, no se requiere ejecutar más de una vez, a menos que haya un cambio en 
+el servicio.

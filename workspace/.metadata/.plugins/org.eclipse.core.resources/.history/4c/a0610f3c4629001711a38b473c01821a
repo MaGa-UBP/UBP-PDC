@@ -1,0 +1,15 @@
+/*
+$(document).ready(function() {
+	$("#boton").click(function() {
+		$("form").submit();
+	});
+});
+*/
+var jJuego = {
+	
+	jugar: function() {
+		$("#jugar").val("S");
+		$("form").submit();
+		
+	}
+}

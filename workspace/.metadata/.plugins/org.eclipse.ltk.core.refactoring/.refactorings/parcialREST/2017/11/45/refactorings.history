@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ar.edu.ubp.fds.VideosResource&apos; to &apos;CategoriasRest&apos;&#x0D;&#x0A;- Original project: &apos;parcialREST&apos;&#x0D;&#x0A;- Original element: &apos;ar.edu.ubp.fds.VideosResource&apos;&#x0D;&#x0A;- Renamed element: &apos;ar.edu.ubp.fds.CategoriasRest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;VideosResource&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ar.edu.ubp.fds{VideosResource.java[VideosResource" matchStrategy="1" name="CategoriasRest" qualified="false" references="true" similarDeclarations="false" stamp="1510003300045" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,49 @@
+package ar.edu.ubp.pdc.chat.servidor;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import javax.swing.DefaultListModel;
+import javax.swing.event.ListDataEvent;
+import javax.swing.event.ListDataListener;
+
+public class ServidorChat {
+	
+	private DefaultListModel<String> conversaciones;
+	private ServerSocket socketServidor;
+	private int clientes;
+    
+    public static void main(String[] args) {
+        new ServidorChat();
+    }
+
+    private ServidorChat() {
+		try {
+			conversaciones = new DefaultListModel<String>();
+			socketServidor = new ServerSocket(5557);
+            System.out.println("Servidor iniciado...");
+	        while (true) {
+	            Socket cliente = socketServidor.accept();
+	            HiloDeCliente nuevoHiloDeCliente = new HiloDeCliente(cliente, ++clientes, this);
+	            this.conversaciones.addListDataListener(nuevoHiloDeCliente);
+	            Thread hilo = new Thread(nuevoHiloDeCliente);
+	            hilo.start();
+	        }
+		} 
+		catch (IOException ex) {
+			System.out.println(ex.getMessage());
+		}
+    }
+    
+    public DefaultListModel<String> getConversaciones(){
+    	return this.conversaciones;
+    }
+    
+    public void agregarMensaje(String mensaje){
+    	this.conversaciones.addElement(mensaje);
+    }
+
+}

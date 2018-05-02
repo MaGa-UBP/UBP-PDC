@@ -1,0 +1,16 @@
+$(document).ready(function(){
+	$('#prodeForm').on('submit',function(e){
+		$(".filaPartido").each(function(){
+			var cant = $(this).find('input:checked').length;
+			$(this).removeClass('has-error');
+			console.log(cant);
+			if(cant>1){
+				$(this).addClass('has-error');
+				e.preventDefault();
+			}else if(cant<1){
+				$(this).addClass('has-error');
+				e.preventDefault();
+			}
+		});
+	});
+});

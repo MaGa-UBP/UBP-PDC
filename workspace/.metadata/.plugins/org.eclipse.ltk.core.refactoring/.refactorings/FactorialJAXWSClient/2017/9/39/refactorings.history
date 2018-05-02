@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;ar.edu.ubp.das.servlet&apos; to &apos;FactorialJAXWS/src&apos;&#x0D;&#x0A;- Original project: &apos;FactorialJAXWSClient&apos;&#x0D;&#x0A;- Destination element: &apos;FactorialJAXWS/src&apos;&#x0D;&#x0A;- Original element: &apos;FactorialJAXWSClient/src/ar.edu.ubp.das.servlet&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=FactorialJAXWS/src" element1="/src&lt;ar.edu.ubp.das.servlet" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1506380266221" version="1.0"/>
+</session>

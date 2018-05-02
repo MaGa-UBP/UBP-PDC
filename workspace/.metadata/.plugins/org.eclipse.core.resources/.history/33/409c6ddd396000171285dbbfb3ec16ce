@@ -1,0 +1,92 @@
+package ar.edu.ubp.pdc.servlets;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+import java.sql.PreparedStatement;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import ar.edu.ubp.pdc.beans.TipoCertificadoBean;
+
+/**
+ * Servlet implementation class BuscarTiposCertificadosServlet
+ */
+@WebServlet("/BuscarTiposCertificados.jsp")
+public class BuscarTiposCertificadosServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public BuscarTiposCertificadosServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html;charset=iso-8859-1");
+		Connection conn;
+		PreparesStatement stmt;
+		ResultSet result;
+		
+		LinkedList<TipoCertificadoBean> certificados = new LinkedList<TipoCertificadoBean>();
+		TipoCertificadoBean c;
+		
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+			conn = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=pdc", "sa", "36130801");
+			conn.setAutoCommit(true);
+			
+			stmt = conn.createStatement();
+			stmt.executeQuery("select desc_tipo_certificado,"
+							+"nro_tipo_certificado"
+							+"from dbo.tipos_certificados (nolock)"
+							+"where cod_grupo = ?"
+							+"go");
+			stmt.setString(1, areaSel);
+			
+			result = stmt.getResultSet();
+			while(result.next()) {
+				c = new TipoCertificadoBean();
+				c.setCodGrupo(result.getString("cod_grupo"));
+				c.setDescTipoCertificado(result.getString("desc_tipo_grupo"));
+				c.setNroTipoCertificado(result.getInt("nro_tipo_certificado"));
+	
+				certificados.add(c);
+			}
+			
+			stmt.close();
+			conn.close();
+			
+			request.setAttribute("certificados", certificados);
+			this.gotoPage("/listado_certificados.jsp", request, response);
+		} 
+		catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+			this.printError(e.getMessage(), request, response);
+		}
+	}
+
+	private void printError(String error, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("error", error);
+		this.gotoPage("/error.jsp", request, response);
+	}
+
+	private void gotoPage(String address, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher(address);
+		                  dispatcher.forward(request, response);
+	}
+}
+

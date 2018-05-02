@@ -1,0 +1,77 @@
+package ar.edu.ubp.pdc.fdeschant.examen;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.PageContext;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+
+public class RecursosTagHandler extends SimpleTagSupport {
+	public String tipoRecurso;
+	public String nombre;
+	public String todos;
+	
+	@Override
+	public void doTag() throws JspException, IOException {
+		super.doTag();
+		Connection conn;
+		PreparedStatement stmt;
+		ResultSet result;
+
+		JspWriter out = this.getJspContext().getOut();
+		out.println("<br/><label>Recurso</label><br/>");
+
+	    try 
+	    {
+	        SchemaFactory          schema   = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");            
+	        DocumentBuilderFactory factory  = DocumentBuilderFactory.newInstance();
+	                               factory.setValidating(false);
+	                               factory.setNamespaceAware(true);
+	                               factory.setSchema(schema.newSchema(new Source[] {new StreamSource(((PageContext)this.getJspContext()).getServletContext().getResourceAsStream("/WEB-INF/xml/tipos_recursos.xsd"))}));
+	        DocumentBuilder        builder  = factory.newDocumentBuilder();        
+	        XPath                  xPath    =  XPathFactory.newInstance().newXPath();
+	        Document               document = builder.parse(((PageContext)this.getJspContext()).getServletContext().getResourceAsStream("/WEB-INF/xml/tipos_recursos.xml"));
+	        
+	        NodeList tipos = NodeList.class.cast(xPath.compile("/tipos_recursos/tipo_recurso").evaluate(document, XPathConstants.NODESET));                                         
+			for (int i = 0, len = tipos.getLength(); i < len; i++) {  
+	            //Aca pegar lo que se tenga que hacer con los elementos del xml, por ejemplo:
+	            out.println("<input type=\"radio\" id=\"rb-id-"+xPath.compile("codigo").evaluate(tipos.item(i), XPathConstants.STRING)+"\" name=\"rb-id\" value=\""+xPath.compile("codigo").evaluate(tipos.item(i), XPathConstants.STRING)+"\" checked/> <label for=\"rb-id-s\" "+(xPath.compile("codigo").evaluate(tipos.item(i), XPathConstants.STRING).equals(this.tipoRecurso) ? "selected" : "")+">"+xPath.compile("descripcion").evaluate(tipos.item(i), XPathConstants.STRING)+this.tipoRecurso+"</label>");
+	        }
+	    }
+		catch (ParserConfigurationException | SAXException | IOException | XPathExpressionException | IllegalArgumentException ex) {
+			out.println("<br/>"+ex.getMessage()+"<br/>");
+		}	
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public void setTipoRecurso(String tipoRecurso) {
+		this.tipoRecurso = tipoRecurso;
+	}
+	public void setTodos(String todos) {
+		this.todos = todos;
+	}
+
+	
+
+}

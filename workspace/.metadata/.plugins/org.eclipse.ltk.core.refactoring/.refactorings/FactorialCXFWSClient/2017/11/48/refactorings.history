@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;js&apos;&#x0D;&#x0A;- Original project: &apos;FactorialCXFWSClient&apos;&#x0D;&#x0A;- Destination element: &apos;js&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     jquery.js&#x0D;&#x0A;     factorial.js&#x0D;&#x0A;     utils.js" description="Copy files" element1="WebContent/js/jquery.js" element2="WebContent/js/factorial.js" element3="WebContent/js/utils.js" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1511819061292" target="/RecuperatorioClient/WebContent/js" units="0" version="1.0"/>
+</session>

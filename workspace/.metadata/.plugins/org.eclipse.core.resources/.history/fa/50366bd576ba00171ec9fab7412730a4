@@ -1,0 +1,24 @@
+package oniet;
+
+public class orden {
+public String id;
+public String dateCreate;
+public String status;
+public String sellerId;
+public String sellerNickName;
+public String buyerId;
+public String buyerNickname;
+public float totalAmount;
+public float paidAmount;
+public float totalAmountWithShipping;
+public int quantity;
+public String currency;
+public String itemId;
+public String itemTitle;
+public String itemCategory;
+public String paymentSiteId;
+public String 	paymentReason;
+public String paymentType;
+public String paymentStatus;
+	
+}

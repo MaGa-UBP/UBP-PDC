@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="FactorialWSService" targetNamespace="http://ws.das.ubp.edu.ar/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.das.ubp.edu.ar/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.das.ubp.edu.ar/" version="1.0" xmlns:tns="http://ws.das.ubp.edu.ar/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getFactorial" type="tns:getFactorial"/>
+
+  <xs:element name="getFactorialResponse" type="tns:getFactorialResponse"/>
+
+  <xs:complexType name="getFactorial">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFactorialResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getFactorialResponse">
+    <wsdl:part name="parameters" element="tns:getFactorialResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFactorial">
+    <wsdl:part name="parameters" element="tns:getFactorial">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IFactorialWS">
+    <wsdl:operation name="getFactorial">
+      <wsdl:input name="getFactorial" message="tns:getFactorial">
+    </wsdl:input>
+      <wsdl:output name="getFactorialResponse" message="tns:getFactorialResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FactorialWSServiceSoapBinding" type="tns:IFactorialWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getFactorial">
+      <soap:operation soapAction="urn:GetFactorial" style="document"/>
+      <wsdl:input name="getFactorial">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFactorialResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FactorialWSService">
+    <wsdl:port name="FactorialWSPort" binding="tns:FactorialWSServiceSoapBinding">
+      <soap:address location="http://localhost:9090/FactorialCXFWS/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

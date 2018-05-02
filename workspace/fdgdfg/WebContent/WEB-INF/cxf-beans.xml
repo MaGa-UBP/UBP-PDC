@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	<jaxws:endpoint xmlns:tns="http://ws.das.ubp.edu.ar/"
+		id="factorialws" implementor="ar.edu.ubp.das.ws.FactorialWS"
+		wsdlLocation="wsdl/factorialws.wsdl" endpointName="tns:FactorialWSPort"
+		serviceName="tns:FactorialWSService" address="/FactorialWSPort">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+	<jaxws:endpoint xmlns:tns="http://asdasd/" id="casdda"
+		implementor="asdasd.casdda" wsdlLocation="wsdl/casdda.wsdl"
+		endpointName="tns:casddaPort" serviceName="tns:casddaService" address="/casddaPort">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+</beans>

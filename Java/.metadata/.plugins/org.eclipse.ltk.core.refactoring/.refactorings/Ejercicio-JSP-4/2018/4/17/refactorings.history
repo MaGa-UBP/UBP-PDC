@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Ejercicio-JSP-4/WebContent/css/adivina.css&apos; to &apos;style.css&apos;" description="Rename resource &apos;adivina.css&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/css/adivina.css" name="style.css" stamp="1524496328992" updateReferences="true"/>
+</session>

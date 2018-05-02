@@ -1,0 +1,88 @@
+jQuery(document).ready(function(){
+	
+	$("a[name=eliminar]").click(function() {
+		jTiposDoc.eliminar($(this));
+	});
+
+}); 
+var jMain = {
+		
+		buscarCertif: function(obj) {
+			
+			jUtils.executing("divcertificados");
+			var codigo = $(obj).val();
+			$.ajax({
+				url: "./BuscarTiposCertificados.jsp",
+				type: "post",
+				datatype: "html",
+				data: $.param($("[name=cod_grupo]:checke", $("#form"))),
+				error: function(hr){
+	                jUtils.showing("error", hr.responseText);
+	            },
+	            success: function(html) {
+	            	jUtils.hiding("error", false);
+	              jUtils.showing("divcertificados", html);
+	            }
+			});
+		},
+		eliminar: function(obj) {
+			jUtils.executing("aux");
+			jUtils.hiding("divcertificados", false);
+			
+			var num = $(obj).closest("tr").find("input[name=numeroC]").val();
+			
+			$.ajax({
+				url: "./EliminarCertificado.jsp",
+				type: "post",
+				data: $.param({"numero": num},{"grupo": selected}),
+				datatype: "html",
+				error: function(hr) {
+					jUtils.showing("aux", hr.responseText);
+					jUtils.showing("divcertificados");
+				},
+				success: function(html) {
+					jUtils.hiding("aux");
+					jUtils.showing("divcertificados");
+					$(obj).closest("tr").remove();
+				}
+			});		
+		},
+		
+		guardar: function() {
+	        if($.trim($("input[name=coda]").val()) == "") {
+	            alert("Debe informar codigo de area");
+	            $("input[name=coda]").focus();
+	            return false;
+	        }
+	        
+	        if($.trim($("input[name=nrog]").val()) == "") {
+	            alert("Debe informar el numero de grupo");
+	            $("input[name=servicio]").focus();
+	            return false;
+	        }
+	        
+	        if($.trim($("input[name=nomg]").val()) == "") {
+	            alert("Debe informar el nombre del grupo");
+	            $("select[name=tema]").focus();
+	            return false;
+	        }
+	        	
+			$.ajax({
+				url: "./GuardarGrupo.jsp",
+				type: "post",
+				data: $.param($("input[name=coda],input[name=nrog],input[name=nomg],input[name=vig]", $("#form"))),
+				datatype: "html",		
+				error: function(hr) {
+					jUtils.showing("error2", hr.responseText);
+				},
+				success: function(html) {
+					//$(location).attr("href", "./index.jsp");
+				}
+			});
+			
+		}
+
+
+
+			
+};

@@ -1,0 +1,75 @@
+package oniet;
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class ABM {
+
+
+
+	public static void DAODB() throws ClassNotFoundException{
+		
+		
+	}
+	
+	public static ArrayList<item>getPunto1(Connection connection){
+		String select1= "SELECT * FROM `items` ORDER BY DateCreated DESC";
+		item i = new item();
+		ArrayList<item>lista1=new ArrayList<item>();
+		java.sql.Statement st=null;
+		
+		try{
+			st=connection.createStatement();
+			ResultSet rs= st.executeQuery(select1);
+			
+			while(rs.next()){
+				i.setId(rs.getString("id"));
+				i.setDate(rs.getString("DateCreated"));
+				i.setSiteld(rs.getString("SiteId"));
+				i.setTite(rs.getString("Tite"));
+				i.setSellerId(rs.getLong("SellerId"));
+				i.setCategoryId(rs.getString("CategoryId"));
+				i.setPrice(rs.getFloat("Price"));
+				i.setBasePrice(rs.getFloat("BasePrice"));
+				i.setCurrencyId(rs.getString("CurrencyId"));
+				i.setInitialQuantity(rs.getInt("InitialQuantity"));
+				i.setAvailableQuantity(rs.getInt("AvailableQuantity"));
+				
+				lista1.add(i);
+				}
+			
+		}
+		catch(SQLException e){
+		e.printStackTrace();	
+		}
+		
+		return lista1;
+	}
+	
+	
+	public static ArrayList<orden>getPunto2(Connection connection){
+	String select2= "SELECT * FROM `orders` ORDER BY DateCreated DESC";
+	orden o = new orden();
+	ArrayList<orden>lista2=new ArrayList<orden>();
+	java.sql.Statement st=null;
+	
+	try{
+		st=connection.createStatement();
+		ResultSet rs= st.executeQuery(select2);
+		
+		while(rs.next()){
+			o.setId(rs.getString("id"));
+			o.setDateCreate(rs.getString("DateCreated"));
+			o.setStatus(rs.getString("Status"));
+			o.setSellerId(rs.getString("SellerId"));
+			o.setSellerNickName(rs.getString("SellerNickname"));
+			
+			
+			
+		}
+	}
+}
+	}

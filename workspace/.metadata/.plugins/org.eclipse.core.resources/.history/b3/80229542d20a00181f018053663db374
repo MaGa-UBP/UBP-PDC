@@ -1,0 +1,35 @@
+
+body{
+	font-family:  "Trebuchet MS",Arial,Helvetica,sans-serif;
+	font-size: 10p;
+	
+}
+table{
+	padding: 2px;
+	
+}
+p{
+	font-size: 12p;
+	
+}
+#even{
+	
+	background-color: #FFFFCC;
+}
+#odd{
+	background-color: #FFFF4D;
+	
+}
+
+
+table head{
+	color: #000;
+	font-style: bold;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+
+a{
+	color: #FFd11a;
+	font-weight: bold;
+}

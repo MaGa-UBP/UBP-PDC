@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xsl:stylesheet version="1.0" 
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xmlns:x="http://www.w3schools.com" >
+    <xsl:output method="html"/>
+    <xsl:template match="/">
+        <html>
+            <head>
+                <title>Recl</title>
+                <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+            </head>
+            <body>
+                <h3>Reclamos</h3>
+                <h5>¿Quiere...?</h5>
+                
+                <table>
+                    <tr>
+						<th >¿Conoces tu numero de chasis? *</th>
+						<td>
+		                    <input type="radio" name="sabechasis" value="S" id="isabechasisS" checked="checked" /><label for="isabechasisS">Si</label><br/>
+							<input type="radio" name="sabechasis" value="N" id="isabechasisN" /><label for="isabechasisN">No</label>
+		                </td>
+                    </tr>
+                    <tr>
+                    	<th >Nº de Chasis *</th>
+                    	<input type="text" id="inrochasis" name="nrochasis" value=""  maxlength="100" size="50"/>
+                    </tr>
+                   	<tr>
+                   		<th>Patente</th>
+                   		<input type="text" id="ipatente" name="patente" value=""  maxlength="100" size="50"/>
+                   	</tr>
+                   	<tr>
+                   		<th>Kilometros</th>
+                   		<input type="text" id="ikilometros" name="kilometros" value=""  maxlength="100" size="50"/>
+                   	</tr>
+                   	<tr>
+                   		<th>Apellido</th>
+                   		<input type="text" id="iapellido" name="apellido" value=""  maxlength="100" size="50"/>
+                   	</tr>
+                   	<tr>
+                   		<th>Nombre</th>
+                   		<input type="text" id="inombre" name="nombre" value=""  maxlength="100" size="50"/>
+                   	</tr>
+                   	<tr>
+                   		<th>E-Mail</th>
+                   		<input type="text" id="imail" name="mail" value=""  maxlength="100" size="50"/>
+                   	</tr>
+                   	<tr>
+                   		<th>Telefono</th>
+                   		<input type="text" id="itelefono" name="telefono" value=""  maxlength="100" size="50"/>
+                   	</tr>
+                   	<tr>
+						<th >¿Desea ser contactado por un vendedor? *</th>
+						<td>
+		                    <input type="radio" name="vendedor" value="S" id="ivendedorS" checked="checked" /><label for="ivendedorS">Si</label><br/>
+							<input type="radio" name="vendedor" value="N" id="ivendedorN" /><label for="ivendedorN">No</label>
+		                </td>
+                    </tr>
+                    <tr>
+                    	<th>Provincia</th>
+                    	<td>
+	                    <select id="provincia" name="provincia">
+		                    <xsl:for-each select="x:provincias/x:provincia">
+		                        <xsl:element name="option">
+		                        	<xsl:attribute name="value">
+		                        	<xsl:value-of select="@cod_provincia"></xsl:value-of>
+		                     		
+		                        	</xsl:attribute>
+		                        	<xsl:value-of select="."></xsl:value-of>
+		                        </xsl:element>
+		                    </xsl:for-each>
+		                    </select>
+	                    </td>
+                    </tr>
+                    <th>Reclamo(4000 caracteres max.) *</th>
+                    <textarea cols="50" rows="5" id="ireclamos" name="reclamos" onkeyup=""></textarea>
+                </table>      
+                <br/><br/>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>

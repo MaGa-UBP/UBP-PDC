@@ -1,0 +1,20 @@
+#ganador{
+	background-color: #F00;
+	font-weight:bold;
+	font-size: 14pt;
+	color: #FFF;
+}
+body {
+  background-color: #CCCCFF;
+}
+h1 {
+   	font-size: 14pt;   
+	font-family: Verdana, Arial, Sans-Serif;
+	color: #000099;
+}
+input{
+	background-color:#000066;
+	font-size: 14pt;
+	color: #D63333;
+	font-weight:bold;
+}

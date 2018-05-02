@@ -1,0 +1,24 @@
+package ar.edu.ubp.das.classes;
+
+public class Jugada {
+	Jugada jugada;
+	public Jugada(){
+		this.jugada = this;
+	}
+	public void jugar(){
+		int i = (int)(Math.random() * 3);
+        switch(i) {
+            case 0:
+            	this.jugada = new Piedra();
+                break;
+            case 1:
+            	this.jugada = new Papel();
+                break;
+            case 2:
+            	this.jugada = new Tijera();
+                break;
+        }
+	}
+	
+	abstract public String resolver (Jugada otraJugada);
+}

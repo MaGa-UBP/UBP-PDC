@@ -1,0 +1,21 @@
+package oniet;
+
+import java.sql.Date;
+
+public class item {
+public int id;
+public String date;
+public String siteld;
+public String tite;
+public String 	sellerId;
+public float categoryId;
+public float price;
+public float 	basePrice;
+public String currencyId;
+public int 	initialQuantity;
+public int availableQuantity;
+
+
+
+	
+}

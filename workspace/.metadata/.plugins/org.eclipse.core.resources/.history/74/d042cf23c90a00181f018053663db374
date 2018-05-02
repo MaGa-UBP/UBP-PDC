@@ -1,0 +1,15 @@
+hr{
+	font-size: 12p;
+	
+}
+
+tr:even{
+	background-color: #FFFFCC;
+}
+tr:odd{
+	background-color: #FFFF4D;
+}
+
+thead{
+	color: #000;
+}

@@ -1,0 +1,25 @@
+INDEX VERSION 1.130
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4198314064.index
+/Ejercicio-JSP-3/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4243451109.index
+/Parcial 1/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1753638317.index
+/MiCustomTags/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/587326214.index
+/Ejercicio-090418/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3899942355.index
+/3Estrellas/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2393233887.index
+/Ejercicio-JSP-4/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/935377142.index
+/PrimerPrograma/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2653851225.index
+/ProyectoBootstrap/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1637383231.index
+/Ejercicio-JSP-2/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/987196265.index
+/ParisiParcial1/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/369536719.index
+/Ejercicio-JSP-1/src
+/Users/gframirez/Documents/UBP/Q9/PDC/Java/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1990820219.index
+/JSP/src

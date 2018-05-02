@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="ar.edu.ubp.pdc.fdeschant.examen.RecursosBean,java.util.LinkedList "%>
+    <%@taglib uri="/WEB-INF/tld/customs.tld" prefix="ct" %>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+			<thead>
+				<tr>
+					<th align="left">C&oacute;digo</th>
+					<th align="left">Nombre</th>
+					<th align="left">M&aacute;scara</th>
+					<th align="left">Num&eacute;rico</th>
+					<th align="left">Tipo Persona</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+	<tbody>
+	<%
+	
+	LinkedList<RecursosBean> lista =(LinkedList<RecursosBean>)(request.getAttribute("lista"));
+	for(RecursosBean rec : lista) {
+		rec.getCod_tipo_recurso();
+		rec.desc_recurso();
+		
+	%>
+			
+	<%
+	}
+	%>
+<ct:temas todos="" tipoRecurso="I" nombre="nombre"/>
+<ct:propietario tipoPropietario="P" nombre="listaPropietarios" idArea="3" idPersonal="0"/>
+</body>
+</html>

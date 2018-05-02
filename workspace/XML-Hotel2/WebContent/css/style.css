@@ -1,0 +1,8 @@
+.normal {
+  border: 1px solid #000;
+  border-collapse: collapse;
+
+}
+.normal th, .normal td {
+  border: 1px solid #000;
+}

@@ -1,0 +1,33 @@
+package ar.edu.ubp.pdc.tags;
+
+import java.io.IOException;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+public class BusquedaTagHandler extends SimpleTagSupport {
+	
+	private String funcBuscar;
+	
+	@Override
+	public void doTag() throws JspException, IOException {
+		super.doTag();
+		JspWriter out = this.getJspContext().getOut();
+  			      out.println("<label for=\"string_busqueda \">Solicitante | Asunto | Texto </label><br/>");
+  		          out.print("<input type=\"text\" id=\"string_busqueda\" name=\"string_busqueda\" maxlength=\"255\" size=\"60\" />");     
+  			      out.print("<input type=\"button\"  name=\"botonBuscar\" value=\"Buscar\" onClick=\""+ funcBuscar +"\" />");
+  		          out.print("<fieldset>");
+  			      out.print("<label for=\"ordenar_por\">Ordenar Por </label><br/>");
+  			      out.print("<input type=\"radio\" id=\"id_sol\" name=\"solicitante\" value=\"S\" /><label for=\"id_sol\">Solicitante</label>");
+  			      out.print("&nbsp;<input type=\"radio\" id=\"id_fec\" name=\"fecha\" value=\"F\" checked=\"checked\" /><label for=\"id_fec\">Fecha</label>");
+  			      out.print("&nbsp;<input type=\"radio\" id=\"id_nro\" name=\"nroTicket\" value=\"T\" /><label for=\"id_nro\">Nro. de Ticket</label>");
+  			      out.print("</fieldset>");  	      
+	}
+		
+	public void setFuncBuscar(String funcBuscar) {
+		this.funcBuscar = funcBuscar;
+	}
+	
+
+}

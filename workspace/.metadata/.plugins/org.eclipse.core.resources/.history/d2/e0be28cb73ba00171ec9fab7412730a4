@@ -1,0 +1,27 @@
+package oniet;
+
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	try {
+		ArrayList<item>lista1=new ArrayList<item>();
+		lista1=ABM.DAODB();
+		item i=new item();
+		for (int x=0; x<10; x++){
+			i=lista1.get(x);
+			
+		}
+		
+	} catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
+
+	
+	
+}

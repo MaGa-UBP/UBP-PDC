@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="tipos">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="tipo" minOccurs="0" maxOccurs="unbounded" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="tipo">
+        <xsd:complexType>
+            <xsd:attribute name="codigo" type="xsd:string" use="required" />
+            <xsd:attribute name="texto"  type="xsd:string" use="required" />
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>    

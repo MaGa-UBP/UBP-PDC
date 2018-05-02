@@ -1,0 +1,38 @@
+Configuración
+
+1.  Descargar la última versión de Apache CXF en https://cxf.apache.org/download.html
+2.  Descomprimir los fuentes en un directorio conocido.
+3.  Acceder a Eclipse y configurar el acceso al directorio correspondiente en Windows / Preferences / Web Services / CXF 2.x Preferences,
+    seleccionando el directorio dentro de la solapa "CXF Runtime".
+4.  Acceder al directorio donde está instalado Java JDK en la ubicación %JAVA_JDK%\jre\lib. 
+5.  Buscar el archivo "jaxp.properties", de no existir crearlo.
+6.  Editar el archivo agregando la siguiente sentencia:
+    javax.xml.accessExternalSchema = all
+7.  Acceder al directorio donde está instalado Java JRE en la ubicación %JAVA_JRE%\lib.
+8.  Repetir los pasos 5 y 6.
+9.  Reiniciar la máquina.
+10. Listo.
+
+Consideraciones al crear el servicio:
+
+1.  Seleccionar la clase que construirá el servicio y hacer botón derecho seleccionando New / Web Services / Web Service
+2.  Asegurarnos que Web service runtime diga "Apache CXF 2.x", continuar...
+3.  Puede o no crearse una interfaz asociada a la clase, continuar...
+4.  Marcar las anotaciones @WebMethod y @WebParam, continuar...
+5.  De las opciones de Java2WS seleccionar "Generate Server" dejando los que ya están seleccionados por defecto.
+6.  Desmarcar "Generate separate XSD for the types" para que toda la configuración quede en el archivo WSDL que se genere, finalizar.
+7.  Editar el archivo WSDL creado, cambiar el puerto al que se hace binding.
+8.  Editar la clase Server que se creo para utilizando la misma URL editada en el paso anterior.
+9.  Ejecutar la aplicación Java para dejar el servicio en funcionamiento.
+10. Listo.
+
+Consideraciones al crear el servicio cliente (utilizar un proyecto separado):
+
+1. Copiar la URL a la que se hace binding agregando la query ?wsdl al final, utilizar un browser para verificar que
+   tenemos acceso a la WSDL.
+2. Hacer botón derecho sobre el proyecto y seleccionar New / Web Service / Web Service Client
+3. Utilizar la URL del paso 1.
+4. Verificar las clases generadas y determinando cómo consumir el servicio de acuerdo a su definición.
+5. Listo.
+
+   

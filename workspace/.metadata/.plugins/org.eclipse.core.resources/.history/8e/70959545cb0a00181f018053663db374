@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="ar.edu.ubp.pdc.fdeschant.examen.RecursosBean,java.util.LinkedList "%>
+    <%@taglib uri="/WEB-INF/tld/customs.tld" prefix="ct" %>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/utils.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3> Recursos </h3>
+<table>
+			<thead>
+				<tr>
+					<th align="left"></th>
+					<th align="left">Nombre</th>
+					<th align="left">M&aacute;scara</th>
+					<th align="left">Num&eacute;rico</th>
+					<th align="left">Tipo Persona</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+	<tbody>
+	<%
+	
+	LinkedList<RecursosBean> lista =(LinkedList<RecursosBean>)(request.getAttribute("lista"));
+	for(RecursosBean rec : lista) {
+	%>
+		<tr>
+			<td><ct:temas todos="<%= rec.getCod_tipo_recurso() == null ? "\N\" : "\S\" %>" tipoRecurso="<%=rec.getCod_tipo_recurso() %>" nombre=""/> </td>
+			<td><ct:propietario tipoPropietario="<%=rec.getTipo_propietario() %>" nombre="" idArea="<%=rec.getNro_area() %>" idPersonal="<%=rec.getNro_leg_personal() %>"/>  <%=rec.getDesc_recurso() %></td>
+			<td><%=rec.getNro_recurso() %></td>
+			<td><%=rec.getVigente() %></td>
+			
+		</tr>
+	<%
+	}
+	%>
+	</tbody>
+</table>
+<a href="./guardar" onclick="jFinal.Guardar();">Guardar</a>
+<a href="./lista.jsp"> Cancelar</a>
+</body>
+</html>

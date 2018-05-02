@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FactorialWS.java&apos; to &apos;Factorial/src/ar.edu.ubp.das.ws&apos;&#x0D;&#x0A;- Original project: &apos;FactorialAxis2WS&apos;&#x0D;&#x0A;- Destination element: &apos;Factorial/src/ar.edu.ubp.das.ws&apos;&#x0D;&#x0A;- Original element: &apos;ar.edu.ubp.das.ws.FactorialWS.java&apos;" description="Copy compilation unit" destination="=Factorial/src&lt;ar.edu.ubp.das.ws" element1="/src&lt;ar.edu.ubp.das.ws{FactorialWS.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1506377689574" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,78 @@
+package ar.edu.ubp.pdc.servlets;
+
+import java.io.IOException;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class EliminarCertificadoServlet
+ */
+@WebServlet("/EliminarCertificado.jsp")
+public class EliminarCertificadoServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public EliminarCertificadoServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		Connection conn;
+		CallableStatement stmt;		
+		
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+			conn = DriverManager.getConnection("jdbc:sqlserver://bilbo;databaseName=pdc", "ldalessandro", "36130801");
+			conn.setAutoCommit(false);
+			
+			try {
+				stmt = conn.prepareCall("{CALL dbo.del_tipo_certificado(?,?)}");
+				stmt.setString(1, request.getParameter("cog_grupo"));
+				stmt.setString(2, request.getParameter("numeroC"));
+				stmt.execute();
+				conn.commit();
+				stmt.close();
+			}
+			catch(SQLException e) {
+				conn.rollback();
+				this.printError(e.getMessage(), request, response);
+			}
+			finally {
+				conn.setAutoCommit(true);
+				conn.close();
+			}
+		} 
+		catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+			this.printError(e.getMessage(), request, response);
+		}
+	}
+
+	
+	private void printError(String error, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setStatus(400);
+		request.setAttribute("error", error);
+		this.gotoPage("/error.jsp", request, response);
+	}
+
+	private void gotoPage(String address, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher(address);
+		                  dispatcher.forward(request, response);
+	}
+
+}

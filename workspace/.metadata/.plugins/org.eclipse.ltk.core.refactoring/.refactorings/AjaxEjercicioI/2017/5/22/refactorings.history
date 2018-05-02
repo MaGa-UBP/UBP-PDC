@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ar.edu.ubp.pdc.beans.tipoDatoTicketBeans&apos; to &apos;tipoDatoTicketBean&apos;&#x0D;&#x0A;- Original project: &apos;AjaxEjercicioI&apos;&#x0D;&#x0A;- Original element: &apos;ar.edu.ubp.pdc.beans.tipoDatoTicketBeans&apos;&#x0D;&#x0A;- Renamed element: &apos;ar.edu.ubp.pdc.beans.tipoDatoTicketBean&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;tipoDatoTicketBeans&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ar.edu.ubp.pdc.beans{tipoDatoTicketBeans.java[tipoDatoTicketBeans" matchStrategy="1" name="tipoDatoTicketBean" qualified="false" references="true" similarDeclarations="false" stamp="1496098607328" textual="false" version="1.0"/>
+</session>

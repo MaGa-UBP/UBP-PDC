@@ -1,0 +1,94 @@
+package ar.edu.ubp.pdc.finalpdc;
+
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.jsp.JspWriter;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+
+/**
+ * Servlet implementation class ServletFinal
+ */
+@WebServlet("/index.jsp")
+public class ServletFinal extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ServletFinal() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		SimpleList<ProvinciaBean> lista;
+		try 
+	    {
+	        SchemaFactory          schema   = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");            
+	        DocumentBuilderFactory factory  = DocumentBuilderFactory.newInstance();
+	                               factory.setValidating(false);
+	                               factory.setNamespaceAware(true);
+	                               factory.setSchema(schema.newSchema(new Source[] {new StreamSource(this.getServletContext().getResourceAsStream("/WEB-INF/xml/mixml.xsd"))}));
+	        DocumentBuilder        builder  = factory.newDocumentBuilder();        
+	        XPath                  xPath    =  XPathFactory.newInstance().newXPath();
+	        Document               document = builder.parse(this.getServletContext().getResourceAsStream("/WEB-INF/xml/provincias.xml"));
+	        
+	        
+	        NodeList tipos = NodeList.class.cast(xPath.compile("/provincias/provincia").evaluate(document, XPathConstants.NODESET));                                         
+	        
+			for (int i = 0, len = tipos.getLength(); i < len; i++) {  
+	            //Aca pegar lo que se tenga que hacer con los elementos del xml, por ejemplo:
+	            /*out.println("<option value=\""+ 
+	                        xPath.compile("@codigo").evaluate(tipos.item(i), XPathConstants.STRING) +
+						    "\">"+ xPath.compile("@texto").evaluate(tipos.item(i), XPathConstants.STRING) +"</option>");*/
+				
+				
+	        }
+	    }
+		catch (ParserConfigurationException | SAXException | IOException | XPathExpressionException | IllegalArgumentException ex) {
+	    	
+		}	   
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+	private void printMessage(String message, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		response.setStatus(400);
+        request.setAttribute("error", message);
+    	this.gotoPage("/error.jsp", request, response);
+    }
+	
+	private void gotoPage(String address, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher(address);
+                          dispatcher.forward(request, response);
+    }
+}

@@ -1,0 +1,46 @@
+@CHARSET "ISO-8859-1";
+
+html, body {
+    font-family: Trebuchet MS, Arial, sans-serif;
+    font-size: 14pt;
+    color: #006600;
+    background:  #b3ffb3;
+}
+.titulo {
+	color:#cc0000;
+}
+.contenedor {display: table;}
+.fila {display: table-row;} .celda{display: table-cell;}
+#op {color:#006600;font-size: 14pt;}
+
+#boton{
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 10pt;
+	width: 150px;
+	border: 1px solid #800000;
+	padding: 5px;
+	background: #800000;
+	color: #ff0000;
+	font-weight:bold;
+}
+.tabla{
+	display: table;
+	padding: 1px;
+	background: #004d00;
+	color:#ffffff;
+	font-weight:bold;
+	text-align: left;
+}
+.filaR {display: table-row;} 
+.celdaR{
+	display: table-cell; 
+	width: 100px;
+	height: 20px;
+	padding: 5px;
+}
+/*
+Color de fondo de las celdas:
+Ganó: #33cc33
+Empató: #ffffff
+Perdió: #ff1919
+*/

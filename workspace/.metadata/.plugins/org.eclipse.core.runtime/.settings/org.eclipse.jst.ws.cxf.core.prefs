@@ -1,0 +1,11 @@
+cxfJ2WSGenerateServer=true
+cxfJ2WSGenerateWebMethodAnnotation=true
+cxfJ2WSGenerateWebParamAnnotation=true
+cxfJ2WSXSDImports=false
+cxfRuntimeLocations=C\:\\herramientas\\apache-cxf-3.1.7
+cxfRuntimeTypes=Apache CXF
+cxfRuntimeVersions=3.1.7
+defaultRuntimeLocation=C\:\\herramientas\\apache-cxf-3.1.7
+defaultRuntimeType=Apache CXF
+defaultRuntimeVersion=3.1.7
+eclipse.preferences.version=1

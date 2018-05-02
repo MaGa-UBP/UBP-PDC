@@ -1,0 +1,13 @@
+package ar.edu.ubp.pdc.fdeschant.examen;
+
+public class RecursosBean {
+	public String desc_recurso;
+	public String cod_tipo_recurso;
+	public String tipo_propietario;
+	public String vigente;
+	public int nro_leg_personal;
+	public int nro_area;
+	public int nro_recurso;
+	
+	
+}

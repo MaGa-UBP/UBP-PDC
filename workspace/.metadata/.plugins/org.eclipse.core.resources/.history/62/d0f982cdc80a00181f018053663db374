@@ -1,0 +1,6 @@
+hr{
+	font-size: 12p;
+	
+}
+
+tr:even

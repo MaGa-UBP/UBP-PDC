@@ -1,0 +1,30 @@
+hr{
+	font-size: 12p;
+	
+}
+body{
+	font-family:  "Trebuchet MS",Arial,Helvetica,sans-serif;
+	font-size: 10p;
+	
+}
+tr:even{
+	color: #FFFFCC;
+	background-color: #FFFFCC;
+}
+tr:odd{
+	background-color: #FFFF4D;
+	color: #FFFF4D;
+}
+table row{
+	background-color: #FFFF4D;
+}
+
+table head{
+	color: #000;
+	font-style: bold;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+table {
+	background-color: #ffffcc;
+}

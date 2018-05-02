@@ -1,0 +1,7 @@
+Configuración
+
+1. Descargar la última versión de HttpClient en http://hc.apache.org/downloads.cgi
+2. Descargar la ultima versión de Gson en https://mvnrepository.com/artifact/com.google.code.gson/gson/2.7
+3. Copiar archivos JAR en el directorio lib de la instalación de Apache
+4. Listo
+

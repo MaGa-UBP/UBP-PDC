@@ -1,0 +1,23 @@
+body{
+	font-family:Trebuchet MS,Arial,Helvetica,sans-serif;
+	font-size: 10pt;
+}
+title{
+	font-size: 12pt;
+}
+table{
+	spacing: 1px;
+}
+
+thead{
+	
+	background-color: #000;
+	color: #FFF;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+a{
+	color: #FFD11A;
+	font-weight: bold;
+}
+

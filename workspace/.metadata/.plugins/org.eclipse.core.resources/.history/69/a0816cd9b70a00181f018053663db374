@@ -1,0 +1,77 @@
+package ar.edu.ubp.pdc.fdeschant.examen;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+
+public class PropietariosTagHandler extends SimpleTagSupport {
+
+	private String nombre;
+	private String tipoPropietario;
+	private String idArea;
+	private String idPersonal;
+	
+	@Override
+	public void doTag() throws JspException, IOException {
+		super.doTag();
+		Connection conn;
+		PreparedStatement stmt;
+		ResultSet result;
+
+		JspWriter out = this.getJspContext().getOut();
+		out.println("<br/><label>Propietarios</label><br/>");
+		out.println("<select name=\""+nombre+"\">");
+		if ((this.tipoPropietario == "A" && (this.idArea != "")||(this.idArea != null))||(this.tipoPropietario == "P" && (this.idPersonal != "")||(this.idPersonal != null)))
+		{
+			try {
+				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+				 conn = DriverManager.getConnection("jdbc:sqlserver://bilbo;databaseName=pdc", "fdeschant", "37011374");
+				conn.setAutoCommit(true);
+				
+				stmt = conn.prepareStatement("{CALL dbo.get_lista_propietarios(?, ?, ?)}");
+				stmt.setString(1, this.tipoPropietario);
+				stmt.setInt(2, Integer.parseInt(this.idPersonal));
+				stmt.setInt(3, Integer.parseInt(this.idArea));
+				stmt.executeQuery();
+				result = stmt.getResultSet();
+				while(result.next()) {
+					out.println("<option value=\""+result.getString("nombre")+"\">"+result.getString("nombre")+"</option>");
+				}
+				
+				stmt.close();
+				conn.close();
+			} 
+			catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+				out.clear();
+				out.println("<div class=\"error\">"+e.toString()+"</div>");
+			}
+		}
+		else
+		{
+			//se pasaron mal los parametros
+		}
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setTipoPropietario(String cod_propietario) {
+		this.tipoPropietario= cod_propietario;
+	}
+	public void setIdArea(String area) {
+		this.idArea = area;
+	}
+	public void setIdPersonal(String id) {
+		this.idPersonal = id;
+	}
+
+}

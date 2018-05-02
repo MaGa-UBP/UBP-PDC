@@ -1,0 +1,30 @@
+Configuración
+
+1. Descargar la última versión de Jersey en https://jersey.java.net/download.html
+2. Descomprimir los fuentes en un directorio conocido.
+3. Descargar el archivo JAR de Jackson JAX-RS Provider en https://mvnrepository.com/artifact/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.8.3
+   junto con los archivos JAR dependientes
+4. Copiar el archivo dentro del directorio ext de Jersey.
+5. Luego en Windows / Preferences / Validation deshabilitar las opciones de "Classpath Dependency Validation".
+5. Listo.
+
+Consideraciones al crear el servicio:
+
+1.  Al crear el proyecto, hacer clic en el botón "Modify" de la configuración del mismo, seleccionar el project facet "JAX-RS (REST Web Services)"
+2.  En el paso "Web Module" seleccionar la creación del archivo web.xml.
+3.  En el paso "JAX-RS Capabilities", seleccionar en la lista "Type" la opción "User Library". Si la librería aun no fue creada, hacer clic en el primer ícono a la
+    derecha.
+    Hacer clic en el botón "New...", poner de nombre "JAX-RS <Version> Library" a la librería y marcar que sea una clase del sistema. Luego seleccionar todos los archivos JAR del directorio descargado en la configuración.
+    Para ello, utilizar el botón "Add External JARs...". Aceptar los cambios.
+4.  Marcar la librería.
+5.  Hacer clic en "Update Deployment Descriptor", indicar en el campo "JAX-RS servlet name" el valor JAXRSServlet y en el campo "JAX-RS servlet class name" el valor
+    "org.glassfish.jersey.servlet.ServletContainer".
+    A su vez, eliminar en "URL mapping patterns" el valor actual y agregar el valor "/rest/*"
+6.  Finalizar para que se cree el proyecto.
+7.  Editar el archivo web.xml agregar a la definición del Servlet JAX-RS, el parámetro:
+      <init-param>
+          <param-name>jersey.config.server.provider.packages</param-name>
+          <param-value>ar.edu.ubp.das.resources,com.fasterxml.jackson.jaxrs</param-value>
+      </init-param>
+    NOTA: El valor "ar.edu.ubp.das.resources" es el paquete que contiene las clases desarrolladas por lo que puede cambiar su nombre.
+8. Listo.

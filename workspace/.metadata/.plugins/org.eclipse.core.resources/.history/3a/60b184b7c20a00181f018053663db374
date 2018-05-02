@@ -1,0 +1,105 @@
+package ar.edu.ubp.pdc.fdeschant.examen;
+
+import java.io.IOException;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class InventarioServlet
+ */
+@WebServlet("/Index.jsp")
+public class InventarioServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public InventarioServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		Connection conn;		
+		PreparedStatement stmt;
+		ResultSet result;
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+			conn = DriverManager.getConnection("jdbc:sqlserver://bilbo;databaseName=pdc", "fdeschant", "37011374");
+			conn.setAutoCommit(false);
+			
+			try {
+				stmt = conn.prepareStatement("select desc_recurso     = desc_recurso,"
+											+"cod_tipo_recurso = cod_tipo_recurso,"
+											+"tipo_propietario = case when nro_leg_personal is not null" 
+											+"                        then 'P'"
+											+"	     			      else 'A'"
+											+"						  end,"        	   
+											+"nro_leg_personal = nro_leg_personal,"
+											+"nro_area         = nro_area,"
+											+"vigente          = vigente,"
+											+"nro_recurso      = nro_recurso"
+											+"from dbo.recursos (nolock)"
+											+"order by desc_recurso");//llamar al procedimiento
+				
+				
+				stmt.executeQuery();
+				result = stmt.getResultSet();
+				while(result.next()) {
+					out.println("<option value=\""+result.getString("nombre")+"\">"+result.getString("nombre")+"</option>");
+				}
+				stmt.close();
+				conn.close();
+			}
+			catch(SQLException e) {
+				conn.rollback();
+				this.printError(e.getMessage(), request, response);
+			}
+			finally {
+				conn.setAutoCommit(true);
+				conn.close();
+			}
+		} 
+		catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+			this.printError(e.getMessage(), request, response);
+		}
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);		
+	}
+	private void printError(String error, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setStatus(400);
+	
+		request.setAttribute("error", error);
+		this.gotoPage("/error.jsp", request, response);
+	}
+
+	private void gotoPage(String address, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher(address);
+		                  dispatcher.forward(request, response);
+	}
+}

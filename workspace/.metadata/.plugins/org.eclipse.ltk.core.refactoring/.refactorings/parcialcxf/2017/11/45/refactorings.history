@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Categoria.java&apos; to &apos;parcialREST/src/ar.edu.ubp.fds&apos;&#x0D;&#x0A;- Original project: &apos;parcialcxf&apos;&#x0D;&#x0A;- Destination element: &apos;parcialREST/src/ar.edu.ubp.fds&apos;&#x0D;&#x0A;- Original element: &apos;ar.edu.ubp.das.fds.Categoria.java&apos;" description="Copy compilation unit" destination="=parcialREST/src&lt;ar.edu.ubp.fds" element1="/src&lt;ar.edu.ubp.das.fds{Categoria.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1510003328525" units="1" version="1.0"/>
+</session>

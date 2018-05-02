@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.LinkedList,ar.edu.ubp.pdc.beans.TipoCertificadoBean" %>    
+<%
+@SuppressWarnings("unchecked")
+	LinkedList<TipoCertificadoBean> certificados = (LinkedList<TipoCertificadoBean>)request.getAttribute("certificados");
+%>
+	 	 <table class="normal">
+
+		<thead>
+			<tr>
+		    	<th align="right">Descripcion certificado</th>
+    		</tr>
+		</thead>
+    	<tbody>
+
+<%      
+		int i=0;
+ 		for(TipoCertificadoBean c : certificados) {
+           	out.println("<tr>");
+           	out.println("<td align=\"left\">" + c.getDescTipoCertificado() + "&nbsp;&nbsp;</td>");
+           	out.println("<td> <a name=\"eliminar\" href=\"#\" onclick=\"jMain.eliminar()\">guardar</a> </td>");
+            out.println("</tr>");
+        }
+%>	
+		<tr>
+		
+		</tr>
+		</tbody>
+    </table>
