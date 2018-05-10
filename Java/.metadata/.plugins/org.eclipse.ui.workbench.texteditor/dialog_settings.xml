@@ -9,12 +9,15 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="resultados" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="mainprode"/>
+			<item value="main"/>
+			<item value="iNotificacionS"/>
 			<item value="resultados"/>
 			<item value="reset"/>
 			<item value="equipos"/>
@@ -27,9 +30,6 @@
 			<item value="juris"/>
 			<item value="total"/>
 			<item value="dibujarD3_gastos_finalidad"/>
-			<item value="&#x09;dibujarD3_gastos_finalidad_funcion()&#x0A;"/>
-			<item value="ae"/>
-			<item value="function "/>
 		</list>
 		<list key="replacehistory">
 		</list>

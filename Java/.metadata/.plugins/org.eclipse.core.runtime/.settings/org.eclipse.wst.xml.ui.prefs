@@ -1,4 +1,22 @@
+cdataBorder=\#61AFEF | null | false | false | false | false
+cdataText=\#ABB2BF | null | false | false | false | false
+commentBorder=\#5C6370 | null | false | true | false | false
+commentText=\#5C6370 | null | false | true | false | false
+declBorder=\#61AFEF | null | false | false | false | false
+doctypeExternalId=\#61AFEF | null | false | false | false | false
+doctypeExternalPubref=\#61AFEF | null | false | false | false | false
+doctypeExtrenalSysref=\#61AFEF | null | false | false | false | false
+doctypeName=\#61AFEF | null | false | false | false | false
 eclipse.preferences.version=1
+entityReference=\#C678DD | null | false | false | false | false
 newFileTemplateName=tld declaration
 org.eclipse.wst.sse.ui.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="xml_new" deleted\="false" description\="tld declaration" enabled\="true" name\="tld declaration">&lt;?xml version\="1.0" encoding\="UTF-8"?&gt;&\#13;\n&lt;taglib xmlns\="http\://java.sun.com/xml/ns/j2ee"&\#13;\n    xmlns\:xsi\="http\://www.w3.org/2001/XMLSchema-instance"&\#13;\n    xsi\:schemaLocation\="http\://java.sun.com/xml/ns/j2ee http\://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"&\#13;\n    version\="2.0"&gt;&\#13;\n\t&lt;description&gt;&lt;/description&gt;&\#13;\n\t&lt;tlib-version&gt;2.1&lt;/tlib-version&gt;&\#13;\n\t&lt;short-name&gt;&lt;/short-name&gt;&\#13;\n\t&lt;uri&gt;&lt;/uri&gt;&\#13;\n&lt;/taglib&gt;</template></templates>
 org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart.lastActivePage=1
+piBorder=\#61AFEF | null | false | false | false | false
+piContent=\#ABB2BF | null | false | false | false | false
+tagAttributeEquals=\#ABB2BF | null | false | false | false | false
+tagAttributeName=\#E06C75 | null | false | false | false | false
+tagAttributeValue=\#98C379 | null | false | false | false | false
+tagBorder=\#E06C75 | null | false | false | false | false
+tagName=\#E06C75 | null | false | false | false | false
+xmlContent=\#ABB2BF | null | false | false | false | false

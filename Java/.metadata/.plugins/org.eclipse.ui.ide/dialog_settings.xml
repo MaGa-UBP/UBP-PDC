@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/Users/gframirez/Documents/UBP/Q9/PDC/Java/VideosMVC3.2"/>
+		<item value="/Users/gframirez/Documents/UBP/Q10/UBP-DAS/Teoria/Modulo III/Ejemplos/VideosMVC3.2"/>
 		<item value="/Users/gframirez/Documents/UBP/Q9/PDC/Java/ParisiParcial1"/>
 		<item value="/Users/gframirez/Documents/UBP/Q9/PDC/Java/3Estrellas"/>
 		<item value="/Users/gframirez/Documents/UBP/Q9/PDC/Java/JSP"/>

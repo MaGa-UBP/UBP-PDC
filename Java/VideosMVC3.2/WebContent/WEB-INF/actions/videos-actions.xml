@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xsi:noNamespaceSchemaLocation="../schema/actions.xsd">
+    <form-beans>
+    </form-beans>
+    <action-mappings>
+        <action path="/Content.do" type="ContentAction">
+            <forward name="success" path="/videos/content.jsp"/>
+        </action>
+        <action path="/Buscar.do" type="BuscarAction">
+            <forward name="success" path="/videos/buscar.jsp"/>
+        </action>
+        <action path="/Ver.do" type="VerAction">
+            <forward name="success" path="/videos/ver.jsp"/>
+        </action>
+    </action-mappings>
+</actions>
