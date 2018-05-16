@@ -1,12 +1,12 @@
 {
-    "count": 17,
+    "count": 16,
     "results": [
       {
       	"ID": 1,
       	"nombre": "Babucha Chicago Skinny",
       	"precio": 1449.90,
         "descripcion": "Pantalón de hombre Negro",
-        "long_description":,
+        "long_description": "",
         "categoria_id": 1,
         "imagenes":[
           {
@@ -19,7 +19,7 @@
       	"nombre": "Pantalón Atacama Sunrise",
       	"precio": 2199.90,
         "descripcion": "Pantalón de hombre Blanco",
-        "long_description":,
+        "long_description": "",
         "categoria_id": 1,
         "imagenes":[
           {
@@ -33,7 +33,7 @@
       	"nombre": "Pantalón Toulouse",
       	"precio": 1789.50,
         "descripcion": "Pantalon blanco tipo jogging de mujer",
-        "long_description":,
+        "long_description": "",
         "categoria_id": 1,
         "imagenes":[
           {
@@ -47,7 +47,7 @@
       	"nombre": "Pantalon Sahara",
       	"precio": 2499.90,
         "descripcion": "Pantalon khaki de mujer",
-        "long_description":,
+        "long_description": "",
         "categoria_id": 1,
         "imagenes":[
           {
@@ -60,7 +60,7 @@
         "nombre": "Tapado Antartica",
         "precio": 3199.50,
         "descripcion": "Tapado blanco de mujer",
-        "long_description":,
+        "long_description": "",
         "categoria_id": 2,
         "imagenes":[
           {
@@ -73,7 +73,7 @@
         "nombre": "Tapado Reyjavik",
         "precio": 4249.90,
         "descripcion": "Tapado negro de mujer",
-        "long_description":,
+        "long_description": "",
         "categoria_id": 2,
         "imagenes":[
           {
@@ -86,7 +86,7 @@
         "nombre": "Campera Jordan",
         "precio": 3990.50,
         "descripcion": "Parka verde abrigada de mujer",
-        "long_description":,
+        "long_description": "",
         "categoria_id": 2,
         "imagenes":[
           {
@@ -99,7 +99,7 @@
         "nombre": "Campera Manchester",
         "precio": 1999.90,
         "descripcion": "Campera estilo britanico camel con patches",
-        "long_description":,
+        "long_description": "",
         "categoria_id": 2,
         "imagenes":[
           {
@@ -112,7 +112,7 @@
         "nombre": "Camisa Sherwood",
         "precio": 2199.99,
         "descripcion": "Camisa tipo leñador verde",
-        "long_description":,
+        "long_description": "",
         "categoria_id": 3,
         "imagenes":[
           {
@@ -125,7 +125,7 @@
         "nombre": "Camisa State Island",
         "precio": 1899.90,
         "descripcion": "Camisa azul marino",
-        "long_description":,
+        "long_description": "",
         "categoria_id": 3,
         "imagenes":[
           {
@@ -138,8 +138,8 @@
       	"nombre": "Mochila Parisina",
       	"precio": 3299.50,
         "descripcion": "Mochila-Cartera negra de cuero",
-        "long_description":,
-        "categoria_id":,
+        "long_description": "",
+        "categoria_id": 4,
         "imagenes":[
           {
             "urlImg": ""
@@ -151,8 +151,8 @@
       	"nombre": "Mochila Vienna",
       	"precio": 2225.00,
         "descripcion":,
-        "long_description":,
-        "categoria_id":,
+        "long_description": "",
+        "categoria_id": 4,
         "imagenes":[
           {
             "urlImg": ""
@@ -164,8 +164,8 @@
       	"nombre": "Mochila Maui",
       	"precio": 2750.00,
         "descripcion":,
-        "long_description":,
-        "categoria_id":,
+        "long_description": "",
+        "categoria_id": 4,
         "imagenes":[
           {
             "urlImg": ""
@@ -177,8 +177,8 @@
       	"nombre": "Gorro de hilo Brooklyn",
       	"precio": 749.90,
         "descripcion": "Gorro de hilo brixton",
-        "long_description":,
-        "categoria_id":,
+        "long_description": "",
+        "categoria_id": 4,
         "imagenes":[
           {
             "urlImg": ""
@@ -190,8 +190,8 @@
       	"nombre": "Lentes de Sol Playacar",
       	"precio": 4250.50,
         "descripcion": "Lentes de Sol Rayban",
-        "long_description":,
-        "categoria_id":,
+        "long_description": "",
+        "categoria_id": 4,
         "imagenes":[
           {
             "urlImg": ""
@@ -203,8 +203,8 @@
       	"nombre": "Gorra Camden Town",
       	"precio": 1299.99,
         "descripcion": "Gorra Brixton roja",
-        "long_description":,
-        "categoria_id":,
+        "long_description": "",
+        "categoria_id": 4,
         "imagenes":[
           {
             "urlImg": ""
