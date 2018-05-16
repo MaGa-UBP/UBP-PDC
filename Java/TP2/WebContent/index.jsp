@@ -108,7 +108,7 @@
 
 					<div class="header-wrapicon2">
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
+						<span class="header-icons-noti" id="numberItemsCart">0</span>
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
@@ -206,7 +206,7 @@
 
 					<div class="header-wrapicon2">
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
+						<span class="header-icons-noti" id="numberItemsCartMobile">0</span>
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
@@ -865,36 +865,26 @@
 	<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
 	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-	<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
-	<script type="text/javascript">
-		$(".selection-1").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect1')
-		});
-	</script>
-
 	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
 	<script type="text/javascript" src="js/slick-custom.js"></script>
-
-	<script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
-
-	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
 
 	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script type="text/javascript">
 		$('.block2-btn-addcart').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
-			});
+				swal(nameProduct, "fue añadido al carrito !", "success");
+				var num = parseInt($("#numberItemsCartMobile").text());
+				$(".header-icons-noti").text(num+1);
+			});	
 		});
 
-		$('.block2-btn-addwishlist').each(function(){
+/* 		$('.block2-btn-addwishlist').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to wishlist !", "success");
 			});
-		});
+		}); */
 	</script>
 
 
