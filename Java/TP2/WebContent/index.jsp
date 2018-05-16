@@ -79,11 +79,7 @@
 							</li>
 							<li>
 								<a href="product.html">Store</a>
-								<ul class="sub_menu">
-									<li><a href="index.html">Abrigos</a></li>
-									<li><a href="index.html">Accesorios</a></li>
-									<li><a href="home-02.html">Camisas</a></li>
-									<li><a href="home-03.html">Pantalones</a></li>
+								<ul class="sub_menu" id="subStore">
 								</ul>
 							</li>
 
@@ -322,17 +318,15 @@
 					<li class="item-menu-mobile">
 						<a href="index.html">Home</a>
 
-						<i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
+						
 					</li>
 
 					<li class="item-menu-mobile">
 						<a href="product.html">Shop</a>
-						<ul class="sub_menu">
-							<li><a href="index.html">Abrigos</a></li>
-							<li><a href="index.html">Accesorios</a></li>
-							<li><a href="home-02.html">Camisas</a></li>
-							<li><a href="home-03.html">Pantalones</a></li>
+						<i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
+						<ul class="sub-menu" id="subStoreMobile">
 						</ul>
+						
 					</li>
 
 					<li class="item-menu-mobile">
@@ -860,6 +854,17 @@
 
 	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/productsHandler.js"></script>
+	<script type="text/javascript">
+		categories.sort(function (a, b) {
+		    return a.nombre.localeCompare(b.nombre);
+		});
+		$.each(categories, function(idx, category) {
+			console.log(category);
+			$("#subStoreMobile").append("<li><a href=\"#\">"+category.nombre+"</a></li>");
+			$("#subStore").append("<li><a href=\"#\">"+category.nombre+"</a></li>");
+		});
+	</script>
+	
 	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
 
 	<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
