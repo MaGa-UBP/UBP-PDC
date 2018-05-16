@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server localhost" name="Tomcat v9.0 Server localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="28">
-    <list key="modules" value0="VideosMVC3.2::org.eclipse.jst.jee.server:VideosMVC3.2::jst.web::3.1"/>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server localhost" name="Tomcat v9.0 Server localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="33">
+    <list key="modules" value0="VideosMVC3.2::org.eclipse.jst.jee.server:VideosMVC3.2::jst.web::3.1" value1="TP2::org.eclipse.jst.jee.server:TP2::jst.web::3.1" value2="MiCustomTags::org.eclipse.jst.jee.server:MiCustomTags::jst.web::3.1" value3="Sessions::org.eclipse.jst.jee.server:Sessions::jst.web::3.1"/>
   </server>
   <server hostname="localhost" id="HTTP Server at localhost" isPublishing="true" name="HTTP Server at localhost" port="80" runtime-id="HTTP Server" server-type="org.eclipse.wst.server.http.server" server-type-id="org.eclipse.wst.server.http.server" start-timeout="240" stop-timeout="240" timestamp="2" urlPrefix="">
     <list key="modules"/>

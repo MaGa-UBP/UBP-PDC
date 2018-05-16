@@ -1,0 +1,25 @@
+{
+    "count": 4,
+    "results": [
+      {
+      	"ID": 1,
+      	"nombre": "Pantalones",
+      	"depende_de": null
+      },
+      {
+      	"ID": 2,
+      	"nombre": "Abrigos",
+      	"depende_de": null
+      },
+      {
+      	"ID": 3,
+      	"nombre": "Camisas",
+      	"depende_de": null
+      },
+      {
+      	"ID": 4,
+      	"nombre": "Accesorios",
+      	"depende_de": null
+      }
+    ]
+  }

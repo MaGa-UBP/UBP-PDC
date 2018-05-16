@@ -9,12 +9,17 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="Block2" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Block2-img"/>
+			<item value="block2"/>
+			<item value="block-2"/>
+			<item value="ct:"/>
+			<item value="hers"/>
 			<item value="mainprode"/>
 			<item value="main"/>
 			<item value="iNotificacionS"/>
@@ -25,11 +30,6 @@
 			<item value="footer"/>
 			<item value="footer .rowConvenios .titConvenios"/>
 			<item value="definicion"/>
-			<item value="generar_gafico"/>
-			<item value="dibujarD3_gastos_ejecutivo"/>
-			<item value="juris"/>
-			<item value="total"/>
-			<item value="dibujarD3_gastos_finalidad"/>
 		</list>
 		<list key="replacehistory">
 		</list>
