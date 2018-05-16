@@ -44,7 +44,7 @@
     /*[ Show header dropdown ]
     ===========================================================*/
     $('.js-show-header-dropdown').on('click', function(){
-        $(this).parent().find('.header-dropdown')
+        $(this).parent().parent().find('.header-dropdown')
     });
 
     var menu = $('.js-show-header-dropdown');
@@ -54,15 +54,15 @@
         $(menu[i]).on('click', function(){ 
             
                 if(jQuery.inArray( this, menu ) == sub_menu_is_showed){
-                    $(this).parent().find('.header-dropdown').toggleClass('show-header-dropdown');
+                    $(this).parent().parent().find('.header-dropdown').toggleClass('show-header-dropdown');
                     sub_menu_is_showed = -1;
                 }
                 else {
                     for (var i = 0; i < menu.length; i++) {
-                        $(menu[i]).parent().find('.header-dropdown').removeClass("show-header-dropdown");
+                        $(menu[i]).parent().parent().find('.header-dropdown').removeClass("show-header-dropdown");
                     }
 
-                    $(this).parent().find('.header-dropdown').toggleClass('show-header-dropdown');
+                    $(this).parent().parent().find('.header-dropdown').toggleClass('show-header-dropdown');
                     sub_menu_is_showed = jQuery.inArray( this, menu );
                 }
         });
@@ -74,7 +74,7 @@
 
     $(window).on("click", function(){
         for (var i = 0; i < menu.length; i++) {
-            $(menu[i]).parent().find('.header-dropdown').removeClass("show-header-dropdown");
+            $(menu[i]).parent().parent().find('.header-dropdown').removeClass("show-header-dropdown");
         }
         sub_menu_is_showed = -1;
     });

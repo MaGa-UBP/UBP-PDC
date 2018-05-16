@@ -36,7 +36,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-
+	<link rel="stylesheet" type="text/css" href="css/macgar.css">
 </head>
 <body class="animsition">
 
@@ -96,22 +96,23 @@
 
 				<!-- Header Icon -->
 				<div class="header-icons">
-					<a href="#" class="header-wrapicon1 dis-block">
+					<a href="#" class="header-wrapicon1 dis-block a-buscar">
 						<i class="fa fa-2x fa-search"></i>
 					</a>
 
 					<span class="linedivide1"></span>
 
 					<div class="header-wrapicon2">
-						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti" id="numberItemsCart">0</span>
-
+						<div class="header-icon1-wrapper">
+							<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+							<span class="header-icons-noti" id="numberItemsCart">0</span>
+						</div>
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
 							<ul class="header-cart-wrapitem">
 								<li class="header-cart-item">
 									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
+										<img src="images/categorias/default.jpg" alt="IMG">
 									</div>
 
 									<div class="header-cart-item-txt">
@@ -127,7 +128,7 @@
 
 								<li class="header-cart-item">
 									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
+										<img src="images/categorias/default.jpg" alt="IMG">
 									</div>
 
 									<div class="header-cart-item-txt">
@@ -143,7 +144,7 @@
 
 								<li class="header-cart-item">
 									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
+										<img src="images/categorias/default.jpg" alt="IMG">
 									</div>
 
 									<div class="header-cart-item-txt">
@@ -181,8 +182,26 @@
 					</div>
 				</div>
 			</div>
+			<div class="container-fluid nav-buscar">
+				<form action="/search" method="GET" class="row justify-content-center">
+					<div class="col col-10">
+						<div class="input-group">
+							<label for="cuadroBusqueda" style="display: none;">¿Qué estás buscando?</label> 
+							<input type="text" name="q" id="cuadroBusqueda" class="form-control" placeholder="¿Qué estás buscando?">
+							<span class="input-group-btn">
+								<button class="btn btn-default" id="btn-buscar-cerrar" type="button">
+									<span class="cerrar fa-3x" aria-hidden="true">X</span>
+								</button>
+								<button class="btn btn-default hide" type="submit" id="btn-buscar">
+									<span class="fa fa-search fa-3x" aria-hidden="true"></span><span
+										class="visuallyhidden">Buscar</span>
+								</button>
+							</span>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
-
 		<!-- Header Mobile -->
 		<div class="wrap_header_mobile">
 			<!-- Logo moblie -->
@@ -201,15 +220,17 @@
 					<span class="linedivide2"></span>
 
 					<div class="header-wrapicon2">
-						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti" id="numberItemsCartMobile">0</span>
+						<div class="header-icon1-wrapper">
+							<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+							<span class="header-icons-noti" id="numberItemsCartMobile">0</span>
+						</div>
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
 							<ul class="header-cart-wrapitem">
 								<li class="header-cart-item">
 									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
+										<img src="images/categorias/default.jpg" alt="IMG">
 									</div>
 
 									<div class="header-cart-item-txt">
@@ -225,7 +246,7 @@
 
 								<li class="header-cart-item">
 									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
+										<img src="images/categorias/default.jpg" alt="IMG">
 									</div>
 
 									<div class="header-cart-item-txt">
@@ -241,7 +262,7 @@
 
 								<li class="header-cart-item">
 									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
+										<img src="images/categorias/default.jpg" alt="IMG">
 									</div>
 
 									<div class="header-cart-item-txt">
@@ -345,7 +366,7 @@
 	<section class="slide1">
 		<div class="wrap-slick1">
 			<div class="slick1">
-				<div class="item-slick1 item1-slick1" style="background-image: url(images/slider/1.jpg);">
+				<div class="item-slick1 item1-slick1" style='background-image: url("images/slider/1.jpg");'>
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
 							Colecci&oacute;n 2018
@@ -364,7 +385,7 @@
 					</div>
 				</div>
 
-				<div class="item-slick1 item2-slick1" style="background-image: url(images/slider/3.jpg);">
+				<div class="item-slick1 item2-slick1" style='background-image: url("images/slider/3.jpg");'>
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rollIn">
 							Colecci&oacute;n 2018
@@ -383,7 +404,7 @@
 					</div>
 				</div>
 
-				<div class="item-slick1 item3-slick1" style="background-image: url(images/slider/7.jpg);">
+				<div class="item-slick1 item3-slick1" style='background-image: url("images/slider/7.jpg");'>
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
 							Colecci&oacute;n 2018
@@ -426,7 +447,7 @@
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative">
-								<img src="images/item-05.jpg" alt="IMG-PRODUCT">
+								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
 
 								<div class="block2-overlay trans-0-4">
 									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -459,7 +480,7 @@
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="images/item-07.jpg" alt="IMG-PRODUCT">
+								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
 
 								<div class="block2-overlay trans-0-4">
 									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -496,7 +517,7 @@
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-								<img src="images/item-02.jpg" alt="IMG-PRODUCT">
+								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
 
 								<div class="block2-overlay trans-0-4">
 									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -529,7 +550,7 @@
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative">
-								<img src="images/item-03.jpg" alt="IMG-PRODUCT">
+								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
 
 								<div class="block2-overlay trans-0-4">
 									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -562,7 +583,7 @@
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative">
-								<img src="images/item-05.jpg" alt="IMG-PRODUCT">
+								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
 
 								<div class="block2-overlay trans-0-4">
 									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -595,7 +616,7 @@
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="images/item-07.jpg" alt="IMG-PRODUCT">
+								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
 
 								<div class="block2-overlay trans-0-4">
 									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -731,7 +752,7 @@
 
 				<ul>
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
+						<a href="#" class="s-text7 a-buscar">
 							Search
 						</a>
 					</li>
@@ -793,7 +814,7 @@
 					Newsletter
 				</h4>
 
-				<form>
+				<form action="">
 					<div class="effect1 w-size9">
 						<input class="s-text7 bg6 w-full p-b-5" type="text" name="email" placeholder="email@example.com">
 						<span class="effect1-line"></span>
@@ -893,7 +914,7 @@
 	</script>
 
 
-	<script src="js/main.js"></script>
-
+	<script src="js/main.js" type="text/javascript"></script>
+	<script src="js/searchNav.js" type="text/javascript"></script>
 </body>
 </html>

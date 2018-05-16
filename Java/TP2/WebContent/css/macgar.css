@@ -1,0 +1,90 @@
+
+.nav-buscar {
+    float: left;
+    background-color: #e65540;
+    height: 90px;
+    display: none;
+/*     width: 100%; */
+}
+.fa-search.fa-4x{
+  font-size: 3em;
+}
+.cerrar.fa-3x{
+  font-size: 2em;
+}
+.nav-buscar .form-control{
+  background-color: #e65540;
+  color: #FFFFFF;
+  height: 40px;
+  font-size: 1.5em;
+  margin-top: 25px;
+  font-style: italic;
+  font-weight: 100;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid #FFFFFF !important;
+  border-radius: 0px;
+}
+.nav-buscar .form-control:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #e65540 inset;
+    -webkit-text-fill-color: white !important;
+}
+
+
+.nav-buscar .btn-default{
+  background-color: #e65540;
+  color: #FFFFFF;
+  height: 60px;
+  width: 60px;
+  border:0;
+  margin-top: 15px;
+}
+.nav-buscar .btn-default:active,
+.nav-buscar .btn-default:focus{
+  background-color: #e65540;
+  color: #e65540;
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-buscar ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #FFFFFF;
+}
+.nav-buscar :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #FFFFFF;
+   opacity:  1;
+}
+.nav-buscar ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #FFFFFF;
+   opacity:  1;
+}
+.nav-buscar :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #FFFFFF;
+}
+.nav-buscar ::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #FFFFFF;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hide{
+  display: none;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+.header-icon1-wrapper:hover .header-icons-noti{
+	  background-color: #e65540;
+}
+.main_menu > li:hover > a {
+    border-bottom: 2px solid #e65540;
+}
