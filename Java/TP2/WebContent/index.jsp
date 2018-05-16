@@ -40,15 +40,7 @@
 	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/priceFormat.js"></script>
 	<script type="text/javascript" src="js/productsHandler.js"></script>
-	<script type="text/javascript">
-		categories.sort(function (a, b) {
-		    return a.nombre.localeCompare(b.nombre);
-		});
-		$.each(categories, function(idx, category) {
-			$("#subStoreMobile").append("<li><a href=\"#\">"+category.nombre+"</a></li>");
-			$("#subStore").append("<li><a href=\"#\">"+category.nombre+"</a></li>");
-		});
-	</script>
+
 	
 </head>
 <body class="animsition">
@@ -180,14 +172,14 @@
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
 									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
+										Ver Carrito
 									</a>
 								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
 									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
+										Finalizar
 									</a>
 								</div>
 							</div>
@@ -298,14 +290,14 @@
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
 									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
+										Ver Carrito
 									</a>
 								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
 									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
+										Finalizar
 									</a>
 								</div>
 							</div>
@@ -678,7 +670,15 @@
 
 
 
-	
+	<script type="text/javascript">
+		categories.sort(function (a, b) {
+		    return a.nombre.localeCompare(b.nombre);
+		});
+		$.each(categories, function(idx, category) {
+			$("#subStoreMobile").append("<li><a href=\"#\">"+category.nombre+"</a></li>");
+			$("#subStore").append("<li><a href=\"#\">"+category.nombre+"</a></li>");
+		});
+	</script>
 		<script type="text/javascript" src="js/featuredProducts.js"></script> 
 	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
 
@@ -690,14 +690,7 @@
 
 	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script type="text/javascript">
-		$('.block2-btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "fue añadido al carrito !", "success");
-				var num = parseInt($("#numberItemsCartMobile").text());
-				$(".header-icons-noti").text(num+1);
-			});	
-		});
+
 
 /* 		$('.block2-btn-addwishlist').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
@@ -710,5 +703,6 @@
 
 	<script src="js/main.js" type="text/javascript"></script>
 	<script src="js/searchNav.js" type="text/javascript"></script>
+	<script src="js/addToCart.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,8 +1,7 @@
 for(var i = products.length-1; i>products.length-9; i--){
 	var prod = products[i];
-	console.log(prod);
 	$("#featuredProducts").append("<div class=\"item-slick2 p-l-15 p-r-15\">\
-									<div class=\"block2\">\
+									<form class=\"block2\">\
 									<div class=\"block2-img wrap-pic-w of-hidden pos-relative\">\
 											<img src=\""+(prod.imagenes.length > 0? prod.imagenes[prod.imagen_portada].urlImg : "images/categorias/default.jpg")+"\" alt=\"IMG-PRODUCT\">\
 											<div class=\"block2-overlay trans-0-4\">\
@@ -11,16 +10,18 @@ for(var i = products.length-1; i>products.length-9; i--){
 													<i class=\"icon-wishlist icon_heart dis-none\" aria-hidden=\"true\"></i>\
 												</a>\
 												<div class=\"block2-btn-addcart w-size1 trans-0-4\">\
-													<button class=\"flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4\">Agregar</button>\
+													<a class=\"flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 addToCart\">A&ntilde;adir</a>\
 												</div>\
 											</div>\
 										</div>\
 										<div class=\"block2-txt p-t-20\">\
-											<a href=\"product-detail.html\" class=\"block2-name dis-block s-text3 p-b-5\">\
+										<input type=\"hidden\" name=\"prodID\" value=\""+prod.ID+"\">\
+										<input type=\"hidden\" name=\"prodName\" value=\""+prod.nombre+"\">\
+											<a href=\"#\" class=\"block2-name dis-block s-text3 p-b-5\">\
 												"+prod.nombre+"\
 											</a>\
 											<span class=\"block2-price m-text6 p-r-5 formatted_price\">$"+$.number( prod.precio, 2, ',', '.' )+"</span>\
 										</div>\
-									</div>\
+									</form>\
 								</div>");
 }

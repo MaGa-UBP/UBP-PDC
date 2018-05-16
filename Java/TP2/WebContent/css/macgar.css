@@ -88,3 +88,6 @@
 .main_menu > li:hover > a {
     border-bottom: 2px solid #e65540;
 }
+.addToCart:hover{
+	cursor: pointer;
+}
