@@ -6,26 +6,46 @@
       	"nombre": "Babucha Chicago Skinny",
       	"precio": 1449.90,
         "descripcion": "Pantalón de hombre Negro",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 1,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/pantalones/1/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/1/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/1/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/1/4.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
       {
       	"ID": 2,
       	"nombre": "Pantalón Atacama Sunrise",
       	"precio": 2199.90,
         "descripcion": "Pantalón de hombre Blanco",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 1,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/pantalones/2/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/2/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/2/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/2/4.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
 
       {
@@ -33,13 +53,23 @@
       	"nombre": "Pantalón Toulouse",
       	"precio": 1789.50,
         "descripcion": "Pantalon blanco tipo jogging de mujer",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 1,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/pantalones/3/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/3/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/3/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/3/4.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
 
       {
@@ -47,169 +77,287 @@
       	"nombre": "Pantalon Sahara",
       	"precio": 2499.90,
         "descripcion": "Pantalon khaki de mujer",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 1,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/pantalones/4/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/4/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/4/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/pantalones/4/4.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 3
       },
       {
         "ID": 5,
         "nombre": "Tapado Antartica",
         "precio": 3199.50,
         "descripcion": "Tapado blanco de mujer",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 2,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/abrigos/1/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/1/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/1/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/1/4.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
       {
         "ID": 6,
         "nombre": "Tapado Reyjavik",
         "precio": 4249.90,
         "descripcion": "Tapado negro de mujer",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 2,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/abrigos/2/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/2/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/2/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/2/4.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
       {
         "ID": 7,
         "nombre": "Campera Jordan",
         "precio": 3990.50,
         "descripcion": "Parka verde abrigada de mujer",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 2,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/abrigos/3/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/3/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/3/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/3/4.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/3/5.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
       {
         "ID": 8,
         "nombre": "Campera Manchester",
         "precio": 1999.90,
         "descripcion": "Campera estilo britanico camel con patches",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 2,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/abrigos/4/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/4/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/4/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/4/4.jpg"
+          },
+          {
+            "urlImg": "images/categorias/abrigos/4/5.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 1
       },
       {
         "ID": 9,
         "nombre": "Camisa Sherwood",
         "precio": 2199.99,
         "descripcion": "Camisa tipo leñador verde",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 3,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/camisas/1/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/camisas/1/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/camisas/1/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/camisas/1/4.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
       {
         "ID": 10,
         "nombre": "Camisa State Island",
         "precio": 1899.90,
         "descripcion": "Camisa azul marino",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 3,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/camisas/2/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/camisas/2/2.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
       {
       	"ID": 11,
       	"nombre": "Mochila Parisina",
       	"precio": 3299.50,
         "descripcion": "Mochila-Cartera negra de cuero",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 4,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/accesorios/1/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/1/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/1/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/1/4.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 2
       },
       {
       	"ID": 12,
       	"nombre": "Mochila Vienna",
       	"precio": 2225.00,
         "descripcion":"Mochila negra",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 4,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/accesorios/2/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/2/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/2/3.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
       {
       	"ID": 13,
       	"nombre": "Mochila Maui",
       	"precio": 2750.00,
-        "descripcion":"Mochila con peces",
-        "long_description": "",
+        "descripcion": "Mochila con peces",
+        "long_description":"",
         "categoria_id": 4,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/accesorios/3/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/3/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/3/3.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/3/4.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
       {
       	"ID": 14,
       	"nombre": "Gorro de hilo Brooklyn",
       	"precio": 749.90,
         "descripcion": "Gorro de hilo brixton",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 4,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/accesorios/4/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/4/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/4/3.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 0
       },
       {
       	"ID": 15,
       	"nombre": "Lentes de Sol Playacar",
       	"precio": 4250.50,
         "descripcion": "Lentes de Sol Rayban",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 4,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/accesorios/5/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/5/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/5/3.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 2
       },
       {
       	"ID": 16,
       	"nombre": "Gorra Camden Town",
       	"precio": 1299.99,
         "descripcion": "Gorra Brixton roja",
-        "long_description": "",
+        "long_description":"",
         "categoria_id": 4,
         "imagenes":[
           {
-            "urlImg": ""
+            "urlImg": "images/categorias/accesorios/6/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/6/2.jpg"
+          },
+          {
+            "urlImg": "images/categorias/accesorios/6/3.jpg"
           }
-        ]
+        ],
+        "imagen_portada": 2
       }
     ]
   }

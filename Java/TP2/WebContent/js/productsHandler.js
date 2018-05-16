@@ -22,8 +22,3 @@ else
 	categories = JSON.parse(localStorage.categoriesData).results; // Para leer los datos del localStorage
 }
 
-console.log("Productos: ");
-console.log(products);
-console.log("Categorias: ");
-console.log(categories);
-

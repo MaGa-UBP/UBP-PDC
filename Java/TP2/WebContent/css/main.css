@@ -1679,7 +1679,12 @@ li.sale-noti > a {
   content: 'Nuevo';
 }
 .block2-img{
-	max-height: 360px;
+	height: 360px;
+}
+.block2-img img{
+	object-fit: cover;
+    object-position: center;
+    height: 360px
 }
 /* ------------------------------------ */
 .block2-overlay {

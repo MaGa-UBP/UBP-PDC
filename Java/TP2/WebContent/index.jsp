@@ -37,6 +37,19 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/macgar.css">
+	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/priceFormat.js"></script>
+	<script type="text/javascript" src="js/productsHandler.js"></script>
+	<script type="text/javascript">
+		categories.sort(function (a, b) {
+		    return a.nombre.localeCompare(b.nombre);
+		});
+		$.each(categories, function(idx, category) {
+			$("#subStoreMobile").append("<li><a href=\"#\">"+category.nombre+"</a></li>");
+			$("#subStore").append("<li><a href=\"#\">"+category.nombre+"</a></li>");
+		});
+	</script>
+	
 </head>
 <body class="animsition">
 
@@ -440,215 +453,7 @@
 
 			<!-- Slide2 -->
 			<div class="wrap-slick2">
-				<div class="slick2">
-
-
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative">
-								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
-
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-											Agregar
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="block2-txt p-t-20">
-								<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-									Coach slim easton black
-								</a>
-
-								<span class="block2-price m-text6 p-r-5">
-									$165.90
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
-
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-											Agregar
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="block2-txt p-t-20">
-								<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-									Frayed denim shorts
-								</a>
-
-								<span class="block2-oldprice m-text7 p-r-5">
-									$29.50
-								</span>
-
-								<span class="block2-newprice m-text8 p-r-5">
-									$15.90
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
-
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-											Agregar
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="block2-txt p-t-20">
-								<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-									Herschel supply co 25l
-								</a>
-
-								<span class="block2-price m-text6 p-r-5">
-									$75.00
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative">
-								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
-
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-											Agregar
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="block2-txt p-t-20">
-								<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-									Denim jacket blue
-								</a>
-
-								<span class="block2-price m-text6 p-r-5">
-									$92.50
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative">
-								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
-
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-											Agregar
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="block2-txt p-t-20">
-								<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-									Coach slim easton black
-								</a>
-
-								<span class="block2-price m-text6 p-r-5">
-									$165.90
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="images/categorias/default.jpg" alt="IMG-PRODUCT">
-
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-											Agregar
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="block2-txt p-t-20">
-								<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-									Frayed denim shorts
-								</a>
-
-								<span class="block2-oldprice m-text7 p-r-5">
-									$29.50
-								</span>
-
-								<span class="block2-newprice m-text8 p-r-5">
-									$15.90
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				<div class="slick2" id="featuredProducts"></div>
 			</div>
 
 		</div>
@@ -873,19 +678,8 @@
 
 
 
-	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/productsHandler.js"></script>
-	<script type="text/javascript">
-		categories.sort(function (a, b) {
-		    return a.nombre.localeCompare(b.nombre);
-		});
-		$.each(categories, function(idx, category) {
-			console.log(category);
-			$("#subStoreMobile").append("<li><a href=\"#\">"+category.nombre+"</a></li>");
-			$("#subStore").append("<li><a href=\"#\">"+category.nombre+"</a></li>");
-		});
-	</script>
 	
+		<script type="text/javascript" src="js/featuredProducts.js"></script> 
 	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
 
 	<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
