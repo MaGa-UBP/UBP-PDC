@@ -7,6 +7,18 @@
 		<item value="/Users/gframirez/Documents/UBP/Q9/PDC/Java/3Estrellas"/>
 		<item value="/Users/gframirez/Documents/UBP/Q9/PDC/Java/JSP"/>
 	</list>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/gframirez/Documents/UBP/Q9/PDC/Servlets-Cookies-Sessions"/>
+			<item value="/Users/gframirez/Downloads/E-commerce-jsp-and-servlet--master/Team3_Project Source Code"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
