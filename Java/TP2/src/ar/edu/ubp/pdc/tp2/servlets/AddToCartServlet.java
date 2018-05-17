@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class AddToCartServlet
  */
-@WebServlet("/addToCart")
+@WebServlet("/cart/add")
 public class AddToCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -54,7 +54,7 @@ public class AddToCartServlet extends HttpServlet {
 		// ACA VA TODO LO DE SESION
 		
 		HttpSession session = request.getSession(true); 
-
+//		Integer 
 		Integer cant = (session.getAttribute(request.getParameter("prodID")) != null? ((Integer)session.getAttribute(request.getParameter("prodID")))+1 : 1);
 		
 		session.setAttribute(request.getParameter("prodID"), cant);

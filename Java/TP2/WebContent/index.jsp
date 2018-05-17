@@ -703,6 +703,6 @@
 
 	<script src="js/main.js" type="text/javascript"></script>
 	<script src="js/searchNav.js" type="text/javascript"></script>
-	<script src="js/addToCart.js" type="text/javascript"></script>
+	<script src="js/cartHandler.js" type="text/javascript"></script>
 </body>
 </html>
