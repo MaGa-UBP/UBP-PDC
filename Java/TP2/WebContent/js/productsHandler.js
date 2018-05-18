@@ -22,3 +22,17 @@ else
 	categories = JSON.parse(localStorage.categoriesData).results; // Para leer los datos del localStorage
 }
 
+
+function getProduct(id){
+	//Solo pueden entrar IDs definidos en el array de productos 
+	var pos = -1;
+	 $.each(products, function(i, product) {
+		 if(product.ID == id){
+			 pos = i;
+			 return false;
+		 }
+	 });
+	 if(pos != -1){
+		 return products[pos];
+	 }
+}

@@ -11,10 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import ar.edu.ubp.pdc.tp2.classes.Product;
+
 /**
  * Servlet implementation class AddToCartServlet
  */
-@WebServlet("/cart/add")
+@WebServlet("/addToCart.jsp")
 public class AddToCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -40,7 +42,9 @@ public class AddToCartServlet extends HttpServlet {
 		while(attrs.hasMoreElements()) {
 			attrName = attrs.nextElement();
 			out.println("Key:"+ attrName +", ");
-			out.println("Value: "+ session.getAttribute(attrName) +"\n");
+			Product aux = (Product) session.getAttribute(attrName);
+			out.println("Name: "+ aux.getNombre());
+			out.println("Cant: "+ aux.getCantidad() +"\n");
 		}
 		
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -54,11 +58,18 @@ public class AddToCartServlet extends HttpServlet {
 		// ACA VA TODO LO DE SESION
 		
 		HttpSession session = request.getSession(true); 
-//		Integer 
-		Integer cant = (session.getAttribute(request.getParameter("prodID")) != null? ((Integer)session.getAttribute(request.getParameter("prodID")))+1 : 1);
 		
-		session.setAttribute(request.getParameter("prodID"), cant);
-		response.getWriter().append(request.getParameter("prodName"));
+		Integer cant = 1; //Aca hay que tomar el parametro cantidad cuanndo este hecho
+		
+		if(session.getAttribute(request.getParameter("prodID")) != null) {
+			Product aux = (Product) session.getAttribute(request.getParameter("prodID"));
+			cant += aux.getCantidad();
+		}
+		
+		Product productToAdd = new Product(request.getParameter("prodID"), request.getParameter("prodName"), request.getParameter("prodImgUrl"), cant, Float.parseFloat(request.getParameter("prodPrice")));
+
+		session.setAttribute(request.getParameter("prodID"), productToAdd);
+		response.getWriter().append(request.getParameter("prodID")+";"+cant);
 //		response.sendRedirect("./index.jsp");
 	}
 

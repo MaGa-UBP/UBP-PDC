@@ -91,3 +91,33 @@
 .addToCart:hover{
 	cursor: pointer;
 }
+.addToCart{
+	color: #FFF!important;
+}
+
+.header-cart-wrapbtn{
+	width: 100%;
+}
+
+.active1{
+	color: #e65540 !important;
+	font-weight: bold;
+}
+.item-menu-mobile .active1{
+	color: #FFFFFF !important;;
+	text-decoration: underline;
+}
+.block2-img img{
+	object-fit: cover;
+    object-position: center;
+    height: 360px
+}
+.header-cart-item-img{
+	height: 80px;
+}
+.header-cart-item-img img{
+	object-fit: cover;
+    object-position: center;
+    height: 80px;
+    width: 80px;
+}

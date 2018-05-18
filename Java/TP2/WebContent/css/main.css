@@ -1581,7 +1581,8 @@ li.sale-noti > a {
     box-shadow: none;
 }
 
-.swal-button {
+.swal-button,
+.swal2-confirm {
     background-color: #e65540;
     font-family: Montserrat-Regular;
     font-size: 15px;
@@ -1593,25 +1594,30 @@ li.sale-noti > a {
     -o-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
+    padding: 10px 24px;
+    cursor: pointer;
 }
 
 .swal-button:hover {
     background-color: #333333;
 }
 
-.swal-button:active {
+.swal-button:active,
+.swal2-confirm:active {
     background-color: #e65540;
 }
 
-.swal-title {
-  font-family: Montserrat-Medium;
-  color: #333333;
-  font-size: 16px;
-  line-height: 1.5;
-  padding: 0 15px;
+.swal-title,
+.swal2-popup .swal2-title {
+  font-family: Montserrat-Medium!important;
+  color: #333333!important;
+  font-size: 16px!important;
+  line-height: 1.5!important;
+  padding: 0 15px!important;
 }
 
-.swal-text {
+.swal-text,
+.swal2-popup #swal2-content {
   font-family: Montserrat-Regular;
   color: #333333;
   font-size: 15px;
@@ -1621,7 +1627,14 @@ li.sale-noti > a {
 .swal-footer {
     margin-top: 0;
 }
-
+.swal2-popup .swal2-actions{
+	margin: 0 !important;
+	display: inline-block !important;
+	
+}
+.swal2-popup .swal2-actions .swal2-confirm{
+	float: right;
+}
 
 /*[ Block1 ]
 ///////////////////////////////////////////////////////////
@@ -1681,11 +1694,7 @@ li.sale-noti > a {
 .block2-img{
 	height: 360px;
 }
-.block2-img img{
-	object-fit: cover;
-    object-position: center;
-    height: 360px
-}
+
 /* ------------------------------------ */
 .block2-overlay {
   position: absolute;
