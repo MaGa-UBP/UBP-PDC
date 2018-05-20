@@ -44,7 +44,12 @@ function filter(categoria, texto, array){
 			$("#subStoreLateral").append("<li class=\"p-t-4\"><a href=\"#\" class=\"s-text13 catSideFilter\" data-filter=\""+category.ID+"\">"+category.nombre+"</a></li>");
 		}
 	});
+	$("#searchResultsText").empty();
+	if(texto!=""){
+		$("#searchResultsText").html("<p>Se est&aacute;n mostrando los resultados de: \""+texto+"\"</p><br/>");
+	}
 	if(productsAux.length > 0){
+		$("#productList").empty();
 		printProductsList(productsAux);
 	}else{
 		$("#productList").html("<p>No se han encontrado resultados</p>");
@@ -52,7 +57,6 @@ function filter(categoria, texto, array){
 }
 
 function printProductsList(array){
-	$("#productList").empty();
 	for(var i = 0; i<array.length; i++){
 		var prod = array[i];
 		$("#cantResultados").text(array.length);

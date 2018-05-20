@@ -355,7 +355,7 @@ public class CategoriasServlet extends HttpServlet {
             		"				<div class=\"col-sm-6 col-md-8 col-lg-9 p-b-50\">\n" + 
             		"					<!--  -->\n" + 
             		"					<div class=\"flex-sb-m flex-w p-b-35\">\n" + 
-            		"						<div class=\"flex-w\">\n" + 
+            		"						<div class=\"flex-w\" id=\"searchResultsText\">\n" + 
             		"\n" + 
             		"						</div>\n" + 
             		"\n" + 
