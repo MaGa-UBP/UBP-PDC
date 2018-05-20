@@ -1,18 +1,15 @@
-package ar.edu.ubp.pdc.tp2.classes;
+package ar.edu.ubp.pdc.tp2.beans;
 
-public class Product {
+public class ProductBean {
+	
 	private String ID;
 	private String nombre;
 	private Integer cantidad;
 	private Float precio;
 	private String urlImagen;
 	
-	public Product(String iD, String nombre, String urlImagen, Integer cantidad, Float precio) {
-		this.ID = iD;
-		this.nombre = nombre;
-		this.urlImagen = urlImagen;
-		this.cantidad = cantidad;
-		this.precio = precio;
+	public ProductBean() {
+		
 	}
 	
 	public String getID() {
@@ -45,4 +42,6 @@ public class Product {
 	public void setUrlImagen(String urlImagen) {
 		this.urlImagen = urlImagen;
 	}
+	
+	
 }

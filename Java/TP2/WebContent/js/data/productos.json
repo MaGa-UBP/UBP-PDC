@@ -5,7 +5,7 @@
       	"ID": 1,
       	"nombre": "Babucha Chicago Skinny",
       	"precio": 1449.90,
-        "descripcion": "Pantalón de hombre Negro",
+        "descripcion": "Pantal&oacute;n de hombre Negro",
         "long_description":"",
         "categoria_id": 1,
         "imagenes":[
@@ -28,7 +28,7 @@
       	"ID": 2,
       	"nombre": "Pantal&oacute;n Atacama Sunrise",
       	"precio": 2199.90,
-        "descripcion": "Pantalón de hombre Blanco",
+        "descripcion": "Pantal&oacute;n de hombre Blanco",
         "long_description":"",
         "categoria_id": 1,
         "imagenes":[
@@ -50,9 +50,9 @@
 
       {
       	"ID": 3,
-      	"nombre": "Pantalón Toulouse",
+      	"nombre": "Pantal&oacute;n Toulouse",
       	"precio": 1789.50,
-        "descripcion": "Pantalon blanco tipo jogging de mujer",
+        "descripcion": "Pantal&oacute;n blanco tipo jogging de mujer",
         "long_description":"",
         "categoria_id": 1,
         "imagenes":[
@@ -74,9 +74,9 @@
 
       {
       	"ID": 4,
-      	"nombre": "Pantalon Sahara",
+      	"nombre": "Pantal&oacute;n Sahara",
       	"precio": 2499.90,
-        "descripcion": "Pantalon khaki de mujer",
+        "descripcion": "Pantal&oacute;n khaki de mujer",
         "long_description":"",
         "categoria_id": 1,
         "imagenes":[
@@ -171,7 +171,7 @@
         "ID": 8,
         "nombre": "Campera Manchester",
         "precio": 1999.90,
-        "descripcion": "Campera estilo britanico camel con patches",
+        "descripcion": "Campera estilo brit&acute;nico camel con patches",
         "long_description":"",
         "categoria_id": 2,
         "imagenes":[
@@ -197,7 +197,7 @@
         "ID": 9,
         "nombre": "Camisa Sherwood",
         "precio": 2199.99,
-        "descripcion": "Camisa tipo leñador verde",
+        "descripcion": "Camisa tipo le&ntilde;ador verde",
         "long_description":"",
         "categoria_id": 3,
         "imagenes":[

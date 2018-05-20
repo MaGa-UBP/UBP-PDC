@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ar.edu.ubp.pdc.tp2.classes.Product;
+import ar.edu.ubp.pdc.tp2.beans.ProductBean;
 
 
 /**
@@ -38,7 +38,7 @@ public class CategoriasServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("text/html;charset=ISO-8859-1");
+		response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
         	HttpSession session = request.getSession(true);   
@@ -96,7 +96,7 @@ public class CategoriasServlet extends HttpServlet {
             		"\n" + 
             		"			<div class=\"wrap_header\">\n" + 
             		"				<!-- Logo -->\n" + 
-            		"				<a href=\"index.html\" class=\"logo\">\n" + 
+            		"				<a href=\"index.jsp\" class=\"logo\">\n" + 
             		"					<img src=\"images/logo/mg.png\" alt=\"IMG-LOGO\">\n" + 
             		"				</a>\n" + 
             		"\n" + 
@@ -104,7 +104,7 @@ public class CategoriasServlet extends HttpServlet {
             		"				<div class=\"wrap_menu\">\n" + 
             		"					<nav class=\"menu\">\n" + 
             		"						<ul class=\"main_menu\"  id=\"subStore\">\n" + 
-            		"							<li><a href=\"#\" class=\"catFilter active1\" data-filter=\"*\">Todo</a></li>\n"+
+            		"							<li><a href=\"#\" class=\"catFilter active1\" data-filter=\"all\">Todo</a></li>\n"+
             		"						</ul>\n" + 
             		"					</nav>\n" + 
             		"				</div>\n" + 
@@ -126,11 +126,11 @@ public class CategoriasServlet extends HttpServlet {
             Integer cantTotItems = 0;
             Float total = (float) 0;
             
-            List<Product> productsArray = new ArrayList<Product>();
+            List<ProductBean> productsArray = new ArrayList<ProductBean>();
             
             while (attrNames.hasMoreElements()) {
             	attrName = attrNames.nextElement();
-            	Product aux = (Product) session.getAttribute(attrName);
+            	ProductBean aux = (ProductBean) session.getAttribute(attrName);
             	productsArray.add(aux);
             	cantTotItems+=aux.getCantidad();
             	total += aux.getCantidad()*aux.getPrecio();
@@ -145,7 +145,7 @@ public class CategoriasServlet extends HttpServlet {
             if(cantTotItems == 0) {
             	 out.println("								<p class=\"emptyCart\">Tu carrito est&aacute; vac&iacute;o</p>");
             }else {
-	            for(Product auxProd : productsArray) {
+	            for(ProductBean auxProd : productsArray) {
 	                out.println("<li class=\"header-cart-item\" id=\"ci"+auxProd.getID()+"\">");
 	                out.println("<div class=\"header-cart-item-img\">");
 	                out.println("<img src=\""+auxProd.getUrlImagen()+"\" alt=\"IMG\">"); 
@@ -181,11 +181,11 @@ public class CategoriasServlet extends HttpServlet {
             		"				</div>\n" + 
             		"			</div>\n" + 
             		"			<div class=\"container-fluid nav-buscar\">\n" + 
-            		"				<form action=\"/search\" method=\"GET\" class=\"row justify-content-center\">\n" + 
+            		"				<form action=\"index.jsp\" id=\"searchForm\" method=\"GET\" class=\"row justify-content-center\">\n" + 
             		"					<div class=\"col col-10\">\n" + 
             		"						<div class=\"input-group\">\n" + 
             		"							<label for=\"cuadroBusqueda\" style=\"display: none;\">¿Qué estás buscando?</label> \n" + 
-            		"							<input type=\"text\" name=\"q\" id=\"cuadroBusqueda\" class=\"form-control\" placeholder=\"¿Qué estás buscando?\">\n" + 
+            		"							<input type=\"text\" name=\"searchQ\" id=\"cuadroBusqueda\" class=\"form-control\" placeholder=\"¿Qué estás buscando?\">\n" + 
             		"							<span class=\"input-group-btn\">\n" + 
             		"								<button class=\"btn btn-default\" id=\"btn-buscar-cerrar\" type=\"button\">\n" + 
             		"									<span class=\"cerrar fa-3x\" aria-hidden=\"true\">X</span>\n" + 
@@ -203,7 +203,7 @@ public class CategoriasServlet extends HttpServlet {
             		"		<!-- Header Mobile -->\n" + 
             		"		<div class=\"wrap_header_mobile\">\n" + 
             		"			<!-- Logo moblie -->\n" + 
-            		"			<a href=\"index.html\" class=\"logo-mobile\">\n" + 
+            		"			<a href=\"index.jsp\" class=\"logo-mobile\">\n" + 
             		"				<img src=\"images/logo/mg.png\" alt=\"IMG-LOGO\">\n" + 
             		"			</a>\n" + 
             		"\n" + 
@@ -220,14 +220,31 @@ public class CategoriasServlet extends HttpServlet {
             		"					<div class=\"header-wrapicon2\">\n" + 
             		"						<div class=\"header-icon1-wrapper\">\n" + 
             		"							<img src=\"images/icons/icon-header-02.png\" class=\"header-icon1 js-show-header-dropdown\" alt=\"ICON\">\n" + 
-            		"							<span class=\"header-icons-noti\" id=\"numberItemsCartMobile\">0</span>\n" + 
+            		"							<span class=\"header-icons-noti\" id=\"numberItemsCartMobile\">"+cantTotItems+"</span>\n" + 
             		"						</div>\n" + 
             		"\n" + 
             		"						<!-- Header cart noti -->\n" + 
             		"						<div class=\"header-cart header-dropdown\">\n" + 
-            		"							<ul class=\"header-cart-wrapitem\" id=\"cartItemsMobile\">\n" + 
-            		"								<p class=\"emptyCart\">Tu carrito est&aacute; vac&iacute;o</p>\n" + 
-            		"							</ul>\n" + 
+            		"							<ul class=\"header-cart-wrapitem\" id=\"cartItemsMobile\">\n");
+            if(cantTotItems == 0) {
+           	 out.println("								<p class=\"emptyCart\">Tu carrito est&aacute; vac&iacute;o</p>");
+		   }else {
+		        for(ProductBean auxProd : productsArray) {
+		            out.println("<li class=\"header-cart-item\" id=\"ci"+auxProd.getID()+"\">");
+					out.println("<div class=\"header-cart-item-img\">");
+					out.println("<img src=\""+auxProd.getUrlImagen()+"\" alt=\"IMG\">"); 
+					out.println("</div>");
+					out.println("<div class=\"header-cart-item-txt\">");
+					out.println("<a href=\"#\" class=\"header-cart-item-name\">" + auxProd.getNombre() + "</a>");
+					out.println("<div class=\"header-cart-item-info\">");
+					out.println("<span class=\"cantProdCart\">"+auxProd.getCantidad()+"</span> x ");
+					out.println("<span class=\"precioProdCart\">$"+NumberFormat.getInstance(new Locale("es", "AR")).format(auxProd.getPrecio())+"</span>");
+					out.println("</div>");
+					out.println("</div>");
+					out.println("</li>");
+		          }
+		   }
+            out.println("							</ul>\n" + 
             		"\n" + 
             		"							<div class=\"header-cart-total\">\n" + 
             		"								Total: $<span class=\"totalCart\">0.00</span>\n" + 
@@ -281,7 +298,7 @@ public class CategoriasServlet extends HttpServlet {
             		"						</div>\n" + 
             		"					</li>\n" + 
             		"\n" + 
-            		"					<li class=\"item-menu-mobile\"><a href=\"#\" class=\"catFilter active1\" data-filter=\"*\">Todo</a></li>\n"+
+            		"					<li class=\"item-menu-mobile\"><a href=\"#\" class=\"catFilter active1\" data-filter=\"all\">Todo</a></li>\n"+
             		"				</ul>\n" + 
             		"			</nav>\n" + 
             		"		</div>\n" + 
@@ -325,13 +342,12 @@ public class CategoriasServlet extends HttpServlet {
             		"			<div class=\"row\">\n" + 
             		"				<div class=\"col-sm-6 col-md-4 col-lg-3 p-b-50\">\n" + 
             		"					<div class=\"leftbar p-r-20 p-r-0-sm\">\n" + 
-            		"						<!--  -->\n" + 
+            		"						<h3 class=\"m-text16 p-b-9\">Filtros</h3>\n" + 
             		"						<h4 class=\"m-text14 p-b-7\">\n" + 
             		"							Categor&iacute;as\n" + 
             		"						</h4>\n" + 
             		"\n" + 
             		"						<ul class=\"p-b-54\" id=\"subStoreLateral\">\n" + 
-            		"						<li class=\"p-t-4\"><a href=\"#\" class=\"catFilter s-text13 active1\" data-filter=\"*\">Todo</a></li>\n"+
             		"						</ul>\n" + 
             		"					</div>\n" + 
             		"				</div>\n" + 
@@ -387,7 +403,6 @@ public class CategoriasServlet extends HttpServlet {
             		"		$.each(categories, function(idx, category) {\n" + 
             		"			$(\"#subStoreMobile\").append(\"<li class=\\\"item-menu-mobile\\\"><a href=\\\"#\\\" data-filter=\\\"\"+category.ID+\"\\\" class=\\\"catFilter\\\">\"+category.nombre+\"</a></li>\");\n" + 
             		"			$(\"#subStore\").append(\"<li><a href=\\\"#\\\" data-filter=\\\"\"+category.ID+\"\\\" class=\\\"catFilter\\\">\"+category.nombre+\"</a></li>\");\n" + 
-            		"			$(\"#subStoreLateral\").append(\"<li class=\\\"p-t-4\\\"><a href=\\\"#\\\" class=\\\"s-text13 catFilter\\\" data-filter=\\\"\"+category.ID+\"\\\">\"+category.nombre+\"</a></li>\");\n" +	
             		"		});\n" + 
             		"	</script>\n" + 
             		"	<script type=\"text/javascript\" src=\"vendor/animsition/js/animsition.min.js\"></script>\n" + 
@@ -404,8 +419,9 @@ public class CategoriasServlet extends HttpServlet {
             		"	<script src=\"js/main.js\" type=\"text/javascript\"></script>\n" + 
             		"	<script src=\"js/searchNav.js\" type=\"text/javascript\"></script>\n" + 
             		"	<script type=\"text/javascript\" src=\"js/productsList.js\"></script>");
-            String catID = ((request.getParameter("catID")==null || request.getParameter("catID")=="" || request.getParameter("catID").equals("all"))? "\"*\"" : request.getParameter("catID"));
-            out.println("<script type=\"text/javascript\">filter("+catID+", products);</script>");
+            String catID = ((request.getParameter("catID")==null || request.getParameter("catID")=="" || request.getParameter("catID").equals("all"))? "\"all\"" : request.getParameter("catID"));
+            String searchQ = (request.getParameter("searchQ")==null || request.getParameter("searchQ")==""? "\"\"" : "\""+request.getParameter("searchQ")+"\"");
+            out.println("<script type=\"text/javascript\">filter("+catID+", "+searchQ+", products);</script>");
             out.println("<script src=\"js/cartHandler.js\" type=\"text/javascript\"></script>");
             out.println("</body>");
             out.println("</html>");

@@ -1,6 +1,6 @@
-$('.addToCart').on('click', function(){ // Agregar al carrito
+$(document).on('click', '.addToCart', function(){  // Agregar al carrito
 	$.ajax({
-		url: "addToCart.jsp",
+		url: "cart.jsp",
 		type: "post",
 		dataType: "html",
 		data:$(this).closest('form').serialize(), //Buscamos los input number de la pagina.
@@ -39,9 +39,10 @@ $('.addToCart').on('click', function(){ // Agregar al carrito
 
 function agregarACarrito(product, cant, selector){
 	$(".emptyCart").hide();
+	var img = (product.imagenes.length > 0? product.imagenes[product.imagen_portada].urlImg : "images/categorias/default.jpg");
 	$(selector).append("<li class=\"header-cart-item\" id=\"ci"+product.ID+"\">\
 			<div class=\"header-cart-item-img\">\
-				<img src=\""+(product.imagenes.length > 0? product.imagenes[product.imagen_portada].urlImg : "images/categorias/default.jpg")+"\" alt=\"Imagen "+product.nombre+"\"/>\
+				<img src=\""+img+"\" alt=\"Imagen "+product.nombre+"\"/>\
 			</div>\
 			<div class=\"header-cart-item-txt\">\
 				<a href=\"#\" class=\"header-cart-item-name\">"+product.nombre+"</a>\
@@ -49,15 +50,15 @@ function agregarACarrito(product, cant, selector){
 					<span class=\"cantProdCart\">"+cant+"</span> x <span class=\"precioProdCart\">"+product.precio+"</span>\
 			</div></div></li>");
 		
-		
-//		$(selector+"Mobile").append("<li class=\"header-cart-item\" id=\"ci"+product.ID+"\">\
-//				<div class=\"header-cart-item-img\">\
-//					<img src=\""+(product.imagenes.length > 0? product.imagenes[product.imagen_portada].urlImg : "images/categorias/default.jpg")+"\" alt=\"Imagen "+product.nombre+"\"/>\
-//				</div>\
-//				<div class=\"header-cart-item-txt\">\
-//					<a href=\"#\" class=\"header-cart-item-name\">"+product.nombre+"</a>\
-//					<div class=\"header-cart-item-info\">\
-//						<span class=\"cantProdCart\">"+cant+"</span> x <span class=\"precioProdCart\">"+product.precio+"</span>\
-//				</div></div></li>");
+	
+		$(selector+"Mobile").append("<li class=\"header-cart-item\">\
+				<div class=\"header-cart-item-img\">\
+					<img src=\""+img+"\" alt=\"Imagen "+product.nombre+"\"/>\
+				</div>\
+				<div class=\"header-cart-item-txt\">\
+					<a href=\"#\" class=\"header-cart-item-name\">"+product.nombre+"</a>\
+					<div class=\"header-cart-item-info\">\
+						<span class=\"cantProdCart\">"+cant+"</span> x <span class=\"precioProdCart\">"+product.precio+"</span>\
+				</div></div></li>");
 	
 }
