@@ -114,20 +114,19 @@ public class Cart extends HttpServlet {
             String attrName;
             Enumeration<String> attrNames = session.getAttributeNames();
             Integer cantTotItems = 0;
-            Float total = (float) 0;
-
+            Float totalItem = (float) 0;
+            Float total = (float) 0;;
             List<ProductBean> productsArray = new ArrayList<ProductBean>();
             while (attrNames.hasMoreElements()) {
             	attrName = attrNames.nextElement();
             	ProductBean aux = (ProductBean) session.getAttribute(attrName);
             	productsArray.add(aux);
             	cantTotItems+=aux.getCantidad();
-            	total += aux.getCantidad()*aux.getPrecio();
+            	totalItem += aux.getCantidad()*aux.getPrecio();
             }
             out.println("<span class=\"header-icons-noti\" id=\"numberItemsCart\">\"+cantTotItems+\"</span>");
             out.println("</div>");
 
-            out.println("<!-- Header cart noti -->");
             out.println("<div class=\"header-cart header-dropdown\">");
             out.println("<ul class=\"header-cart-wrapitem\" id=\"cartItems\">");
             if(cantTotItems == 0) {
@@ -150,7 +149,7 @@ public class Cart extends HttpServlet {
             }
             out.println("</ul>");
             out.println("<div class=\"header-cart-total\">");
-            out.println("<input type=\"hidden\" value=\"\"+total+\"\" name=\"inputTotalCart\"/> Total: $<span class=\"totalCart\">\"+NumberFormat.getInstance(new Locale(\"es\", \"AR\")).format(total)+\"</span>");
+            out.println("<input type=\"hidden\" value=\""+totalItem+"\" name=\"inputTotalCart\"/> Total: $<span class=\"totalCart\">"+NumberFormat.getInstance(new Locale("es", "AR")).format(totalItem)+"</span>");
             out.println("</div>");
             out.println("<div class=\"header-cart-buttons\">");
             out.println("<div class=\"header-cart-wrapbtn\">");
@@ -216,19 +215,17 @@ public class Cart extends HttpServlet {
 
             out.println("</header>");
 
-            out.println("<-- Title Page -->");
-            out.println("<section class=\"bg-title-page p-t-40 p-b-50 flex-col-c-m\" style=\"background-image: url(images/heading-pages-01.jpg);");
-            out.println("<h2 class=\"l-text2 t-center\"> Carrito de compras </h2>");
-            out.println("</section>");
-
-            out.println("<-- Cart -->");
             out.println("<section class=\"cart bgwhite p-t-70 p-b-100\">");
             out.println("<div class=\"container\">");
-            out.println("<!-- Cart item -->");
             out.println("<div class=\"container-table-cart pos-relative\">");
             out.println("<div class=\"wrap-table-shopping-cart bgwhite\">");
+            Float totalItemCart = (float) 0;
+            Float totalCart = (float) 0;;
+            
             if(cantTotItems == 0) {
             	out.println("<p class=\"emptyCart\">Tu carrito est&aacute; vac&iacute;o</p>");
+                out.println("</div>");
+                out.println("</div>");
             }else {
             	out.println("<table class=\"table-shopping-cart\">");
                 out.println("<tr class=\"table-head\">");
@@ -258,35 +255,34 @@ public class Cart extends HttpServlet {
                     out.println("</button>");
                     out.println("</div>");
                     out.println("</td>");
-                    out.println("<td class=\"column-5\">"+NumberFormat.getInstance(new Locale("es", "AR")).format(auxProd.getCantidad() * auxProd.getPrecio()) +"</td>");
+                    totalItemCart = auxProd.getCantidad() * auxProd.getPrecio();
+                    totalCart += totalItemCart;
+                    out.println("<td class=\"column-5\">$"+NumberFormat.getInstance(new Locale("es", "AR")).format(totalItemCart) +"</td>");
                     out.println("</tr>");
             	}
+                out.println("</table>");
+                out.println("</div>");
+                out.println("</div>");
+                out.println("<div class=\"flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm\">");
+                //  out.println("<div class=\"flex-w flex-m w-full-sm\">");
+                //  out.println("</div>");
+                out.println("<div class=\"size11 trans-0-4 m-t-10 m-b-10\">");
+                out.println("<!-- Button -->");
+                out.println("<button class=\"flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4\"> Actualizar carrito </button>");
+                out.println("</div>");
+                out.println("</div>");
+                
+                
+                out.println("<div class=\"bo9 w-size18 p-l-40 p-r-40 p-t-30 p-b-38 m-t-30 m-r-0 m-l-auto p-lr-15-sm\">");
+                out.println("<div class=\"flex-w flex-sb-m p-t-26 p-b-30\">");
+                out.println("<span class=\"m-text22 w-size19 w-full-sm\"> Total carrito </span>");
+                out.println("<span class=\"m-text21 w-size20 w-full-sm\">$"+NumberFormat.getInstance(new Locale("es", "AR")).format(totalCart) + " </span>");
+                out.println("</div>");
+                out.println("<div class=\"size15 trans-0-4\">");
+                out.println("<button class=\"flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4\"> Finalizar compra </button>");
+                out.println("</div>");
+                out.println("</div>");
             }
-            out.println("</table>");
-            out.println("</div>");
-            out.println("</div>");
-
-            out.println("<div class=\"flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm\">");
-        //  out.println("<div class=\"flex-w flex-m w-full-sm\">");
-        //  out.println("</div>");
-            out.println("<div class=\"size10 trans-0-4 m-t-10 m-b-10\">");
-            out.println("<!-- Button -->");
-            out.println("<button class=\"flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4\"> Actualizar carrito </button>");
-            out.println("</div>");
-            out.println("</div>");
-            
-            
-            out.println("<!-- Total -->");
-            out.println("<div class=\"bo9 w-size18 p-l-40 p-r-40 p-t-30 p-b-38 m-t-30 m-r-0 m-l-auto p-lr-15-sm\">");
-            out.println("<div class=\"flex-w flex-sb-m p-t-26 p-b-30\">");
-            out.println("<span class=\"m-text22 w-size19 w-full-sm\"> Total carrito </span>");
-            out.println("<span class=\"m-text21 w-size20 w-full-sm\">" +total + " </span>");
-            out.println("/div");
-            out.println("<div class=\"size15 trans-0-4\">");
-            out.println("<!-- Button -->");
-            out.println("<button class=\"flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4\"> Finalizar compra </button>");
-            out.println("</div>");
-            out.println("</div>");
             out.println("</div>");
             out.println("</section>");
 
@@ -323,7 +319,7 @@ public class Cart extends HttpServlet {
             		"        $(\"#subStore\").append(\"<li><a href=\\\"#\\\" data-filter=\\\"\"+category.ID+\"\\\" class=\\\"catFilter\\\">\"+category.nombre+\"</a></li>\");\n" +
             		"        $(\"#subStoreLateral\").append(\"<li class=\\\"p-t-4\\\"><a href=\\\"#\\\" class=\\\"s-text13 catFilter\\\" data-filter=\\\"\"+category.ID+\"\\\">\"+category.nombre+\"</a></li>\");\n" +
             		"    });");
-            out.println("<script>");
+            out.println("</script>");
             out.println("<script type=\"text/javascript\" src=\"vendor/animsition/js/animsition.min.js\"></script>");
             out.println("<script type=\"text/javascript\" src=\"vendor/bootstrap/js/popper.js\"></script>");
             out.println("<script type=\"text/javascript\" src=\"vendor/bootstrap/js/bootstrap.min.js\"></script>");
