@@ -66,7 +66,16 @@ function printProductsList(array){
 										<div class=\"block2-img wrap-pic-w of-hidden pos-relative\">\
 												<img src=\""+prodImg+"\" alt=\"IMG-PRODUCT\">\
 												<div class=\"block2-overlay trans-0-4\">\
-													<div class=\"block2-btn-addcart w-size1 trans-0-4\">\
+													<div class=\"block2-btn-addcart dark w-size1 trans-0-4\">\
+														<div class=\"flex-w w-size17\">\
+															<a href=\"#\" class=\"btn-num-product-down color1 flex-c-m size7 bg8 eff2\">\
+																<i class=\"fs-12 fa fa-minus\" aria-hidden=\"true\"></i>\
+															</a>\
+															<input class=\"size8 m-text18 t-center num-product\" type=\"number\" name=\"prodQuantity\" value=\"1\">\
+															<a href=\"#\"  class=\"btn-num-product-up color1 flex-c-m size7 bg8 eff2\">\
+																<i class=\"fs-12 fa fa-plus\" aria-hidden=\"true\"></i>\
+															</a>\
+														</div>\
 														<a class=\"flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 addToCart\">A&ntilde;adir</a>\
 													</div>\
 												</div>\
@@ -85,6 +94,8 @@ function printProductsList(array){
 										</form>\
 									</div>");
 	}
+	
+
 }
 $(document).on('click','.catFilter', function(e){
 	e.preventDefault();
@@ -100,6 +111,21 @@ $(document).on('click','.catSideFilter', function(e){
 	var text = getUrlParameter("searchQ");
 	filter(cat, text,products); 
 });
+
+$(document).on('click', '.btn-num-product-down',  function(e){
+	e.preventDefault();
+	var num = parseInt($(this).parent().find("input").val());
+	if(num>1){
+		$(this).parent().find("input[name=prodQuantity]").val(num-1);
+	}
+});
+
+$(document).on('click', '.btn-num-product-up',  function(e){
+	e.preventDefault();
+	var num = parseInt($(this).parent().find("input").val());
+	$(this).parent().find("input[name=prodQuantity]").val(num+1);
+});
+
 
 $(document).on('submit', '#searchForm',  function(e){
 	e.preventDefault();

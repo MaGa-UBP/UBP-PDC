@@ -351,24 +351,29 @@ public class Cart extends HttpServlet {
 
 		HttpSession session = request.getSession(true);
 
-		Integer cant = 1; //Aca hay que tomar el parametro cantidad cuanndo este hecho
-		
-		ProductBean productToAdd = new ProductBean();
-		
-		if(session.getAttribute(request.getParameter("prodID")) != null) {
-			productToAdd = (ProductBean) session.getAttribute(request.getParameter("prodID"));
-			cant += productToAdd.getCantidad();
-		}else {
-			productToAdd.setID(request.getParameter("prodID"));
-			productToAdd.setNombre(request.getParameter("prodName"));
-			productToAdd.setUrlImagen(request.getParameter("prodImgUrl"));
-			productToAdd.setPrecio(Float.parseFloat(request.getParameter("prodPrice")));
+		if(request.getParameter("deleteFromCart") != null && request.getParameter("deleteFromCart") != "") {
+			session.removeAttribute(request.getParameter("deleteFromCart"));
+			response.getWriter().append(request.getParameter("deleteFromCart"));
 		}
-		productToAdd.setCantidad(cant);
+		else {
+			Integer cant = Integer.parseInt(request.getParameter("prodQuantity"));
+			
+			ProductBean productToAdd = new ProductBean();
+			
+			if(session.getAttribute(request.getParameter("prodID")) != null) {
+				productToAdd = (ProductBean) session.getAttribute(request.getParameter("prodID"));
+				cant += productToAdd.getCantidad();
+			}else {
+				productToAdd.setID(request.getParameter("prodID"));
+				productToAdd.setNombre(request.getParameter("prodName"));
+				productToAdd.setUrlImagen(request.getParameter("prodImgUrl"));
+				productToAdd.setPrecio(Float.parseFloat(request.getParameter("prodPrice")));
+			}
+			productToAdd.setCantidad(cant);
 
-		session.setAttribute(request.getParameter("prodID"), productToAdd);
-		response.getWriter().append(request.getParameter("prodID")+";"+cant);
-
+			session.setAttribute(request.getParameter("prodID"), productToAdd);
+			response.getWriter().append(request.getParameter("prodID")+";"+cant);
+		}
 	}
 
 }

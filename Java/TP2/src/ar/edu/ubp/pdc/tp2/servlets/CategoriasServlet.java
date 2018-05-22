@@ -145,11 +145,13 @@ public class CategoriasServlet extends HttpServlet {
             if(cantTotItems == 0) {
             	 out.println("								<p class=\"emptyCart\">Tu carrito est&aacute; vac&iacute;o</p>");
             }else {
+	        	out.println("<p class=\"emptyCart\" style=\"display: none;\">Tu carrito est&aacute; vac&iacute;o</p>");
 	            for(ProductBean auxProd : productsArray) {
-	                out.println("<li class=\"header-cart-item\" id=\"ci"+auxProd.getID()+"\">");
-	                out.println("<div class=\"header-cart-item-img\">");
+	                out.println("<form action=\"cart.js\" method=\"post\"><li class=\"header-cart-item\" id=\"ci"+auxProd.getID()+"\">");
+	                out.println("<input type=\"hidden\" name=\"deleteFromCart\" value=\""+auxProd.getID()+"\">");
+	                out.println("<a href=\"#\" class=\"btnRemove\"><div class=\"header-cart-item-img\">");
 	                out.println("<img src=\""+auxProd.getUrlImagen()+"\" alt=\"IMG\">"); 
-	                out.println("</div>");
+	                out.println("</div></a>");
 	                out.println("<div class=\"header-cart-item-txt\">");
 	                out.println("<a href=\"#\" class=\"header-cart-item-name\">" + auxProd.getNombre() + "</a>");
 	                out.println("<div class=\"header-cart-item-info\">");
@@ -157,7 +159,7 @@ public class CategoriasServlet extends HttpServlet {
 	                out.println("<span class=\"precioProdCart\">$"+NumberFormat.getInstance(new Locale("es", "AR")).format(auxProd.getPrecio())+"</span>");
 	                out.println("</div>");
 	                out.println("</div>");
-	                out.println("</li>");
+	                out.println("</li></form>");
 	              }
             }
             
@@ -229,11 +231,13 @@ public class CategoriasServlet extends HttpServlet {
             if(cantTotItems == 0) {
            	 out.println("								<p class=\"emptyCart\">Tu carrito est&aacute; vac&iacute;o</p>");
 		   }else {
+	        	out.println("<p class=\"emptyCart\" style=\"display: none;\">Tu carrito est&aacute; vac&iacute;o</p>");
 		        for(ProductBean auxProd : productsArray) {
-		            out.println("<li class=\"header-cart-item\" id=\"ci"+auxProd.getID()+"\">");
-					out.println("<div class=\"header-cart-item-img\">");
+		            out.println("<form action=\"cart.js\" method=\"post\"><li class=\"header-cart-item\" id=\"ci"+auxProd.getID()+"-Mobile\">");
+	                out.println("<input type=\"hidden\" name=\"deleteFromCart\" value=\""+auxProd.getID()+"\">");
+		            out.println("<a href=\"#\" class=\"btnRemove\"><div class=\"header-cart-item-img\">");
 					out.println("<img src=\""+auxProd.getUrlImagen()+"\" alt=\"IMG\">"); 
-					out.println("</div>");
+					out.println("</div>/a>");
 					out.println("<div class=\"header-cart-item-txt\">");
 					out.println("<a href=\"#\" class=\"header-cart-item-name\">" + auxProd.getNombre() + "</a>");
 					out.println("<div class=\"header-cart-item-info\">");
