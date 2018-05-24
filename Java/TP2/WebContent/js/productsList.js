@@ -62,6 +62,7 @@ function printProductsList(array){
 		$("#cantResultados").text(array.length);
 		var prodImg = (prod.imagenes.length > 0? prod.imagenes[prod.imagen_portada].urlImg : "images/categorias/default.jpg");
 		$("#productList").append("<div class=\"col-sm-12 col-md-6 col-lg-4 p-b-50\">\
+									<div class=\"prodItem\">\
 										<form class=\"block2\">\
 										<div class=\"block2-img wrap-pic-w of-hidden pos-relative\">\
 												<img src=\""+prodImg+"\" alt=\"IMG-PRODUCT\">\
@@ -92,6 +93,7 @@ function printProductsList(array){
 												<span class=\"block2-price m-text6 p-r-5 formatted_price\">$"+$.number( prod.precio, 2, ',', '.' )+"</span>\
 											</div>\
 										</form>\
+									</div>\
 									</div>");
 	}
 	
@@ -112,18 +114,18 @@ $(document).on('click','.catSideFilter', function(e){
 	filter(cat, text,products); 
 });
 
-$(document).on('click', '.btn-num-product-down',  function(e){
+/*[ +/- num product ]
+===========================================================*/
+$("#productList").on('click', '.btn-num-product-down',  function(e){
 	e.preventDefault();
-	var num = parseInt($(this).parent().find("input").val());
-	if(num>1){
-		$(this).parent().find("input[name=prodQuantity]").val(num-1);
-	}
+	var numProduct = Number($(this).next().val());
+	if(numProduct > 1) $(this).next().val(numProduct - 1);
 });
 
-$(document).on('click', '.btn-num-product-up',  function(e){
+$("#productList").on('click', '.btn-num-product-up',  function(e){
 	e.preventDefault();
-	var num = parseInt($(this).parent().find("input").val());
-	$(this).parent().find("input[name=prodQuantity]").val(num+1);
+	var numProduct = Number($(this).prev().val());
+    $(this).prev().val(numProduct + 1);
 });
 
 

@@ -40,69 +40,129 @@ $(document).on('click', '.addToCart', function(){  // Agregar al carrito
 
 
 
-function agregarACarrito(product, cant, selector){
-	$(".emptyCart").hide();
-	var img = (product.imagenes.length > 0? product.imagenes[product.imagen_portada].urlImg : "images/categorias/default.jpg");
-	$(selector).append("<form action=\"cart.js\" method=\"post\" ><li class=\"header-cart-item\" id=\"ci"+product.ID+"\">\
-			<input type=\"hidden\" name=\"deleteFromCart\" value=\""+product.ID+"\">\
-			<a href=\"#\" class=\"btnRemove\"> <div class=\"header-cart-item-img\">\
-				<img src=\""+img+"\" alt=\"Imagen "+product.nombre+"\"/>\
-			</div></a>\
-			<div class=\"header-cart-item-txt\">\
-				<a href=\"#\" class=\"header-cart-item-name\">"+product.nombre+"</a>\
-				<div class=\"header-cart-item-info\">\
-					<span class=\"cantProdCart\">"+cant+"</span> x <span class=\"precioProdCart\">"+product.precio+"</span>\
-			</div></div></li></form>");
-		
-	
-		$(selector+"Mobile").append("<li class=\"header-cart-item\">\
-				<div class=\"header-cart-item-img\">\
-					<img src=\""+img+"\" alt=\"Imagen "+product.nombre+"\"/>\
-				</div>\
-				<div class=\"header-cart-item-txt\">\
-					<a href=\"#\" class=\"header-cart-item-name\">"+product.nombre+"</a>\
-					<div class=\"header-cart-item-info\">\
-						<span class=\"cantProdCart\">"+cant+"</span> x <span class=\"precioProdCart\">"+product.precio+"</span>\
-				</div></div></li>");
-	
-}
-
-
-
-$("#cartItems").on('click', '.btnRemove', function(e){  
-	e.preventDefault();
-	console.log($(this));
+function updateCarrito(formItem, cant){
+	var serialized = formItem.find('input').serialize() + "&prodQuantToUpdate="+cant;
 	$.ajax({
 		url: "cart.jsp",
 		type: "post",
 		dataType: "html",
-		data:$(this).closest('form').serialize(), //Buscamos los input number de la pagina.
+		data: formItem.find('input').serialize() + "&prodQuantToUpdate="+cant, //Buscamos los input number de la pagina.
 		error: function(hr){
 			swal({title: "Error!", html: "Por favor, intente nuevamente.", type:"error", buttonsStyling:false});
 			console.log(hr);
 		},
 		success: function(response){
+			console.log(response);
+
+			var idProduct = response.split(';')[0];
+			var cantUpdate = parseInt(response.split(';')[1]);
+			var product = getProduct(idProduct);
+
+			var $iTotalItem = formItem.find("input[name=iItemTotal]");
+			
+			var totalItemCart = parseFloat($iTotalItem.val());
+			
+			var totalCart = parseFloat($("input[name=inputTotalCart]").val());
+			
+			totalItemCart += parseFloat(product.precio)*cantUpdate;
+			totalCart += parseFloat(product.precio)*cantUpdate;
+			$iTotalItem.val(totalItemCart);
+			$("input[name=inputTotalCart]").val(totalCart);
+			
+			console.log(totalItemCart);
+			console.log(totalCart);
+			$(".totalCart").text($.number( totalCart, 2, ',', '.' ));
+			formItem.find(".itemTotal").text($.number( totalItemCart, 2, ',', '.' ));
+			
+//			swal({title: product.nombre, html: "fue a&ntilde;adido al carrito !", type:"success", buttonsStyling:false});
+//			var num = parseInt($("#numberItemsCart").text())+cantAAgregar;
+//			$(".header-icons-noti").text(num);
+			
+		}
+	});
+}
+
+
+$(".table-row").on('click', '.btn-num-product-down',  function(e){
+	e.preventDefault();
+	var numProduct = Number($(this).next().val());
+	if(numProduct > 1){
+		$(this).next().val(numProduct - 1);
+		var formItem = $(e.target).closest('tr');
+		var cant= -1;
+		updateCarrito(formItem , cant);
+	}
+});
+
+$(".table-row").on('click', '.btn-num-product-up',  function(e){
+	e.preventDefault();
+	var numProduct = Number($(this).prev().val());
+    $(this).prev().val(numProduct + 1);
+    var formItem = $(e.target).closest('tr');
+    var cant = 1;
+    updateCarrito(formItem, cant);
+});
+
+
+$(".btnRemove").on('click', function(e){  
+	e.preventDefault();
+	var rowToDelete = $(e.target).closest('tr');
+	console.log(rowToDelete);
+	$.ajax({
+		url: "cart.jsp",
+		type: "post",
+		dataType: "html",
+		data:$.param({"deleteFromCart": $(rowToDelete).find("input[name=prodID]").val()}), //Buscamos los input number de la pagina.
+		error: function(hr){
+			swal({title: "Error!", html: "Por favor, intente nuevamente.", type:"error", buttonsStyling:false});
+			console.log(hr);
+		},
+		success: function(response){
+			console.log(response);
+			var idProduct = response.split(';')[0];
+			var cantDelete = parseInt(response.split(';')[1]);
+			var product = getProduct(idProduct);
 			
 			var totalCart =  parseFloat($("input[name=inputTotalCart]").val());
-			var product = getProduct(response);
-			var cantActual = parseInt($('#ci'+product.ID+" .cantProdCart").text());
 			
 			
-			totalCart -= parseFloat(product.precio)*cantActual;
+			totalCart -= parseFloat(product.precio)*cantDelete;
 			$("input[name=inputTotalCart]").val(totalCart)
 			$(".totalCart").text($.number( totalCart, 2, ',', '.' ));
-			var num = parseInt($("#numberItemsCart").text())-cantActual;
-			$(".header-icons-noti").text(num);
-			$("#ci"+response).remove();
-			$("#ci"+response+"-Mobile").remove();
-			if(num == 0){
+			if($(rowToDelete).parent().find('.table-row').length == 1){
 				$(".emptyCart").show();
+				$(rowToDelete).closest('form').remove();
+				$(".btnFinalizar").hide();
+				$(".btnVolver").show();
 			}
+			$(rowToDelete).remove();
 		}
 	});
 });
+$('.btnFinalizar').on("click", function() {
+	$(this).hide();
+	$('.formFinalizar').show();
+});
 
-//function removerDeCarrito(product, selector){
-//
-//	
-//}
+$('.btnComprar').on("click", function(e) {
+	e.preventDefault();
+	var string = $('#finalizarCompraForm').serialize();
+	console.log(string);
+	$.ajax({
+		url: "./cookies.jsp",
+		type: "post",
+		data: $('#finalizarCompraForm').serialize(),
+		datatype: "html",
+		error: function(hr) {
+			console.log(hr.responseText);
+		},
+		success: function(html) {
+			console.log(html);
+			swal({title: "Perfecto!", html: "Tu compra se ha recibido exitosamente", type:"success", buttonsStyling:false}).then((result) => {
+				  if (result.value) {
+					  window.location.replace("./index.jsp");
+				  }
+				});
+		}
+	});
+});

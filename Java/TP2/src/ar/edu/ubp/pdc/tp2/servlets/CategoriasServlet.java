@@ -173,7 +173,7 @@ public class CategoriasServlet extends HttpServlet {
             		"							<div class=\"header-cart-buttons\">\n" + 
             		"								<div class=\"header-cart-wrapbtn\">\n" + 
             		"									<!-- Button -->\n" + 
-            		"									<a href=\"#\" class=\"flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4\">\n" + 
+            		"									<a href=\"#\" class=\"flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 btnFinalizarCompra\">\n" + 
             		"										Finalizar Compra\n" + 
             		"									</a>\n" + 
             		"								</div>\n" + 
@@ -307,7 +307,7 @@ public class CategoriasServlet extends HttpServlet {
             		"			</nav>\n" + 
             		"		</div>\n" + 
             		"	</header>");
-            
+            out.println("<div id=\"website\">");
             out.println("<section class=\"slide1\">\n" + 
             		"		<div class=\"wrap-slick1\">\n" + 
             		"			<div class=\"slick1\">\n" + 
@@ -377,7 +377,12 @@ public class CategoriasServlet extends HttpServlet {
             		"			</div>\n" + 
             		"		</div>\n" + 
             		"	</section>");
-            
+            out.println("</div>");
+            out.println("<div id=\"cartResults\">");
+            out.println("<div class=\"loaderContainer\">");
+            out.println("<div class=\"loader\" style=\"display: none;\"></div>");
+            out.println("</div>");
+            out.println("</div>");
             out.println("<footer class=\"bg6 p-t-45 p-b-43 p-l-45 p-r-45\">");
             out.println("<div class=\"flex-w p-b-90\">");
             out.println("<div class=\"w-size6 p-t-30 p-l-15 p-r-15 respon3\">");
@@ -426,7 +431,7 @@ public class CategoriasServlet extends HttpServlet {
             String catID = ((request.getParameter("catID")==null || request.getParameter("catID")=="" || request.getParameter("catID").equals("all"))? "\"all\"" : request.getParameter("catID"));
             String searchQ = (request.getParameter("searchQ")==null || request.getParameter("searchQ")==""? "\"\"" : "\""+request.getParameter("searchQ")+"\"");
             out.println("<script type=\"text/javascript\">filter("+catID+", "+searchQ+", products);</script>");
-            out.println("<script src=\"js/cartHandler.js\" type=\"text/javascript\"></script>");
+            out.println("<script src=\"js/miniCartHandler.js\" type=\"text/javascript\"></script>");
             out.println("</body>");
             out.println("</html>");
 		}
