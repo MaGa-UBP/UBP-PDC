@@ -133,19 +133,25 @@
 
 }
 .loaderContainer{
-		min-height: calc(100vh - 125px);
+	/* min-height: calc(100vh - 125px); */
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: fixed;
+	width: 100%;
+	height: calc(100vh + 45px);
+	background-color: rgba(0,0,0,0.5);
+	z-index: 2;
+	top: -45px;
 }
 .loader {
     border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border-top: 16px solid #e65540;
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
     display: inline-block;
 }
 

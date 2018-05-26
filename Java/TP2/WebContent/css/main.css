@@ -1744,11 +1744,11 @@ li.sale-noti > a {
   line-height: 0;
 }
 
-.block2-btn-addwishlist:hover .icon_heart_alt {
+.block2-btn-addwishlist:hover .icon_close_alt2 {
   display: none;
 }
 
-.block2-btn-addwishlist:hover .icon_heart {
+.block2-btn-addwishlist:hover .icon_close_alt{
   display: block;
 }
 

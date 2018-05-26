@@ -1,47 +1,6 @@
-$(document).on('click', '.addToCart', function(){  // Agregar al carrito
-	var $prodQInput = $(this).closest('form').find("input[name=prodQuantity]");
-	$.ajax({
-		url: "cart.jsp",
-		type: "post",
-		dataType: "html",
-		data:$(this).closest('form').serialize(), //Buscamos los input number de la pagina.
-		error: function(hr){
-			swal({title: "Error!", html: "Por favor, intente nuevamente.", type:"error", buttonsStyling:false});
-			console.log(hr);
-		},
-		success: function(response){
-			var idProduct = response.split(';')[0];
-			var cantTotProd = parseInt(response.split(';')[1]);
-			var product = getProduct(idProduct);
-
-			var cantAAgregar = 0;
-			$prodQInput.val(1);
-			if($("#ci"+product.ID).length){
-				var cantActual = parseInt($('#ci'+product.ID+" .cantProdCart").text());
-				$('#ci'+product.ID+" .cantProdCart").text(cantTotProd);
-				$('#ci'+product.ID+"-Mobile .cantProdCart").text(cantTotProd);
-				cantAAgregar = cantTotProd-cantActual;
-			}else{
-				cantAAgregar = cantTotProd;
-				agregarACarrito(product, cantAAgregar, "#cartItems");
-			}
-			var totalCart = parseFloat($("input[name=inputTotalCart]").val());
-			totalCart += parseFloat(product.precio)*cantAAgregar;
-			$("input[name=inputTotalCart]").val(totalCart)
-			$(".totalCart").text($.number( totalCart, 2, ',', '.' ));
-			
-			
-			swal({title: product.nombre, html: "fue a&ntilde;adido al carrito !", type:"success", buttonsStyling:false});
-			var num = parseInt($("#numberItemsCart").text())+cantAAgregar;
-			$(".header-icons-noti").text(num);
-		}
-	});
-});
-
-
-
 function updateCarrito(formItem, cant){
 	var serialized = formItem.find('input').serialize() + "&prodQuantToUpdate="+cant;
+	$('.loaderContainer').show();
 	$.ajax({
 		url: "cart.jsp",
 		type: "post",
@@ -52,7 +11,6 @@ function updateCarrito(formItem, cant){
 			console.log(hr);
 		},
 		success: function(response){
-			console.log(response);
 
 			var idProduct = response.split(';')[0];
 			var cantUpdate = parseInt(response.split(';')[1]);
@@ -73,10 +31,7 @@ function updateCarrito(formItem, cant){
 			console.log(totalCart);
 			$(".totalCart").text($.number( totalCart, 2, ',', '.' ));
 			formItem.find(".itemTotal").text($.number( totalItemCart, 2, ',', '.' ));
-			
-//			swal({title: product.nombre, html: "fue a&ntilde;adido al carrito !", type:"success", buttonsStyling:false});
-//			var num = parseInt($("#numberItemsCart").text())+cantAAgregar;
-//			$(".header-icons-noti").text(num);
+			$('.loaderContainer').hide();
 			
 		}
 	});
@@ -107,7 +62,7 @@ $(".table-row").on('click', '.btn-num-product-up',  function(e){
 $(".btnRemove").on('click', function(e){  
 	e.preventDefault();
 	var rowToDelete = $(e.target).closest('tr');
-	console.log(rowToDelete);
+	$('.loaderContainer').show();
 	$.ajax({
 		url: "cart.jsp",
 		type: "post",
@@ -125,7 +80,7 @@ $(".btnRemove").on('click', function(e){
 			
 			var totalCart =  parseFloat($("input[name=inputTotalCart]").val());
 			
-			
+			$("#btnRemove-"+idProduct).remove();
 			totalCart -= parseFloat(product.precio)*cantDelete;
 			$("input[name=inputTotalCart]").val(totalCart)
 			$(".totalCart").text($.number( totalCart, 2, ',', '.' ));
@@ -136,6 +91,7 @@ $(".btnRemove").on('click', function(e){
 				$(".btnVolver").show();
 			}
 			$(rowToDelete).remove();
+			$('.loaderContainer').hide();
 		}
 	});
 });

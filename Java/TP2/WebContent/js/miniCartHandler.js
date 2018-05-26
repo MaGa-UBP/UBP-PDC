@@ -1,5 +1,7 @@
-$(document).on('click', '.addToCart', function(){  // Agregar al carrito
+$(document).on('click', '.addToCart', function(e){  // Agregar al carrito
+	e.preventDefault();
 	var $prodQInput = $(this).closest('form').find("input[name=prodQuantity]");
+	$('.loaderContainer').show();
 	$.ajax({
 		url: "cart.jsp",
 		type: "post",
@@ -17,13 +19,19 @@ $(document).on('click', '.addToCart', function(){  // Agregar al carrito
 			var cantAAgregar = 0;
 			$prodQInput.val(1);
 			if($("#ci"+product.ID).length){
-				var cantActual = parseInt($('#ci'+product.ID+" .cantProdCart").text());
-				$('#ci'+product.ID+" .cantProdCart").text(cantTotProd);
-				$('#ci'+product.ID+"-Mobile .cantProdCart").text(cantTotProd);
+				var cantActual = parseInt($("#c"+product.ID+" .cantProdCart").text());
+				$("#ci"+product.ID+" .cantProdCart").text(cantTotProd);
+				$("#ci"+product.ID+"-Mobile .cantProdCart").text(cantTotProd);
 				cantAAgregar = cantTotProd-cantActual;
 			}else{
 				cantAAgregar = cantTotProd;
 				agregarACarrito(product, cantAAgregar, "#cartItems");
+
+				$(e.target).closest('.block2-overlay').append("<a href=\"#\" class=\"block2-btn-addwishlist hov-pointer trans-0-4 btnRemove\" id=\"btnRemove-"+product.ID+"\">\
+						<i class=\"icon-wishlist icon_close_alt2\" aria-hidden=\"true\"></i>\
+						<i class=\"icon-wishlist icon_close_alt dis-none\" aria-hidden=\"true\"></i>\
+						<input type=\"hidden\" name=\"deleteFromCart\" value=\""+idProduct+"\">\
+					</a>");
 			}
 			var totalCart = parseFloat($("input[name=inputTotalCart]").val());
 			totalCart += parseFloat(product.precio)*cantAAgregar;
@@ -32,6 +40,7 @@ $(document).on('click', '.addToCart', function(){  // Agregar al carrito
 			
 			
 			swal({title: product.nombre, html: "fue a&ntilde;adido al carrito !", type:"success", buttonsStyling:false});
+			$('.loaderContainer').hide();
 			var num = parseInt($("#numberItemsCart").text())+cantAAgregar;
 			$(".header-icons-noti").text(num);
 		}
@@ -69,9 +78,10 @@ function agregarACarrito(product, cant, selector){
 
 
 
-$("#cartItems").on('click', '.btnRemove', function(e){  
+$("#cartItems, #website").on('click', '.btnRemove', function(e){  
 	e.preventDefault();
-	console.log($(this));
+
+	$('.loaderContainer').show();
 	$.ajax({
 		url: "cart.jsp",
 		type: "post",
@@ -87,8 +97,8 @@ $("#cartItems").on('click', '.btnRemove', function(e){
 			var product = getProduct(idProduct);
 			
 			var totalCart =  parseFloat($("input[name=inputTotalCart]").val());
-			
-			
+			$("#btnRemove-"+idProduct).remove();
+			$('.loaderContainer').hide();
 			totalCart -= parseFloat(product.precio)*cantDelete;
 			$("input[name=inputTotalCart]").val(totalCart)
 			$(".totalCart").text($.number( totalCart, 2, ',', '.' ));
@@ -105,7 +115,7 @@ $("#cartItems").on('click', '.btnRemove', function(e){
 
 $('.btnFinalizarCompra').on('click', function(e){
 	$("#website").hide();
-	$('.loader').show();
+	$('.loaderContainer').show();
 	$.ajax({
 		url: "cart.jsp",
 		type: "get",
@@ -115,6 +125,7 @@ $('.btnFinalizarCompra').on('click', function(e){
 			console.log(hr);
 		},
 		success: function(response){
+			$('.loaderContainer').hide();
 			$("#cartResults").html(response);
 			$('.wrap_menu').hide();
 			$('.header-icons').hide();

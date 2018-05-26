@@ -1,5 +1,5 @@
 {
-    "count": 16,
+    "count": 22,
     "results": [
       {
       	"ID": 1,
@@ -358,6 +358,109 @@
           }
         ],
         "imagen_portada": 2
+      },
+      {
+        "ID": 17,
+        "nombre": "Camisa Sherwood",
+        "precio": 2199.99,
+        "descripcion": "Camisa tipo le&ntilde;ador verde",
+        "long_description":"",
+        "categoria_id": 3,
+        "imagenes":[
+          {
+            "urlImg": "images/categorias/camisas/3/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/camisas/3/2.jpg"
+          }
+        ],
+        "imagen_portada": 0
+      }
+      ,
+      {
+        "ID": 18,
+        "nombre": "Camisa Sherwood",
+        "precio": 2199.99,
+        "descripcion": "Camisa tipo le&ntilde;ador verde",
+        "long_description":"",
+        "categoria_id": 3,
+        "imagenes":[
+          {
+            "urlImg": "images/categorias/camisas/4/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/camisas/4/2.jpg"
+          }
+        ],
+        "imagen_portada": 0
+      },
+      {
+        "ID": 19,
+        "nombre": "Remera Sherwood",
+        "precio": 1199.99,
+        "descripcion": "Remera tipo le&ntilde;ador verde",
+        "long_description":"",
+        "categoria_id": 5,
+        "imagenes":[
+          {
+            "urlImg": "images/categorias/remeras/1/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/remeras/1/2.jpg"
+          }
+        ],
+        "imagen_portada": 0
+      },
+      {
+        "ID": 20,
+        "nombre": "Remera Sherwood",
+        "precio": 799.99,
+        "descripcion": "Remera tipo le&ntilde;ador verde",
+        "long_description":"",
+        "categoria_id": 5,
+        "imagenes":[
+          {
+            "urlImg": "images/categorias/remeras/2/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/remeras/2/2.jpg"
+          }
+        ],
+        "imagen_portada": 0
+      },
+      {
+        "ID": 21,
+        "nombre": "Polo Marine",
+        "precio": 2099.99,
+        "descripcion": "Polo tipo le&ntilde;ador verde",
+        "long_description":"",
+        "categoria_id": 5,
+        "imagenes":[
+          {
+            "urlImg": "images/categorias/remeras/3/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/remeras/3/2.jpg"
+          }
+        ],
+        "imagen_portada": 0
+      },
+      {
+        "ID": 22,
+        "nombre": "Polo Sherwood",
+        "precio": 2399.99,
+        "descripcion": "Polo tipo le&ntilde;ador verde",
+        "long_description":"",
+        "categoria_id": 5,
+        "imagenes":[
+          {
+            "urlImg": "images/categorias/remeras/4/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/remeras/4/2.jpg"
+          }
+        ],
+        "imagen_portada": 0
       }
     ]
   }

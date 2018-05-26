@@ -307,6 +307,9 @@ public class CategoriasServlet extends HttpServlet {
             		"			</nav>\n" + 
             		"		</div>\n" + 
             		"	</header>");
+            out.println("<div class=\"loaderContainer\" style=\"display: none;\">");
+            out.println("<div class=\"loader\"></div>");
+            out.println("</div>");
             out.println("<div id=\"website\">");
             out.println("<section class=\"slide1\">\n" + 
             		"		<div class=\"wrap-slick1\">\n" + 
@@ -340,7 +343,7 @@ public class CategoriasServlet extends HttpServlet {
             		"			</div>\n" + 
             		"		</div>\n" + 
             		"	</section>");
-            
+
             out.println("<section class=\"bgwhite p-t-55 p-b-65\">\n" + 
             		"		<div class=\"container\">\n" + 
             		"			<div class=\"row\">\n" + 
@@ -379,9 +382,7 @@ public class CategoriasServlet extends HttpServlet {
             		"	</section>");
             out.println("</div>");
             out.println("<div id=\"cartResults\">");
-            out.println("<div class=\"loaderContainer\">");
-            out.println("<div class=\"loader\" style=\"display: none;\"></div>");
-            out.println("</div>");
+
             out.println("</div>");
             out.println("<footer class=\"bg6 p-t-45 p-b-43 p-l-45 p-r-45\">");
             out.println("<div class=\"flex-w p-b-90\">");
@@ -405,16 +406,7 @@ public class CategoriasServlet extends HttpServlet {
             out.println("<div class=\"t-center s-text8 p-t-20\">Copyright © 2018 All rights reserved</div>");
             out.println("</div>");
             out.println("</footer>");
-            out.println("<script type=\"text/javascript\">\n" + 
-            		"		categories.sort(function (a, b) {\n" + 
-            		"		    return a.nombre.localeCompare(b.nombre);\n" + 
-            		"		});\n" + 
-            		"		$.each(categories, function(idx, category) {\n" + 
-            		"			$(\"#subStoreMobile\").append(\"<li class=\\\"item-menu-mobile\\\"><a href=\\\"#\\\" data-filter=\\\"\"+category.ID+\"\\\" class=\\\"catFilter\\\">\"+category.nombre+\"</a></li>\");\n" + 
-            		"			$(\"#subStore\").append(\"<li><a href=\\\"#\\\" data-filter=\\\"\"+category.ID+\"\\\" class=\\\"catFilter\\\">\"+category.nombre+\"</a></li>\");\n" + 
-            		"		});\n" + 
-            		"	</script>\n" + 
-            		"	<script type=\"text/javascript\" src=\"vendor/animsition/js/animsition.min.js\"></script>\n" + 
+            out.println("<script type=\"text/javascript\" src=\"vendor/animsition/js/animsition.min.js\"></script>\n" + 
             		"\n" + 
             		"	<script type=\"text/javascript\" src=\"vendor/bootstrap/js/popper.js\"></script>\n" + 
             		"	<script type=\"text/javascript\" src=\"vendor/bootstrap/js/bootstrap.min.js\"></script>\n" + 
@@ -426,11 +418,29 @@ public class CategoriasServlet extends HttpServlet {
             		"\n" + 
             		"\n" + 
             		"	<script src=\"js/main.js\" type=\"text/javascript\"></script>\n" + 
-            		"	<script src=\"js/searchNav.js\" type=\"text/javascript\"></script>\n" + 
-            		"	<script type=\"text/javascript\" src=\"js/productsList.js\"></script>");
-            String catID = ((request.getParameter("catID")==null || request.getParameter("catID")=="" || request.getParameter("catID").equals("all"))? "\"all\"" : request.getParameter("catID"));
+            		"	<script src=\"js/searchNav.js\" type=\"text/javascript\"></script>");
+            String catID = "";
+            if(request.getParameter("catID")!=null && request.getParameter("catID")!="") {
+            	if(request.getParameter("catID")=="all") {
+            		catID = "all";
+            	}else {
+            		catID = request.getParameter("catID");
+            	}
+            	
+            }
+            out.println("<script type=\"text/javascript\">");
+	        out.println("var prodsInCart = [];");
+            if(cantTotItems != 0) {
+   	        	out.println("prodsInCart= [");
+   		        for(ProductBean auxProd : productsArray) {
+   	                out.println(auxProd.getID()+",");
+   		          }
+   		     out.println("];");
+   		   	}
+            out.println("</script>");
             String searchQ = (request.getParameter("searchQ")==null || request.getParameter("searchQ")==""? "\"\"" : "\""+request.getParameter("searchQ")+"\"");
-            out.println("<script type=\"text/javascript\">filter("+catID+", "+searchQ+", products);</script>");
+            out.println("<script type=\"text/javascript\">loadData(\""+catID+"\", "+searchQ+");</script>");
+//            out.println("<script type=\"text/javascript\">filter(\""+catID+"\", "+searchQ+", products);</script>");
             out.println("<script src=\"js/miniCartHandler.js\" type=\"text/javascript\"></script>");
             out.println("</body>");
             out.println("</html>");
