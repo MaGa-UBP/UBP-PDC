@@ -19,7 +19,7 @@ $(document).on('click', '.addToCart', function(e){  // Agregar al carrito
 			var cantAAgregar = 0;
 			$prodQInput.val(1);
 			if($("#ci"+product.ID).length){
-				var cantActual = parseInt($("#c"+product.ID+" .cantProdCart").text());
+				var cantActual = parseInt($("#ci"+product.ID+" .cantProdCart").text());
 				$("#ci"+product.ID+" .cantProdCart").text(cantTotProd);
 				$("#ci"+product.ID+"-Mobile .cantProdCart").text(cantTotProd);
 				cantAAgregar = cantTotProd-cantActual;
@@ -30,7 +30,6 @@ $(document).on('click', '.addToCart', function(e){  // Agregar al carrito
 				$(e.target).closest('.block2-overlay').append("<a href=\"#\" class=\"block2-btn-addwishlist hov-pointer trans-0-4 btnRemove\" id=\"btnRemove-"+product.ID+"\">\
 						<i class=\"icon-wishlist icon_close_alt2\" aria-hidden=\"true\"></i>\
 						<i class=\"icon-wishlist icon_close_alt dis-none\" aria-hidden=\"true\"></i>\
-						<input type=\"hidden\" name=\"deleteFromCart\" value=\""+idProduct+"\">\
 					</a>");
 			}
 			var totalCart = parseFloat($("input[name=inputTotalCart]").val());
@@ -64,7 +63,7 @@ function agregarACarrito(product, cant, selector){
 			</div></div></li></form>");
 		
 	
-		$(selector+"Mobile").append("<li class=\"header-cart-item\">\
+		$(selector+"Mobile").append("<li class=\"header-cart-item\" id=\"ci"+product.ID+"-Mobile\">\
 				<div class=\"header-cart-item-img\">\
 					<img src=\""+img+"\" alt=\"Imagen "+product.nombre+"\"/>\
 				</div>\
@@ -86,7 +85,7 @@ $("#cartItems, #website").on('click', '.btnRemove', function(e){
 		url: "cart.jsp",
 		type: "post",
 		dataType: "html",
-		data:$(this).closest('form').serialize(), //Buscamos los input number de la pagina.
+		data:$(this).closest('form').serialize()+"&deleteFromCart="+$(this).closest('form').find("input[name=prodID]").val(), //Buscamos los input number de la pagina.
 		error: function(hr){
 			swal({title: "Error!", html: "Por favor, intente nuevamente.", type:"error", buttonsStyling:false});
 			console.log(hr);
@@ -128,6 +127,7 @@ $('.btnFinalizarCompra').on('click', function(e){
 			$('.loaderContainer').hide();
 			$("#cartResults").html(response);
 			$('.wrap_menu').hide();
+			$('.header-icons-mobile').hide();
 			$('.header-icons').hide();
 		}
 	});

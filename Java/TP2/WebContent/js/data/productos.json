@@ -5,7 +5,7 @@
       	"ID": 1,
       	"nombre": "Babucha Chicago Skinny",
       	"precio": 1449.90,
-        "descripcion": "Pantal&oacute;n de hombre Negro",
+        "descripcion": "Pantal&oacute;n de hombre Negro suelto",
         "long_description":"",
         "categoria_id": 1,
         "imagenes":[
@@ -28,7 +28,7 @@
       	"ID": 2,
       	"nombre": "Pantal&oacute;n Atacama Sunrise",
       	"precio": 2199.90,
-        "descripcion": "Pantal&oacute;n de hombre Blanco",
+        "descripcion": "Pantal&oacute;n de hombre mostaza",
         "long_description":"",
         "categoria_id": 1,
         "imagenes":[
@@ -99,7 +99,7 @@
         "ID": 5,
         "nombre": "Tapado Antartica",
         "precio": 3199.50,
-        "descripcion": "Tapado blanco de mujer",
+        "descripcion": "Tapado blanco de mujer, mangas 3/4",
         "long_description":"",
         "categoria_id": 2,
         "imagenes":[
@@ -122,7 +122,7 @@
         "ID": 6,
         "nombre": "Tapado Reyjavik",
         "precio": 4249.90,
-        "descripcion": "Tapado negro de mujer",
+        "descripcion": "Tapado negro y blanco de mujer, super abrigado",
         "long_description":"",
         "categoria_id": 2,
         "imagenes":[
@@ -145,7 +145,7 @@
         "ID": 7,
         "nombre": "Campera Jordan",
         "precio": 3990.50,
-        "descripcion": "Parka verde abrigada de mujer",
+        "descripcion": "Parka verde desmontable de mujer, especial para invierno",
         "long_description":"",
         "categoria_id": 2,
         "imagenes":[
@@ -171,7 +171,7 @@
         "ID": 8,
         "nombre": "Campera Manchester",
         "precio": 1999.90,
-        "descripcion": "Campera estilo brit&acute;nico camel con patches",
+        "descripcion": "Campera estilo brit&acute;nico camel con patches, lo nuevo en el invierno",
         "long_description":"",
         "categoria_id": 2,
         "imagenes":[
@@ -197,7 +197,7 @@
         "ID": 9,
         "nombre": "Camisa Sherwood",
         "precio": 2199.99,
-        "descripcion": "Camisa tipo le&ntilde;ador verde",
+        "descripcion": "Camisa tipo le&ntilde;ador verde tipo Flannel",
         "long_description":"",
         "categoria_id": 3,
         "imagenes":[
@@ -220,7 +220,7 @@
         "ID": 10,
         "nombre": "Camisa State Island",
         "precio": 1899.90,
-        "descripcion": "Camisa azul marino",
+        "descripcion": "Camisa de mujer, color azul marino",
         "long_description":"",
         "categoria_id": 3,
         "imagenes":[
@@ -237,7 +237,7 @@
       	"ID": 11,
       	"nombre": "Mochila Parisina",
       	"precio": 3299.50,
-        "descripcion": "Mochila-Cartera negra de cuero",
+        "descripcion": "Mochila-Cartera negra de cuero, de mujer",
         "long_description":"",
         "categoria_id": 4,
         "imagenes":[
@@ -260,7 +260,7 @@
       	"ID": 12,
       	"nombre": "Mochila Vienna",
       	"precio": 2225.00,
-        "descripcion":"Mochila negra",
+        "descripcion":"Mochila negra, unisex",
         "long_description":"",
         "categoria_id": 4,
         "imagenes":[
@@ -280,7 +280,7 @@
       	"ID": 13,
       	"nombre": "Mochila Maui",
       	"precio": 2750.00,
-        "descripcion": "Mochila con peces",
+        "descripcion": "Mochila con motivo oc&eacute;ano, unisex",
         "long_description":"",
         "categoria_id": 4,
         "imagenes":[
@@ -303,7 +303,7 @@
       	"ID": 14,
       	"nombre": "Gorro de hilo Brooklyn",
       	"precio": 749.90,
-        "descripcion": "Gorro de hilo brixton",
+        "descripcion": "Gorro de hilo brixton, tejido",
         "long_description":"",
         "categoria_id": 4,
         "imagenes":[
@@ -323,7 +323,7 @@
       	"ID": 15,
       	"nombre": "Lentes de Sol Playacar",
       	"precio": 4250.50,
-        "descripcion": "Lentes de Sol Rayban",
+        "descripcion": "Lentes de Sol Rayban, en degrad&eacute; marr&oacute; Animal print, unisex",
         "long_description":"",
         "categoria_id": 4,
         "imagenes":[
@@ -343,7 +343,7 @@
       	"ID": 16,
       	"nombre": "Gorra Camden Town",
       	"precio": 1299.99,
-        "descripcion": "Gorra Brixton roja",
+        "descripcion": "Gorra Brixton roja, unisex",
         "long_description":"",
         "categoria_id": 4,
         "imagenes":[
@@ -361,9 +361,9 @@
       },
       {
         "ID": 17,
-        "nombre": "Camisa Sherwood",
-        "precio": 2199.99,
-        "descripcion": "Camisa tipo le&ntilde;ador verde",
+        "nombre": "Camisa Manhattan",
+        "precio": 2699.99,
+        "descripcion": "Camisa a rayas celeste y blanca, Vineyard Vines, hombre",
         "long_description":"",
         "categoria_id": 3,
         "imagenes":[
@@ -379,9 +379,9 @@
       ,
       {
         "ID": 18,
-        "nombre": "Camisa Sherwood",
+        "nombre": "Camisa Yosemite",
         "precio": 2199.99,
-        "descripcion": "Camisa tipo le&ntilde;ador verde",
+        "descripcion": "Camisa verde lisa de mujer",
         "long_description":"",
         "categoria_id": 3,
         "imagenes":[
@@ -396,9 +396,9 @@
       },
       {
         "ID": 19,
-        "nombre": "Remera Sherwood",
+        "nombre": "Remera Tommmy Jeans",
         "precio": 1199.99,
-        "descripcion": "Remera tipo le&ntilde;ador verde",
+        "descripcion": "Remera estampada gris, de mujer, Tommy Hilfiger",
         "long_description":"",
         "categoria_id": 5,
         "imagenes":[
@@ -413,9 +413,9 @@
       },
       {
         "ID": 20,
-        "nombre": "Remera Sherwood",
+        "nombre": "Remera Seaside",
         "precio": 799.99,
-        "descripcion": "Remera tipo le&ntilde;ador verde",
+        "descripcion": "Remera lisa celeste, Vineyard Vines, de hombre",
         "long_description":"",
         "categoria_id": 5,
         "imagenes":[
@@ -432,7 +432,7 @@
         "ID": 21,
         "nombre": "Polo Marine",
         "precio": 2099.99,
-        "descripcion": "Polo tipo le&ntilde;ador verde",
+        "descripcion": "Remera polo negra de hombre, Vineyard Vines",
         "long_description":"",
         "categoria_id": 5,
         "imagenes":[
@@ -447,9 +447,9 @@
       },
       {
         "ID": 22,
-        "nombre": "Polo Sherwood",
+        "nombre": "Polo Valle del Uco",
         "precio": 2399.99,
-        "descripcion": "Polo tipo le&ntilde;ador verde",
+        "descripcion": "Polo a rayas, color Malbec, de mujer",
         "long_description":"",
         "categoria_id": 5,
         "imagenes":[
@@ -458,6 +458,23 @@
           },
           {
             "urlImg": "images/categorias/remeras/4/2.jpg"
+          }
+        ],
+        "imagen_portada": 0
+      },
+       {
+        "ID": 23,
+        "nombre": "Camisa Manhattan en Atardecer",
+        "precio": 2199.99,
+        "descripcion": "Camisa a rayas rosa y blanca, Vineyard Vines",
+        "long_description":"",
+        "categoria_id": 3,
+        "imagenes":[
+          {
+            "urlImg": "images/categorias/camisas/5/1.jpg"
+          },
+          {
+            "urlImg": "images/categorias/camisas/5/2.jpg"
           }
         ],
         "imagen_portada": 0

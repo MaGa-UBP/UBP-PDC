@@ -68,6 +68,7 @@ public class CategoriasServlet extends HttpServlet {
             out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/macgar.css\">");
             out.println("<script type=\"text/javascript\" src=\"vendor/jquery/jquery-3.2.1.min.js\"></script>");
             out.println("<script type=\"text/javascript\" src=\"js/priceFormat.js\"></script>");
+            out.println("<script type=\"text/javascript\" src=\"js/latinize.js\"></script>");
             out.println("<script type=\"text/javascript\" src=\"js/productsHandler.js\"></script>");
             out.println("</head>");
             out.println("<body class=\"animsition\">");
@@ -213,12 +214,6 @@ public class CategoriasServlet extends HttpServlet {
             		"			<div class=\"btn-show-menu\">\n" + 
             		"				<!-- Header Icon mobile -->\n" + 
             		"				<div class=\"header-icons-mobile\">\n" + 
-            		"					<a href=\"#\" class=\"header-wrapicon1 dis-block\">\n" + 
-            		"						<img src=\"images/icons/icon-header-01.png\" class=\"header-icon1\" alt=\"ICON\">\n" + 
-            		"					</a>\n" + 
-            		"\n" + 
-            		"					<span class=\"linedivide2\"></span>\n" + 
-            		"\n" + 
             		"					<div class=\"header-wrapicon2\">\n" + 
             		"						<div class=\"header-icon1-wrapper\">\n" + 
             		"							<img src=\"images/icons/icon-header-02.png\" class=\"header-icon1 js-show-header-dropdown\" alt=\"ICON\">\n" + 
@@ -237,7 +232,7 @@ public class CategoriasServlet extends HttpServlet {
 	                out.println("<input type=\"hidden\" name=\"deleteFromCart\" value=\""+auxProd.getID()+"\">");
 		            out.println("<a href=\"#\" class=\"btnRemove\"><div class=\"header-cart-item-img\">");
 					out.println("<img src=\""+auxProd.getUrlImagen()+"\" alt=\"IMG\">"); 
-					out.println("</div>/a>");
+					out.println("</div></a>");
 					out.println("<div class=\"header-cart-item-txt\">");
 					out.println("<a href=\"#\" class=\"header-cart-item-name\">" + auxProd.getNombre() + "</a>");
 					out.println("<div class=\"header-cart-item-info\">");
@@ -257,7 +252,7 @@ public class CategoriasServlet extends HttpServlet {
             		"							<div class=\"header-cart-buttons\">\n" + 
             		"								<div class=\"header-cart-wrapbtn\">\n" + 
             		"									<!-- Button -->\n" + 
-            		"									<a href=\"#\" class=\"flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4\">\n" + 
+            		"									<a href=\"#\" class=\"flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 btnFinalizarCompra\">\n" + 
             		"										Finalizar Compra\n" + 
             		"									</a>\n" + 
             		"								</div>\n" + 
@@ -440,7 +435,6 @@ public class CategoriasServlet extends HttpServlet {
             out.println("</script>");
             String searchQ = (request.getParameter("searchQ")==null || request.getParameter("searchQ")==""? "\"\"" : "\""+request.getParameter("searchQ")+"\"");
             out.println("<script type=\"text/javascript\">loadData(\""+catID+"\", "+searchQ+");</script>");
-//            out.println("<script type=\"text/javascript\">filter(\""+catID+"\", "+searchQ+", products);</script>");
             out.println("<script src=\"js/miniCartHandler.js\" type=\"text/javascript\"></script>");
             out.println("</body>");
             out.println("</html>");

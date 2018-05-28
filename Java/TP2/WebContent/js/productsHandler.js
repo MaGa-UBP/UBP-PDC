@@ -123,12 +123,15 @@ function catExists(array, cat){
 	return exists;
 }
 
+
+	
 function filter(categoria, texto, array){
 	if(categoria!=""&&categoria!=null){
 		scrollToProducts();
 	}else{
 		categoria = "all";
 	}
+
 	updateQueryStringParam("catID", categoria);
 	updateQueryStringParam("searchQ", texto);
 	var categoriesAux;
@@ -136,7 +139,7 @@ function filter(categoria, texto, array){
 
 	if(texto!="" && texto!=undefined){
 		productsAux = $.grep(array, function( product, i ) {
-			return (product.nombre.toLowerCase().indexOf(texto.toLowerCase()) >= 0) || (product.descripcion.toLowerCase().indexOf(texto.toLowerCase()) >= 0); //Ver tema de acentos
+			return ($('<textarea />').html(product.nombre.toLowerCase()).text().latinize().indexOf(texto.toLowerCase().latinize()) >= 0) || ($('<textarea />').html(product.descripcion.toLowerCase()).text().latinize().indexOf(texto.toLowerCase().latinize()) >= 0);
 		});
 		categoriesAux = $.grep(categories, function( category, i ) {
 			return catExists(productsAux, category); 
@@ -185,7 +188,6 @@ function printProductsList(array){
 			del = "<a href=\"#\" class=\"block2-btn-addwishlist hov-pointer trans-0-4 btnRemove\" id=\"btnRemove-"+prod.ID+"\">\
 				<i class=\"icon-wishlist icon_close_alt2\" aria-hidden=\"true\"></i>\
 				<i class=\"icon-wishlist icon_close_alt dis-none\" aria-hidden=\"true\"></i>\
-				<input type=\"hidden\" name=\"deleteFromCart\" value=\""+prod.ID+"\">\
 			</a>";
 		}
 		$("#productList").append("<div class=\"col-sm-12 col-md-6 col-lg-4 p-b-50\">\
@@ -212,7 +214,6 @@ function printProductsList(array){
 											<div class=\"block2-txt p-t-20\">\
 											<input type=\"hidden\" name=\"prodID\" value=\""+prod.ID+"\">\
 											<input type=\"hidden\" name=\"prodPrice\" value=\""+prod.precio+"\">\
-											<input type=\"hidden\" name=\"prodQuantity\" value=\"1\">\
 											<input type=\"hidden\" name=\"prodImgUrl\" value=\""+prodImg+"\">\
 											<input type=\"hidden\" name=\"prodName\" value=\""+$("<div/>").text(prod.nombre).html()+"\">\
 												<a href=\"#\" class=\"block2-name dis-block s-text3 p-b-5\">\
@@ -250,13 +251,13 @@ $(document).on('click','.catSideFilter', function(e){
 
 /*[ +/- num product ]
 ===========================================================*/
-$("#productList").on('click', '.btn-num-product-down',  function(e){
+$(document).on('click', '.btn-num-product-down',  function(e){
 	e.preventDefault();
 	var numProduct = Number($(this).next().val());
 	if(numProduct > 1) $(this).next().val(numProduct - 1);
 });
 
-$("#productList").on('click', '.btn-num-product-up',  function(e){
+$(document).on('click', '.btn-num-product-up',  function(e){
 	e.preventDefault();
 	var numProduct = Number($(this).prev().val());
     $(this).prev().val(numProduct + 1);
